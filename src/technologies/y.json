@@ -384,8 +384,8 @@
       "<!-- This site is optimized with the Yoast (?:WordPress )?SEO plugin v([^\\s]+) -\\;version:\\1",
       "<!-- This site is optimized with the Yoast SEO Premium plugin v(?:[^\\s]+) \\(Yoast SEO v([^\\s]+)\\) -\\;version:\\1"
     ],
-    "icon": "Yoast SEO.png",
     "implies": "WordPress",
+    "icon": "Yoast SEO.png",
     "oss": true,
     "website": "https://yoast.com/wordpress/plugins/seo/"
   },
@@ -411,6 +411,7 @@
       100
     ],
     "description": "Yoast SEO for Shopify optimizes Shopify shops.",
+    "html": "<!-- This site is optimized with Yoast SEO for Shopify -->",
     "dom": {
       "script#yoast-schema-graph": {
         "attributes": {
@@ -418,13 +419,13 @@
         }
       }
     },
-    "html": "<!-- This site is optimized with Yoast SEO for Shopify -->",
     "icon": "yoast-seo-shopify.png",
-    "implies": "Shopify",
+    "oss": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "implies": "Shopify",
     "saas": true,
     "website": "https://yoast.com/shopify/apps/yoast-seo/"
   },
