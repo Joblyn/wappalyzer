@@ -298,7 +298,6 @@ const Wappalyzer = {
       headers: mm,
       dns: mm,
     }
-
     // returns the technologies detected
     try {
       const detections = technologies
