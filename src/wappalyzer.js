@@ -260,6 +260,7 @@ const Wappalyzer = {
     } while (resolved.length && !done)
   },
 
+  // here ----- 
   /**
    * Initialize analyzation.
    * @param {*} param0
@@ -287,7 +288,8 @@ const Wappalyzer = {
       headers: mm,
       dns: mm,
     }
-
+    
+    // returns the technologies detected
     try {
       const detections = technologies
         .map((technology) =>
