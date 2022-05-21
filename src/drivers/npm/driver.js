@@ -762,7 +762,7 @@ class Site {
                           textContent && textContent.match(regExp)
                         return hrefIncludes || titleIncludes || textIncludes
                       })
-                      
+              
                     // buttons
                     let buttons = Array.from(
                       document.getElementsByTagName('button')
@@ -777,7 +777,6 @@ class Site {
                           textContent && textContent.match(regExp)
                         return hrefIncludes || textIncludes
                       })
-
                     // divs
                     let divTexts = Array.from(
                       document.getElementsByTagName('div')
