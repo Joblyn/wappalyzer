@@ -1175,8 +1175,8 @@
       "high",
       "recurring"
     ],
-    "saas": true,
     "scriptSrc": "everflow\\.js",
+    "saas": true,
     "website": "https://www.everflow.io"
   },
   "Eveve": {

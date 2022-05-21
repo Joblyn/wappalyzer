@@ -980,11 +980,11 @@
     ],
     "description": "Measured is an analytics platform to measure efficiency of marketing channels.",
     "icon": "Measured.svg",
+    "scriptSrc": "tag\\.measured\\.com",
+    "saas": true,
     "pricing": [
       "poa"
     ],
-    "saas": true,
-    "scriptSrc": "tag\\.measured\\.com",
     "website": "https://www.measured.com"
   },
   "Medallia": {
