@@ -471,6 +471,27 @@
     ],
     "website": "https://reactrouter.com/"
   },
+  "Reactive": {
+    "cats": [
+      1,
+      6
+    ],
+    "description": "Reactive is a subscription-based software that allows you to set up an online store and website. It has a CMS and has been created to support retail, coffee bars, restaurants owners and accomodation properties such as hotels or villas. With Reactive one can sell products or accept reservations and online orders.",
+    "icon": "Reactive.svg",
+    "implies": [
+      "Ruby on Rails"
+    ],
+    "meta": {
+      "generator": "Reactive"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "url": "^https?//.+\\.reactiveonline\\.io",
+    "website": "https://reactiveonline.io"
+  },
   "Really Simple CAPTCHA": {
     "cats": [
       87
@@ -903,6 +924,21 @@
       "\\bRelais Colis\\b"
     ],
     "website": "https://www.relaiscolis.com"
+  },
+  "Remarkable Commerce": {
+    "cats": [
+      6
+    ],
+    "description": "Remarkable Commerce is a technology and services company which provides a commerce platform for mid-sized retailers.",
+    "icon": "Remarkable.png",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "js": {
+      "Remarkable": ""
+    },
+    "website": "https://remarkable.net/"
   },
   "Remix": {
     "cats": [

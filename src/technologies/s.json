@@ -265,6 +265,19 @@
     "scripts": "embed\\.sendtonews\\.com/",
     "website": "https://www.stnvideo.com"
   },
+  "Strattic": {
+    "cats": [
+      88
+    ],
+    "description": "Strattic offers static and headless hosting for WordPress sites.",
+    "headers": {
+      "x-powered-by": "Strattic"
+    },
+    "pricing": [ "recurring", "low" ],
+    "requires": "WordPress",
+    "icon": "strattic-icon.png",
+    "website": "https://www.strattic.com/"
+  },
   "STUDIO": {
     "cats": [
       51
@@ -1017,7 +1030,7 @@
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "cdn\\.secomapp\\.com/",
     "website": "https://www.secomapp.com"
@@ -1030,6 +1043,16 @@
     "description": "Sectigo provides SSL certificate and computer security products.",
     "icon": "Sectigo.svg",
     "website": "https://sectigo.com/"
+  },
+  "Sections.design Shopify App Optimization": {
+    "cats": [
+      92
+    ],
+    "description": "Sections.design Shopify App Optimization is a Shopify section written in liquid for the purpose of improving performance of Shopify stores by optimizing how Shopify app loads.",
+    "dom": "div#shopify-section-app-optimization",
+    "icon": "Sections-Design.png",
+    "implies": "Shopify",
+    "website": "https://github.com/mirceapiturca/Sections/tree/master/App%20Optimization"
   },
   "Section.io": {
     "cats": [
@@ -1269,20 +1292,6 @@
     "saas": true,
     "scriptSrc": "embed\\.selly\\.(?:gg|io)",
     "website": "https://selly.io/"
-  },
-  "Selz": {
-    "cats": [
-      6
-    ],
-    "description": "Selz is ecommerce platform with built-in payment processing.",
-    "dom": "img[src*='img.selzstatic.com']",
-    "icon": "Selz.png",
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "saas": true,
-    "website": "https://selz.com/"
   },
   "Semantic UI": {
     "cats": [
@@ -1787,7 +1796,7 @@
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "website": "https://apps.shopify.com/custom-options"
   },
   "Shopaholic": {
@@ -1821,7 +1830,7 @@
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "cdn\\.myshopapps\\.com/",
     "website": "http://www.shopapps.in"
@@ -1941,6 +1950,20 @@
     "url": "^https?//.+\\.myshopify\\.com",
     "website": "http://shopify.com"
   },
+  "Shopify Buy Button": {
+    "cats": [
+      100
+    ],
+    "description": "Shopify Buy Button is an app from Shopify which allows merchant to embed buy functionality for any product or collection into another website or blog.",
+    "icon": "Shopify.svg",
+    "js": {
+      "ShopifyBuy": ""
+    },
+    "scriptSrc": [
+      "sdk\\. shopifycdn\\.com/buy-button/latest/"
+    ],
+    "website": "https://apps.shopify.com/buy-button"
+  },
   "Shopify Chat": {
     "cats": [
       52,
@@ -1948,6 +1971,7 @@
     ],
     "description": "Shopify Chat is Shopify's native live chat function that allows you to have real-time conversations with customers visiting your Shopify store.",
     "icon": "Shopify.svg",
+    "implies": "Shopify",
     "scriptSrc": [
       "cdn\\.shopify\\.com/shopifycloud/shopify_chat/"
     ],
@@ -1960,7 +1984,7 @@
     ],
     "description": "Shopify Consent Management let's you create a tracking consent banner for EU customers.",
     "icon": "Shopify.svg",
-    "requires": "Shopify",
+    "implies": "Shopify",
     "scriptSrc": [
       "cookie_consent_shopify\\.js"
     ],
@@ -1973,7 +1997,7 @@
     ],
     "description": "Shopify Geolocation App makes language and country recommendations to your customers based on their geographic location and browser or device language.",
     "icon": "Shopify Geolocation App.png",
-    "requires": "Shopify",
+    "implies": "Shopify",
     "scriptSrc": "geolocation-recommendations\\.shopifycloud\\.com/",
     "website": "https://apps.shopify.com/geolocation"
   },
@@ -1987,7 +2011,7 @@
     "js": {
       "SPR": ""
     },
-    "requires": "Shopify",
+    "implies": "Shopify",
     "scriptSrc": [
       "productreviews\\.shopifycdn\\.com"
     ],
@@ -2366,6 +2390,19 @@
       "static\\.simonsignal\\.com"
     ],
     "website": "https://www.simondata.com/"
+  },
+  "Simpl": {
+    "cats": [
+      41,
+      91
+    ],
+    "description": "Simpl is a fintech company that offers a cardless payment network with multiple solutions for merchants and consumers.",
+    "icon": "Simpl.png",
+    "js": {
+      "simplSettings": ""
+    },
+    "saas": true,
+    "website": "https://getsimpl.com/"
   },
   "Simple Analytics": {
     "cats": [
@@ -4498,6 +4535,26 @@
     ],
     "saas": true,
     "website": "https://www.storehippo.com"
+  },
+  "stores.jp": {
+    "cats": [
+      6
+    ],
+    "description": "stores.jp is an ecommerce platform which allows users to create their own ecommerce website.",
+    "icon": "stores.jp.svg",
+    "implies": [
+      "Visa",
+      "Mastercard"
+    ],
+    "js": {
+      "STORES_JP": ""
+    },
+    "pricing": [
+      "freemium",
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://stores.jp/ec/"
   },
   "Storeden": {
     "cats": [
