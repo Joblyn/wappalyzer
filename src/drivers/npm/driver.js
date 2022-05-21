@@ -103,6 +103,7 @@ function analyzeJs(js, technologies = Wappalyzer.technologies) {
     .flat()
 }
 
+// inspect nodes here
 function getDom(page, technologies = Wappalyzer.technologies) {
   return page.evaluate((technologies) => {
     return technologies
@@ -188,6 +189,7 @@ function getDom(page, technologies = Wappalyzer.technologies) {
   }, technologies)
 }
 
+// avalyses the dom, using regex to find matches to a technology
 function analyzeDom(dom, technologies = Wappalyzer.technologies) {
   return dom
     .map(({ name, selector, exists, text, property, attribute, value }) => {
@@ -398,7 +400,12 @@ class Site {
 
     this.probed = false
 
+<<<<<<< HEAD
     this.destroyed = false
+=======
+    // login button
+    this.buttons = {}
+>>>>>>> 5ee4d0314 (added coded to check for login or sigin button on a page)
   }
 
   log(message, source = 'driver', type = 'log') {
@@ -468,6 +475,7 @@ class Site {
     ])
   }
 
+  // make request to url
   async goto(url) {
     if (this.destroyed) {
       return
@@ -530,6 +538,7 @@ class Site {
 
     let responseReceived = false
 
+    // on xhr call the url
     page.on('request', async (request) => {
       try {
         if (request.resourceType() === 'xhr') {
@@ -586,6 +595,7 @@ class Site {
       }
     })
 
+    // gets the response from page
     page.on('response', async (response) => {
       if (this.destroyed || !page || page.__closed || page.isClosed()) {
         return
@@ -597,8 +607,9 @@ class Site {
           response.frame().url() === url.href &&
           response.request().resourceType() === 'script'
         ) {
-          const scripts = await response.text()
+          const scripts = await response.text() // ajax response
 
+          // analyzes the response
           await this.onDetect(response.url(), analyze({ scripts }))
         }
       } catch (error) {
@@ -728,6 +739,8 @@ class Site {
       let meta = []
       let js = []
       let dom = []
+      // login
+      let logins = {}
 
       if (html) {
         // Links
@@ -754,6 +767,69 @@ class Site {
               ).jsonValue(),
               [],
               'Timeout (links)'
+            )
+
+        // login button
+        logins = this.options.recursive
+          ? {}
+          : await this.promiseTimeout(
+              (
+                await this.promiseTimeout(
+                  page.evaluateHandle(() => {
+                    const regExp =
+                      /signin|login|sign_in|log_in|sign in|log in/gi
+                    // anchors
+                    let anchors = Array.from(document.getElementsByTagName('a'))
+                      .map(({ href, title, textContent }) => ({
+                        href,
+                        title,
+                        textContent,
+                      }))
+                      .filter(({ href, title, textContent }) => {
+                        let hrefIncludes = href && href.match(regExp)
+                        let titleIncludes = title && title.match(regExp)
+                        let textIncludes =
+                          textContent && textContent.match(regExp)
+                        return hrefIncludes || titleIncludes || textIncludes
+                      })
+                      
+                    // buttons
+                    let buttons = Array.from(
+                      document.getElementsByTagName('button')
+                    )
+                      .map(({ href, textContent }) => ({
+                        href,
+                        textContent,
+                      }))
+                      .filter(({ href, textContent }) => {
+                        let hrefIncludes = href && href.match(regExp)
+                        let textIncludes =
+                          textContent && textContent.match(regExp)
+                        return hrefIncludes || textIncludes
+                      })
+
+                    // divs
+                    let divTexts = Array.from(
+                      document.getElementsByTagName('div')
+                    )
+                      .map(({ textContent }) => ({
+                        textContent,
+                      }))
+                      .filter(({ textContent }) => {
+                        let textIncludes =
+                          textContent && textContent.match(regExp)
+                        return textIncludes
+                      })
+                      .map(({ innerText }) => ({ innerText }))
+
+                    return { anchors, buttons, divTexts }
+                  }),
+                  { jsonValue: () => ({}) },
+                  'Timeout (login)'
+                )
+              ).jsonValue(),
+              {},
+              'Timeout (login)'
             )
 
         // Text
@@ -887,6 +963,10 @@ class Site {
         meta,
       }
 
+      this.buttons = {
+        logins,
+      }
+
       await this.onDetect(
         url,
         [
@@ -977,6 +1057,7 @@ class Site {
     }
   }
 
+  // analyzes the url passed in
   async analyze(url = this.originalUrl, index = 1, depth = 1) {
     if (this.options.recursive) {
       await sleep(this.options.delay * index)
@@ -1079,6 +1160,7 @@ class Site {
         })
       ),
       patterns,
+      buttons: this.buttons,
     }
 
     await this.emit('analyze', results)
@@ -1187,6 +1269,7 @@ class Site {
     await this.batch(links, depth, batch + 1)
   }
 
+  // on detecting technologies
   async onDetect(url, detections = []) {
     this.detections = this.detections
       .concat(detections)
