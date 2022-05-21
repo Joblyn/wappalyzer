@@ -204,6 +204,38 @@
     "scriptSrc": "/__layer0__/cache-manifest\\.js",
     "website": "https://www.layer0.co"
   },
+  "LayoutHub": {
+    "cats": [
+      100,
+      51
+    ],
+    "description": "LayoutHub is an easy page builder that helps merchants quickly set up an online store with any kind of page type by using our library of pre-designed layouts and blocks.",
+    "icon": "LayoutHub.png",
+    "requires": "Shopify",
+    "scriptSrc": "app\\.layouthub\\.com/shopify/layouthub\\.js",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://layouthub.com"
+  },
+  "Lazada": {
+    "cats": [
+      6
+    ],
+    "description": "Lazada is a B2B2C marketplace model in which so-called merchants sell goods on their platform.",
+    "icon": "Lazada.svg",
+    "meta": {
+      "aplus-auto-exp": "lzdhome\\.desktop\\."
+    },
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.lazada.com"
+  },
   "LazySizes": {
     "cats": [
       59
@@ -1546,5 +1578,15 @@
     },
     "oss": true,
     "website": "https://lit.dev"
+  },
+  "lite-youtube-embed": {
+    "cats": [
+      59
+    ],
+    "description": "The lite-youtube-embed technique renders the YouTube video inside the IFRAME tag only when the play button in clicked thus improving the core web vitals score of your website.",
+    "dom": "lite-youtube",
+    "website": "https://github.com/paulirish/lite-youtube-embed",
+    "oss": true, 
+    "implies": "YouTube"
   }
 }

@@ -725,6 +725,21 @@
     "scriptSrc": "js\\.peek\\.\\w+",
     "website": "https://www.peek.com/"
   },
+  "PeerBoard": {
+    "cats": [
+      2
+    ],
+    "description": "PeerBoard is a plug-and-play community solution, which helps groups, clubs, startups, marketplaces and businesses create discussion forums.",
+    "icon": "PeerBoard.png",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "scriptSrc": "\\.peerboard\\.com/",
+    "website": "https://peerboard.com"
+  },
   "PeerTube": {
     "cats": [
       2
@@ -1150,6 +1165,24 @@
     ],
     "website": "https://piano.io"
   },
+  "PickyStory": {
+    "cats": [
+      100
+    ],
+    "description": "PickyStory is the ecommerce conversion platform.",
+    "icon": "PickyStory.png",
+    "implies": "Shopify",
+    "js": {
+      "pickystory.overrideStore": ""
+    },
+    "pricing": [
+      "freemium",
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "cdn\\.pickystory\\.com/",
+    "website": "https://pickystory.com"
+  },
   "Pico": {
     "cats": [
       53
@@ -1301,6 +1334,21 @@
     ],
     "saas": true,
     "website": "https://www.pipedrive.com/"
+  },
+  "Piwik PRO Core": {
+    "cats": [
+      10
+    ],
+    "description": "Piwik PRO Core is a free alternative to Google Analytics that is privacy & compliance focused.",
+    "icon": "Piwik PRO Core.svg",
+    "excludes": "Matomo Analytics",
+    "pricing": [
+      "freemium",
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.piwik\\.pro/",
+    "website": "https://piwik.pro"
   },
   "PixelFed": {
     "cats": [
@@ -2160,6 +2208,22 @@
     "scriptSrc": "\\.privy\\.com/",
     "website": "https://www.privy.com"
   },
+  "ProcessWire": {
+    "cats": [
+      1
+    ],
+    "description": "ProcessWire is an open source content management system (CMS) and framework (CMF).",
+    "icon": "ProcessWire.svg",
+    "implies": "PHP",
+    "headers": {
+      "X-Powered-By": "ProcessWire CMS"
+    },
+    "js": {
+      "ProcessWire": ""
+    },
+    "oss": true,
+    "website": "https://processwire.com"
+  },
   "Product Personalizer": {
     "cats": [
       100,
@@ -2182,6 +2246,9 @@
     ],
     "description": "ProfilePress is a WordPress registration plugin that lets you create login forms, registration forms, user profiles, and more.",
     "dom": "link[href*='/wp-content/plugins/wp-user-avatar/']",
+    "cookies": {
+      "ppwp_wp_session": ""
+    },
     "icon": "ProfilePress.svg",
     "pricing": [
       "low",
@@ -2445,6 +2512,22 @@
     ],
     "saas": true,
     "website": "https://www.purecars.com"
+  },
+  "PurpleAds": {
+    "cats": [
+      36
+    ],
+    "description": "PurpleAds is an online advertising solution that businesses use to promote their products and services on Google Search, YouTube and other sites across the web.",
+    "icon": "PurpleAds.svg",
+    "meta": {
+      "purpleads-verification": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.purpleads\\.io/",
+    "website": "https://purpleads.io"
   },
   "PushDaddy Whatsapp Chat": {
     "cats": [

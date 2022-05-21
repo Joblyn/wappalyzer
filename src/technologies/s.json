@@ -85,6 +85,23 @@
     "icon": "SDL Tridion.svg",
     "website": "http://www.sdl.com/products/tridion"
   },
+  "Semplice": {
+    "cats": [
+      80,
+      51
+    ],
+    "description": "Semplice is a Wordpress-based website builder made by designers for designers.",
+    "icon": "Semplice.svg",
+    "js": {
+      "semplice.template_dir": ""
+    },
+    "pricing": [
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/semplice(?:\\d+)?(?:-child)?(?:-theme)?/",
+    "website": "https://www.semplice.com"
+  },
   "SEMrush": {
     "cats": [
       32
@@ -169,17 +186,6 @@
       "smf_": ""
     },
     "website": "http://www.simplemachines.org"
-  },
-  "SMSBump": {
-    "cats": [
-      32
-    ],
-    "description": "SMS Bump is a SMS marketing and automations app.",
-    "icon": "Smsbump.png",
-    "js": {
-      "SMSBumpForm": ""
-    },
-    "website": "https://smsbump.com/"
   },
   "SOBI 2": {
     "cats": [
@@ -1691,6 +1697,21 @@
     "scriptSrc": "^https?://codice(?:business|ssl|pro|isp)?\\.shinystat\\.com/cgi-bin/getcod\\.cgi",
     "website": "http://shinystat.com"
   },
+  "ShipTection": {
+    "cats": [
+      100
+    ],
+    "description": "ShipTection is the easiest way to offer shipping protection on your Shopify site.",
+    "icon": "ShipTection.png",
+    "implies": "Shopify",
+    "scriptSrc": "app\\.shiptection\\.com/",
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://wamapps.io/pages/shiptection-protection"
+  },
   "Shogun": {
     "cats": [
       51
@@ -2289,6 +2310,22 @@
     "saas": true,
     "scriptSrc": "\\.signifyd\\.com",
     "website": "https://www.signifyd.com"
+  },
+  "siimple": {
+    "cats": [
+      66
+    ],
+    "description": "siimple is a minimal CSS toolkit for building flat, clean and responsive web designs.",
+    "icon": "siimple.svg",
+    "dom": {
+      "link[href*='siimple.min.css']": {
+        "attributes": {
+          "href": "/npm/siimple@([\\d\\.]+)/dist/siimple\\.min\\.css\\;version:\\1"
+        }
+      }
+    },
+    "oss": true,
+    "website": "https://siimple.xyz"
   },
   "SilverStripe": {
     "cats": [

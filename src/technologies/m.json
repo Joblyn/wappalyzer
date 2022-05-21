@@ -1453,6 +1453,24 @@
     "scriptSrc": "\\w+\\.healcode\\.com",
     "website": "https://www.mindbodyonline.com"
   },
+  "Mindbox": {
+    "cats": [
+      32
+    ],
+    "description": "Mindbox is a marketing automation platform.",
+    "icon":"Mindbox.png",
+    "js": {
+      "mindbox": "",
+      "MindboxEndpointSettings": "",
+      "mindboxBatchedModulesInitialized": ""
+    },
+    "saas": true,
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "website": "https://mindbox.ru"
+  },
   "Minero.cc": {
     "cats": [
       56
@@ -1852,6 +1870,41 @@
       "generator": "Mondo Shop"
     },
     "website": "http://mondo-media.de"
+  },
+  "Moneris": {
+    "cats": [
+      41
+    ],
+    "description": "Moneris (formerly Moneris Solutions) is Canada's largest financial technology company that specialises in payment processing.",
+    "icon": "Moneris.svg",
+    "headers": {
+      "content-security-policy": "\\.moneris\\.com"
+    },
+    "js": {
+      "initialServerData.monerisConfiguration": ""
+    },
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://www.moneris.com"
+  },
+  "Moneris Payment Gateway": {
+    "cats": [
+      87
+    ],
+    "description": "Moneris is Canada’s leading processor of Debit and credit card payments. This WooCommerce extension automatically adds moneris payment gateway to your woocommerce website and allows you to keep the customer on your site for the checkout process.",
+    "icon": "Moneris.svg",
+    "implies": [
+      "Moneris",
+      "WooCommerce"
+    ],
+    "js": {
+      "wc_moneris_hosted_tokenization_params": ""
+    },
+    "scriptSrc": "/wp-content/plugins/woocommerce-gateway-moneris/",
+    "requires": "WordPress",
+    "website": "https://wordpress.org/plugins/wc-moneris-payment-gateway"
   },
   "MongoDB": {
     "cats": [
