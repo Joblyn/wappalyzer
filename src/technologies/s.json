@@ -1014,6 +1014,17 @@
     "icon": "Sectigo.svg",
     "website": "https://sectigo.com/"
   },
+  "Sections.design Shopify App Optimization": {
+    "cats": [
+      92
+    ],
+    "description": "Sections.design Shopify App Optimization is a Shopify section written in liquid for the purpose of improving performance of Shopify stores by optimizing how Shopify app loads.",
+    "dom": "div#shopify-section-app-optimization",
+    "icon": "Sections-Design.png",
+    "implies": "Shopify",
+    "oss": true,
+    "website": "https://github.com/mirceapiturca/Sections/tree/master/App%20Optimization"
+  },
   "Section.io": {
     "cats": [
       31
@@ -1026,16 +1037,6 @@
     },
     "icon": "sectionio.svg",
     "website": "https://www.section.io"
-  },
-  "Sections.design Shopify App Optimization": {
-    "cats": [
-      92
-    ],
-    "description": "Sections.design Shopify App Optimization is a Shopify section written in liquid for the purpose of improving performance of Shopify stores by optimizing how Shopify app loads.",
-    "dom": "div#shopify-section-app-optimization",
-    "icon": "Sections-Design.png",
-    "implies": "Shopify",
-    "website": "https://github.com/mirceapiturca/Sections/tree/master/App%20Optimization"
   },
   "SeedProd Coming Soon": {
     "cats": [
@@ -1949,6 +1950,9 @@
     "scriptSrc": [
       "sdk\\. shopifycdn\\.com/buy-button/latest/"
     ],
+    "pricing": [
+      "freemium"
+    ],
     "website": "https://apps.shopify.com/buy-button"
   },
   "Shopify Chat": {
@@ -2368,12 +2372,12 @@
       91
     ],
     "description": "Simpl is a fintech company that offers a cardless payment network with multiple solutions for merchants and consumers.",
-    "icon": "Simpl.png",
+    "icon": "Simpl.svg",
     "js": {
       "simplSettings": ""
     },
     "saas": true,
-    "website": "https://getsimpl.com/"
+    "website": "https://getsimpl.com"
   },
   "Simple Analytics": {
     "cats": [
