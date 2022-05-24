@@ -337,12 +337,12 @@
     "headers": {
       "x-powered-by": "Helhost"
     },
-    "icon": "Helhost.svg",
     "implies": [
       "Nginx",
       "AlmaLinux",
       "Apache"
     ],
+    "icon": "Helhost.svg",
     "pricing": [
       "low",
       "recurring",
