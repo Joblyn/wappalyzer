@@ -1065,7 +1065,7 @@
   },
   "Loadify": {
     "cats": [
-      92,
+      92,    
       100
     ],
     "description": "Loadify is a shopify app which helps merchants deploy performance techniques like loading screen, transitions & lazy Load.",
@@ -1073,7 +1073,7 @@
     "implies": "Shopify",
     "scriptSrc": "\\.loadifyapp\\.ninety9\\.dev",
     "website": "https://apps.shopify.com/loadify"
-  },
+  },    
   "LocalFocus": {
     "cats": [
       25
