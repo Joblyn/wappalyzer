@@ -2079,7 +2079,6 @@
     "icon": "Prebid.png",
     "js": {
       "PREBID_TIMEOUT": "",
-      "pbjs": "",
       "pbjs.version": "v([\\d\\.]+)\\;version:\\1"
     },
     "oss": true,
