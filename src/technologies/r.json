@@ -378,23 +378,6 @@
     "scriptSrc": "/wp-content/plugins/wpcf7-recaptcha/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://wordpress.org/plugins/wpcf7-recaptcha/"
   },
-  "ReConvert": {
-    "cats": [
-      100
-    ],
-    "description": "ReConvert is a post-purchase upsell & thank you page.",
-    "icon": "ReConvert.svg",
-    "implies": "Shopify",
-    "pricing": [
-      "low",
-      "payg",
-      "freemium",
-      "recurring"
-    ],
-    "saas": true,
-    "scriptSrc": "\\.stilyoapps\\.com/reconvert/assets/js/store_reconvert_node\\.js",
-    "website": "https://www.reconvert.io"
-  },
   "ReDoc": {
     "cats": [
       4
@@ -635,6 +618,21 @@
     "website": "https://reciteme.com/"
   },
   "Recomify": {
+    "cats": [
+      100
+    ],
+    "description": "Recomify is a 1-click install, cost-effective smart product recommendation engine.",
+    "icon": "Recomify.png",
+    "implies": "Shopify",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "app\\.recomify\\.com/",
+    "website": "https://www.recomify.com"
+  },
+  "ReConvert": {
     "cats": [
       100
     ],
