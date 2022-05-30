@@ -972,52 +972,22 @@
     "scriptSrc": "cdn\\.equalweb\\.com.*\\.js",
     "website": "https://www.equalweb.com/"
   },
-  "EraofEcom Cartroids": {
-    "cats": [
-      100
-    ],
-    "description": "EraofEcom Cartroids makes it easy for you to create highly targeted upsells, cross-sells and bundle offers.",
-    "icon": "EraofEcom.png",
-    "implies": "Shopify",
-    "js": {
-      "cartroids.appBase": "cartroids\\.eraofecom\\.org"
-    },
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "website": "https://eraofecom.org/collections/tech/products/cartroids"
-  },
-  "EraofEcom MTL": {
-    "cats": [
-      100
-    ],
-    "description": "EraofEcom MTL is a Shopify pop up app that enables you to catch your website visitors.",
-    "icon": "EraofEcom.png",
-    "implies": "Shopify",
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "scriptSrc": "mtl\\.eraofecom\\.org",
-    "website": "https://eraofecom.org/collections/tech/products/milk-the-leads"
-  },
   "EraofEcom WinAds": {
     "cats": [
       100
     ],
     "description": "EraofEcom WinAds is an all-in-one Facebook pixel app for Shopify.",
-    "dom": "link[href*='winads.eraofecom.org']",
     "icon": "EraofEcom.png",
     "implies": "Shopify",
+    "dom": "link[href*='winads.eraofecom.org']",
     "js": {
       "win_ads.baseURL": "winads\\.eraofecom\\.org"
     },
+    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
-    "saas": true,
     "website": "https://eraofecom.org/collections/tech/products/win-ads-manager"
   },
   "Erlang": {
