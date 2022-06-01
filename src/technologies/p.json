@@ -741,11 +741,11 @@
     ],
     "description": "PebblePost provides marketers a way to transform recent online data into intelligent direct mail programs that perform.",
     "icon": "PebblePost.svg",
+    "scriptSrc": "cdn\\.pbbl\\.co/",
+    "saas": true,
     "pricing": [
       "payg"
     ],
-    "saas": true,
-    "scriptSrc": "cdn\\.pbbl\\.co/",
     "website": "https://www.pebblepost.com"
   },
   "Peek": {
