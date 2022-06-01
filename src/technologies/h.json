@@ -350,41 +350,6 @@
     ],
     "website": "https://www.helhost.com"
   },
-  "HeliumWeb": {
-    "cats": [
-      18
-    ],
-    "description": "HeliumWeb is a server-side (backend) web framework written in PHP & JavaScript",
-    "headers": {
-      "X-Powered-By": "Adrikikicp Development"
-    },
-    "implies": "PHP",
-    "js": {
-      "helium.js": ""
-    },
-    "oss": true,
-    "pricing": [
-      "freemium"
-    ],
-    "saas": true,
-    "scriptSrc": [
-      "helium/src/helium.js/helium_web.js",
-      "http://maven.enriquitomcfh.ml/helium.js/helium_web.js",
-      "http://maven.enriquitomcfh.ml/helium.js/helium_web.min.js"
-    ],
-    "website": "https://heliumweb.adrikikicp-development.ml"
-  },
-  "Helix Ultimate": {
-    "cats": [
-      18
-    ],
-    "description": "Helix Ultimate a free template framework for Joomla.",
-    "dom": "header#sp-header, body.helix-ultimate",
-    "icon": "HelixUltimate.svg",
-    "implies": "Joomla",
-    "oss": true,
-    "website": "https://www.joomshaper.com/joomla-templates/helixultimate"
-  },
   "Helixo UFE": {
     "cats": [
       100
@@ -396,13 +361,24 @@
       "ufe.funnelData": "",
       "ufeStore.cartTotal": ""
     },
+    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
-    "saas": true,
     "website": "https://helixo.co/upsell-funnel-engine/"
+  },
+  "Helix Ultimate": {
+    "cats": [
+      18
+    ],
+    "description": "Helix Ultimate a free template framework for Joomla.",
+    "dom": "header#sp-header, body.helix-ultimate",
+    "icon": "HelixUltimate.svg",
+    "implies": "Joomla",
+    "oss": true,
+    "website": "https://www.joomshaper.com/joomla-templates/helixultimate"
   },
   "Hello Bar": {
     "cats": [
