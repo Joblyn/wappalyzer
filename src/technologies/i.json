@@ -394,19 +394,6 @@
     "scriptSrc": "\\.inmoment\\.com(?:\\.\\w+)?/",
     "website": "https://inmoment.com"
   },
-  "InSyncai": {
-    "cats": [
-      52
-    ],
-    "description": "InSyncai offers a conversational platform for enterprises to design and build chatbots having applications in customer support and services.",
-    "dom": "iframe[src*='insync_iframe_webchat_js_prod'], iframe#insync-iframe",
-    "icon": "InSyncai.png",
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "website": "https://www.insyncai.com"
-  },
   "Incapsula": {
     "cats": [
       31
@@ -700,20 +687,18 @@
     ],
     "website": "https://instapage.com"
   },
-  "Instatus": {
+  "InSyncai": {
     "cats": [
-      13
+      52
     ],
-    "description": "Instatus is a status and incident communication tool.",
-    "dom": "a[href*='instatus.com'][target='_blank']",
-    "icon": "Instatus.svg",
+    "description": "InSyncai offers a conversational platform for enterprises to design and build chatbots having applications in customer support and services.",
+    "dom": "iframe[src*='insync_iframe_webchat_js_prod'], iframe#insync-iframe",
+    "icon": "InSyncai.png",
     "pricing": [
-      "freemium",
-      "low",
-      "recurring"
+      "poa"
     ],
     "saas": true,
-    "website": "https://instatus.com"
+    "website": "https://www.insyncai.com"
   },
   "Integral Ad Science": {
     "cats": [
