@@ -839,17 +839,17 @@
       76
     ],
     "description": "Reelevant is a visual content platform that helps businesses to create on-demand content for their viewers in order to increase conversion rates.",
+    "icon": "Reelevant.svg",
     "headers": {
       "Content-Security-Policy": "\\.reelevant\\.com"
     },
-    "icon": "Reelevant.svg",
     "js": {
       "reel.companyId": ""
     },
+    "saas": true,
     "pricing": [
       "poa"
     ],
-    "saas": true,
     "website": "https://try.reelevant.com"
   },
   "Reevoo": {
