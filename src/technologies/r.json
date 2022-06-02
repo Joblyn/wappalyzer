@@ -1288,6 +1288,7 @@
     ],
     "description": "Revieve is a technology company delivering consumer-centric personalised digital brand experiences powered by AI/AR.",
     "icon": "Revieve.svg",
+    "saas": true,
     "js": {
       "Revieve.__esModule": "",
       "revieveConfig.onClickProduct": ""
@@ -1295,7 +1296,6 @@
     "pricing": [
       "poa"
     ],
-    "saas": true,
     "website": "https://www.revieve.com"
   },
   "ReviewSolicitors": {
