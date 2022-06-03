@@ -1874,8 +1874,8 @@
     "icon": "Popper.svg",
     "js": {
       "Popper.Defaults": "",
-      "Popper.applyStyles": "",
-      "createPopper": ""
+      "createPopper": "",
+      "Popper.applyStyles": ""
     },
     "oss": true,
     "scriptSrc": [
