@@ -1030,18 +1030,18 @@
     "cats": [
       5
     ],
+    "description": "GoCertify is a conversion-focused and cost-effective way to verify students, key workers, under-26s, over-60s, military and more for exclusive discounts.",
+    "icon": "GoCertify.png",
+    "dom": "a[href*='secure.gocertify.me']",
     "cookies": {
       "_gocertify_session": ""
     },
-    "description": "GoCertify is a conversion-focused and cost-effective way to verify students, key workers, under-26s, over-60s, military and more for exclusive discounts.",
-    "dom": "a[href*='secure.gocertify.me']",
-    "icon": "GoCertify.png",
+    "scriptSrc": "assets\\.gocertify\\.me/",
     "pricing": [
       "poa",
       "payg"
     ],
     "saas": true,
-    "scriptSrc": "assets\\.gocertify\\.me/",
     "website": "https://www.gocertify.me"
   },
   "GoDaddy": {
