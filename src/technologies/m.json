@@ -369,48 +369,19 @@
       32
     ],
     "description": "MailerLite is an email marketing tool and website builder for businesses of all shapes and sizes.",
+    "icon": "Mailgun.svg",
     "dom": "link[href*='.mailerlite.com']",
-    "icon": "MailerLite.svg",
     "js": {
       "MailerLiteObject": ""
     },
+    "scriptSrc": "\\.mailerlite\\.com/",
+    "saas": true,
     "pricing": [
       "freemium",
       "payg",
       "recurring"
     ],
-    "saas": true,
-    "scriptSrc": "\\.mailerlite\\.com/",
     "website": "https://www.mailerlite.com"
-  },
-  "MailerLite Website Builder": {
-    "cats": [
-      51
-    ],
-    "description": "MailerLite Website Builder is a free drag & drop website builder with interactive blocks and ecommerce integrations.",
-    "icon": "MailerLite.svg",
-    "pricing": [
-      "freemium"
-    ],
-    "requires": [
-      "MailerLite",
-      "Go",
-      "Caddy"
-    ],
-    "saas": true,
-    "scriptSrc": "cdn\\.mailerlite\\.com/moment/moment\\.min\\.js",
-    "website": "https://www.mailerlite.com/features/website-builder"
-  },
-  "MailerLite plugin": {
-    "cats": [
-      87
-    ],
-    "description": "The official MailerLite signup forms plugin makes it easy to grow your newsletter subscriber list from your WordPress blog or website. The plugin automatically integrates your WordPress form with your MailerLite email marketing account.",
-    "icon": "MailerLite.svg",
-    "implies": "MailerLite",
-    "requires": "WordPress",
-    "scriptSrc": "/wp-content/plugins/woo-mailerlite/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
-    "website": "https://ru.wordpress.org/plugins/official-mailerlite-sign-up-forms/"
   },
   "Mailgun": {
     "cats": [
