@@ -746,7 +746,8 @@ class Site {
               (
                 await this.promiseTimeout(
                   page.evaluateHandle(() => {
-                    const regExp = /((sign|log)(\s{0,}|_)in)|register/gi
+                    const signInRegExp = /((sign|log)(\s{0,}|_)in)|register/gi;
+
                     // anchors
                     let anchors = Array.from(document.getElementsByTagName('a'))
                       .map(({ href, title, textContent, alt }) => ({
@@ -756,11 +757,11 @@ class Site {
                         alt,
                       }))
                       .filter(({ href, title, textContent, alt }) => {
-                        let hrefIncludes = href && href.match(regExp)
-                        let titleIncludes = title && title.match(regExp)
+                        let hrefIncludes = href && href.match(signInRegExp)
+                        let titleIncludes = title && title.match(signInRegExp)
                         let textIncludes =
-                          textContent && textContent.match(regExp)
-                        let altIncludes = alt && alt.match(regExp)
+                          textContent && textContent.match(signInRegExp)
+                        let altIncludes = alt && alt.match(signInRegExp)
                         return (
                           hrefIncludes ||
                           titleIncludes ||
@@ -778,9 +779,9 @@ class Site {
                         textContent,
                       }))
                       .filter(({ href, textContent }) => {
-                        let hrefIncludes = href && href.match(regExp)
+                        let hrefIncludes = href && href.match(signInRegExp)
                         let textIncludes =
-                          textContent && textContent.match(regExp)
+                          textContent && textContent.match(signInRegExp)
                         return hrefIncludes || textIncludes
                       })
                     // check for a div with a textcontent that contains regex
@@ -792,7 +793,7 @@ class Site {
                       }))
                       .filter(({ textContent }) => {
                         let textIncludes =
-                          textContent && textContent.match(regExp)
+                          textContent && textContent.match(signInRegExp)
                         return textIncludes
                       })
                       .map(({ innerText }) => ({ innerText }))
