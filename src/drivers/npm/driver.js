@@ -6,6 +6,7 @@ const http = require('http')
 const https = require('https')
 const puppeteer = require('puppeteer')
 const Wappalyzer = require('./wappalyzer')
+const { title } = require('process')
 
 const { setTechnologies, setCategories, analyze, analyzeManyToMany, resolve } =
   Wappalyzer
@@ -745,60 +746,81 @@ class Site {
           : await this.promiseTimeout(
               (
                 await this.promiseTimeout(
-                  page.evaluateHandle(() => {
-                    const signInRegExp = /((sign|log)(\s{0,}|_)in)|register/gi;
+                  // delay page inspection by 10s
+                  new Promise((resolve) => {
+                    setTimeout(
+                      () =>
+                        resolve(
+                          page.evaluateHandle(() => {
+                            const signInRegExp =
+                              /((sign|log)(\s{0,}|_)in)|register/gi
 
-                    // anchors
-                    let anchors = Array.from(document.getElementsByTagName('a'))
-                      .map(({ href, title, textContent, alt }) => ({
-                        href,
-                        title,
-                        textContent,
-                        alt,
-                      }))
-                      .filter(({ href, title, textContent, alt }) => {
-                        let hrefIncludes = href && href.match(signInRegExp)
-                        let titleIncludes = title && title.match(signInRegExp)
-                        let textIncludes =
-                          textContent && textContent.match(signInRegExp)
-                        let altIncludes = alt && alt.match(signInRegExp)
-                        return (
-                          hrefIncludes ||
-                          titleIncludes ||
-                          textIncludes ||
-                          altIncludes
-                        )
-                      })
+                            // anchors
+                            let anchors = Array.from(
+                              document.getElementsByTagName('a')
+                            )
+                              .map(({ href, title, textContent, alt }) => ({
+                                href,
+                                title,
+                                textContent,
+                                alt,
+                              }))
+                              .filter(({ href, title, textContent, alt }) => {
+                                let hrefIncludes =
+                                  href && href.match(signInRegExp)
+                                let titleIncludes =
+                                  title && title.match(signInRegExp)
+                                let textIncludes =
+                                  textContent && textContent.match(signInRegExp)
+                                let altIncludes = alt && alt.match(signInRegExp)
+                                return (
+                                  hrefIncludes ||
+                                  titleIncludes ||
+                                  textIncludes ||
+                                  altIncludes
+                                )
+                              })
 
-                    // check for a button with href attribute or textcontent that contains regex
-                    let buttons = Array.from(
-                      document.getElementsByTagName('button')
+                            // check for a button with href attribute or textcontent that contains regex
+                            let buttons = Array.from(
+                              document.getElementsByTagName('button')
+                            )
+                              .map(({ href, title, textContent }) => ({
+                                href,
+                                title,
+                                textContent,
+                              }))
+                              .filter(({ href, title, textContent }) => {
+                                let hrefIncludes =
+                                  href && href.match(signInRegExp)
+                                let titleIncludes =
+                                  title && title.match(signInRegExp)
+                                let textIncludes =
+                                  textContent && textContent.match(signInRegExp)
+                                return (
+                                  hrefIncludes || textIncludes || titleIncludes
+                                )
+                              })
+
+                            // check for a div with a textcontent that contains regex
+                            let divTexts = Array.from(
+                              document.getElementsByTagName('div')
+                            )
+                              .map(({ textContent }) => ({
+                                textContent,
+                              }))
+                              .filter(({ textContent }) => {
+                                let textIncludes =
+                                  textContent && textContent.match(signInRegExp)
+                                return textIncludes
+                              })
+                              .map(({ innerText }) => ({ innerText }))
+
+                            return { anchors, buttons, divTexts }
+                          })
+                        ),
+                      20000
                     )
-                      .map(({ href, textContent }) => ({
-                        href,
-                        textContent,
-                      }))
-                      .filter(({ href, textContent }) => {
-                        let hrefIncludes = href && href.match(signInRegExp)
-                        let textIncludes =
-                          textContent && textContent.match(signInRegExp)
-                        return hrefIncludes || textIncludes
-                      })
-                    // check for a div with a textcontent that contains regex
-                    let divTexts = Array.from(
-                      document.getElementsByTagName('div')
-                    )
-                      .map(({ textContent }) => ({
-                        textContent,
-                      }))
-                      .filter(({ textContent }) => {
-                        let textIncludes =
-                          textContent && textContent.match(signInRegExp)
-                        return textIncludes
-                      })
-                      .map(({ innerText }) => ({ innerText }))
-
-                    return { anchors, buttons, divTexts }
                   }),
                   { jsonValue: () => ({}) },
                   'Timeout (login)'
@@ -940,7 +962,7 @@ class Site {
       }
 
       this.buttons = {
-        logins,
+        login: logins,
       }
 
       await this.onDetect(
