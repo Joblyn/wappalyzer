@@ -746,24 +746,30 @@ class Site {
               (
                 await this.promiseTimeout(
                   page.evaluateHandle(() => {
-                    const regExp =
-                      /signin|login|sign_in|log_in|sign in|log in/gi
+                    const regExp = /((sign|log)(\s{0,}|_)in)|register/gi
                     // anchors
                     let anchors = Array.from(document.getElementsByTagName('a'))
-                      .map(({ href, title, textContent }) => ({
+                      .map(({ href, title, textContent, alt }) => ({
                         href,
                         title,
                         textContent,
+                        alt,
                       }))
-                      .filter(({ href, title, textContent }) => {
+                      .filter(({ href, title, textContent, alt }) => {
                         let hrefIncludes = href && href.match(regExp)
                         let titleIncludes = title && title.match(regExp)
                         let textIncludes =
                           textContent && textContent.match(regExp)
-                        return hrefIncludes || titleIncludes || textIncludes
+                        let altIncludes = alt && alt.match(regExp)
+                        return (
+                          hrefIncludes ||
+                          titleIncludes ||
+                          textIncludes ||
+                          altIncludes
+                        )
                       })
-              
-                    // buttons
+
+                    // check for a button with href attribute or textcontent that contains regex
                     let buttons = Array.from(
                       document.getElementsByTagName('button')
                     )
@@ -777,7 +783,7 @@ class Site {
                           textContent && textContent.match(regExp)
                         return hrefIncludes || textIncludes
                       })
-                    // divs
+                    // check for a div with a textcontent that contains regex
                     let divTexts = Array.from(
                       document.getElementsByTagName('div')
                     )
