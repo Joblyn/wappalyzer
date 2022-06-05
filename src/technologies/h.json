@@ -603,12 +603,12 @@
     ],
     "description": "Free Shipping Bar is a Shopify app built by Hextom. Free Shipping Bar help promote free shipping with progressive messages to motivate customers to buy more.",
     "icon": "Hextom.png",
-    "implies": "Shopify",
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "\\.hextom\\.com/js/freeshippingbar\\.js",
     "website": "https://hextom.com/case_study/free-shipping-bar"
@@ -619,7 +619,6 @@
     ],
     "description": "Ultimate Sales Boost by Hextom is an app designed to help you drive more sales by creating a sense of urgency, scarcity and trust.",
     "icon": "Hextom.png",
-    "implies": "Shopify",
     "js": {
       "hextom_usb": "",
       "ht_usb.isLoaded": ""
@@ -629,6 +628,7 @@
       "low",
       "recurring"
     ],
+    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "\\.hextom\\.com/js/ultimatesalesboost\\.js",
     "website": "https://hextom.com/case_study/ultimate-sales-boost"
