@@ -1383,7 +1383,7 @@ class Site {
         })
       ),
       patterns,
-      buttons: this.buttons,
+      inspects: this.inspects,
     }
 
     await this.emit('analyze', results)
