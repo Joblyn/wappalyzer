@@ -406,7 +406,6 @@ class Site {
     this.cache = {}
 
     this.probed = false
-
     // inspects
     this.inspects = {}
     this.destroyed = false
@@ -893,14 +892,14 @@ class Site {
                                     placeholder,
                                     className,
                                   }) => {
-                                    const nameIncludes =
+                                    let nameIncludes =
                                       _name && _name.match(emailInputRegex)
-                                    const idIncludes =
+                                    let idIncludes =
                                       id && id.match(emailInputRegex)
-                                    const placeholderIncludes =
+                                    let placeholderIncludes =
                                       placeholder &&
                                       placeholder.match(emailPlaceholderRegex)
-                                    const classIncludes =
+                                    let classIncludes =
                                       className &&
                                       className
                                         .split(' ')
@@ -927,16 +926,16 @@ class Site {
                               )
                                 .filter(
                                   ({ type, id, className, textContent }) => {
-                                    // let typeMatches =
-                                    //   type && type.match(/submit|button/gi)
-                                    const idIncludes =
+                                    let typeMatches =
+                                      type && type.match(/submit|button/gi)
+                                    let idIncludes =
                                       id && id.match(emailClassRegex)
-                                    const classIncludes =
+                                    let classIncludes =
                                       className &&
                                       className
                                         .split(' ')
                                         .some((c) => c.match(emailClassRegex))
-                                    const textIncludes =
+                                    let textIncludes =
                                       textContent &&
                                       textContent.match(emailClassRegex)
                                     return (
@@ -962,16 +961,16 @@ class Site {
                               )
                                 .filter(
                                   ({ type, id, className, name, value }) => {
-                                    const typeMatches =
+                                    let typeMatches =
                                       type && type.match(/(submit)|(button)/gi)
-                                    const idIncludes =
+                                    let idIncludes =
                                       id && id.match(emailClassRegex)
-                                    const classIncludes =
+                                    let classIncludes =
                                       className &&
                                       className.match(emailClassRegex)
-                                    const nameIncludes =
+                                    let nameIncludes =
                                       name && name.match(emailClassRegex)
-                                    const valueIncludes =
+                                    let valueIncludes =
                                       value && value.match(emailClassRegex)
                                     return (
                                       typeMatches &&
@@ -1036,10 +1035,10 @@ class Site {
                               document.getElementsByTagName('iframe')
                             )
                               .filter(({ id, title, src }) => {
-                                const idIncludes = id && id.match(liveChatRegex)
-                                const titleIncludes =
+                                let idIncludes = id && id.match(liveChatRegex)
+                                let titleIncludes =
                                   title && title.match(liveChatRegex)
-                                const srcIncludes =
+                                let srcIncludes =
                                   src && title.match(liveChatRegex)
                                 return (
                                   idIncludes || titleIncludes || srcIncludes
@@ -1051,7 +1050,7 @@ class Site {
                               document.getElementsByTagName('script')
                             )
                               .filter(({ src }) => {
-                                const srcIncludes =
+                                let srcIncludes =
                                   src && src.match(liveChatRegex)
                                 return srcIncludes
                               })
