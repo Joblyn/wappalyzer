@@ -7,6 +7,7 @@ const https = require('https')
 const puppeteer = require('puppeteer')
 const Wappalyzer = require('./wappalyzer')
 const { title } = require('process')
+const { IBM_LZ77 } = require('adm-zip/util/constants')
 
 const { setTechnologies, setCategories, analyze, analyzeManyToMany, resolve } =
   Wappalyzer
@@ -404,8 +405,9 @@ class Site {
 
     this.probed = false
 
-    // login button
-    this.buttons = {}
+    // inspects
+    this.inspects = {}
+
   }
 
   log(message, source = 'driver', type = 'log') {
@@ -712,6 +714,9 @@ class Site {
       let dom = []
       // login
       let logins = {}
+      // subscribe
+      let subscribe = {}
+      let livechats = {}
 
       if (html) {
         // Links
@@ -746,14 +751,14 @@ class Site {
           : await this.promiseTimeout(
               (
                 await this.promiseTimeout(
-                  // delay page inspection by 10s
+                  // delay page inspection by 20s
                   new Promise((resolve) => {
                     setTimeout(
                       () =>
                         resolve(
                           page.evaluateHandle(() => {
                             const signInRegExp =
-                              /((sign|log)(\s{0,}|_)in)|register/gi
+                              /((sign|log)(\s{0,}|_)(in|up))|register/gi
 
                             // anchors
                             let anchors = Array.from(
@@ -828,6 +833,218 @@ class Site {
               ).jsonValue(),
               {},
               'Timeout (login)'
+            )
+
+        // subscribe dialog
+        subscribe = this.options.recursive
+          ? {}
+          : await this.promiseTimeout(
+              (
+                await this.promiseTimeout(
+                  // delay page inspection by 20s
+                  new Promise((resolve) => {
+                    setTimeout(
+                      () =>
+                        resolve(
+                          page.evaluateHandle(() => {
+                            const emailInputRegex =
+                              /(join|subscri(b|p)(e|tion)|sign(\s{0,}|_)up|newsletter|email)/gi
+                            const emailPlaceholderRegex =
+                              /(email|(^.{0,}@.{0,}\.com))/gi
+                            const emailClassRegex =
+                              /join|subsci(b|p)(e|tion)|sign(\s{0,1}|_)up|newsletter/gi
+                            const btnTextRegex =
+                              /subscri(b|p)(e|tion)|newsletter/gi
+
+                            const els = []
+                            //  input
+                            let inputBtnEls = (() => {
+                              let emailInputEls = Array.from(
+                                document.querySelectorAll('input[type=email]')
+                              )
+                                .filter(
+                                  ({
+                                    name: _name,
+                                    id,
+                                    placeholder,
+                                    className,
+                                  }) => {
+                                    let nameIncludes =
+                                      _name && _name.match(emailInputRegex)
+                                    let idIncludes =
+                                      id && id.match(emailInputRegex)
+                                    let placeholderIncludes =
+                                      placeholder &&
+                                      placeholder.match(emailPlaceholderRegex)
+                                    let classIncludes =
+                                      className &&
+                                      className
+                                        .split(' ')
+                                        .some((c) => c.match(emailClassRegex))
+                                    return (
+                                      nameIncludes ||
+                                      idIncludes ||
+                                      placeholderIncludes ||
+                                      classIncludes
+                                    )
+                                  }
+                                )
+                                .map(
+                                  ({ name, id, placeholder, className }) => ({
+                                    name,
+                                    id,
+                                    placeholder,
+                                    className,
+                                  })
+                                )
+
+                              const btnEls = Array.from(
+                                document.querySelectorAll('button')
+                              )
+                                .filter(
+                                  ({ type, id, className, textContent }) => {
+                                    let typeMatches =
+                                      type && type.match(/submit|button/gi)
+                                    let idIncludes =
+                                      id && id.match(emailClassRegex)
+                                    let classIncludes =
+                                      className &&
+                                      className
+                                        .split(' ')
+                                        .some((c) => c.match(emailClassRegex))
+                                    let textIncludes =
+                                      textContent &&
+                                      textContent.match(emailClassRegex)
+                                    return (
+                                      idIncludes ||
+                                      classIncludes ||
+                                      textIncludes
+                                    )
+                                  }
+                                )
+                                .map(
+                                  ({ type, id, className, textContent }) => ({
+                                    type,
+                                    id,
+                                    className,
+                                    textContent,
+                                  })
+                                )
+
+                              const submitInputEls = Array.from(
+                                document.querySelectorAll(
+                                  'input[type = submit]'
+                                )
+                              )
+                                .filter(
+                                  ({ type, id, className, name, value }) => {
+                                    let typeMatches =
+                                      type && type.match(/(submit)|(button)/gi)
+                                    let idIncludes =
+                                      id && id.match(emailClassRegex)
+                                    let classIncludes =
+                                      className &&
+                                      className.match(emailClassRegex)
+                                    let nameIncludes =
+                                      name && name.match(emailClassRegex)
+                                    let valueIncludes =
+                                      value && value.match(emailClassRegex)
+                                    return (
+                                      typeMatches &&
+                                      (idIncludes ||
+                                        classIncludes ||
+                                        nameIncludes ||
+                                        valueIncludes)
+                                    )
+                                  }
+                                )
+                                .map(
+                                  ({ type, id, className, name, value }) => ({
+                                    type,
+                                    id,
+                                    className,
+                                    name,
+                                    value,
+                                  })
+                                )
+
+                              els.push({
+                                subscribe: {
+                                  emailInputs: emailInputEls,
+                                  btns: btnEls,
+                                  submitInputs: submitInputEls,
+                                },
+                              })
+
+                              return els
+                            })()
+
+                            return { inputBtnEls }
+                          })
+                        ),
+                      20000
+                    )
+                  }),
+                  { jsonValue: () => ({}) },
+                  'Timeout (subscribe)'
+                )
+              ).jsonValue(),
+              {},
+              'Timeout (subscribe)'
+            )
+
+        // livechats
+        livechats = this.options.recursive
+          ? {}
+          : await this.promiseTimeout(
+              (
+                await this.promiseTimeout(
+                  // delay page inspection by 20s
+                  new Promise((resolve) => {
+                    setTimeout(
+                      () =>
+                        resolve(
+                          page.evaluateHandle(() => {
+                            const liveChatRegex =
+                              /chat|widget|messag(e|ing)|twiliio|tawk|zapier|live(-|_|\s{0,})chat|mobile(-|_|\s{0,})monkey|go(-|_|\s{0,})bot|purechat|bold(-|_|\s{0,})360|wp(-|_|\s{0,})chat|tidio|smarts(-|_|\s{0,})upp|chatty(-|_|\s{0,})people|user(-|_|\s{0,})like|chatra|chaport|snapengage|acquire|kayako|fresh(-|_|\s{0,})chat|drift|help(-|_|\s{0,})crunch|zendesk(-|_|\s{0,})chat|click(-|_|\s{0,})desk|inter(-|_|\s{0,})com|olark|g2|fresh(-|_|\s{0,})desk|crisp|live(-|_|\s{0,})zilla|jivo(-|_|\s{0,})chat|qualaroo|hotjar|flash(-|_|\s{0,})talking/gi
+                            // iframes
+                            const iframes = Array.from(
+                              document.getElementsByTagName('iframe')
+                            )
+                              .filter(({ id, title, src }) => {
+                                let idIncludes = id && id.match(liveChatRegex)
+                                let titleIncludes =
+                                  title && title.match(liveChatRegex)
+                                let srcIncludes =
+                                  src && title.match(liveChatRegex)
+                                return (
+                                  idIncludes || titleIncludes || srcIncludes
+                                )
+                              })
+                              .map(({ id, title, src }) => ({ id, title, src }))
+
+                            const scripts = Array.from(
+                              document.getElementsByTagName('script')
+                            )
+                              .filter(({ src }) => {
+                                let srcIncludes =
+                                  src && src.match(liveChatRegex)
+                                return srcIncludes
+                              })
+                              .map(({ src }) => ({ src }))
+
+                            return { iframes, scripts }
+                          })
+                        ),
+                      20000
+                    )
+                  }),
+                  { jsonValue: () => ({}) },
+                  'Timeout (livechats)'
+                )
+              ).jsonValue(),
+              {},
+              'Timeout (livechats)'
             )
 
         // Text
@@ -961,8 +1178,10 @@ class Site {
         meta,
       }
 
-      this.buttons = {
+      this.inspects = {
         login: logins,
+        subscribe: subscribe,
+        livechats: livechats,
       }
 
       await this.onDetect(
