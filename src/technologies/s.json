@@ -1014,17 +1014,6 @@
     "icon": "Sectigo.svg",
     "website": "https://sectigo.com/"
   },
-  "Sections.design Shopify App Optimization": {
-    "cats": [
-      92
-    ],
-    "description": "Sections.design Shopify App Optimization is a Shopify section written in liquid for the purpose of improving performance of Shopify stores by optimizing how Shopify app loads.",
-    "dom": "div#shopify-section-app-optimization",
-    "icon": "Sections-Design.png",
-    "implies": "Shopify",
-    "oss": true,
-    "website": "https://github.com/mirceapiturca/Sections/tree/master/App%20Optimization"
-  },
   "Section.io": {
     "cats": [
       31
@@ -1037,6 +1026,17 @@
     },
     "icon": "sectionio.svg",
     "website": "https://www.section.io"
+  },
+  "Sections.design Shopify App Optimization": {
+    "cats": [
+      92
+    ],
+    "description": "Sections.design Shopify App Optimization is a Shopify section written in liquid for the purpose of improving performance of Shopify stores by optimizing how Shopify app loads.",
+    "dom": "div#shopify-section-app-optimization",
+    "icon": "Sections-Design.png",
+    "implies": "Shopify",
+    "oss": true,
+    "website": "https://github.com/mirceapiturca/Sections/tree/master/App%20Optimization"
   },
   "SeedProd Coming Soon": {
     "cats": [
@@ -1947,11 +1947,11 @@
     "js": {
       "ShopifyBuy": ""
     },
-    "scriptSrc": [
-      "sdk\\. shopifycdn\\.com/buy-button/latest/"
-    ],
     "pricing": [
       "freemium"
+    ],
+    "scriptSrc": [
+      "sdk\\. shopifycdn\\.com/buy-button/latest/"
     ],
     "website": "https://apps.shopify.com/buy-button"
   },
@@ -4649,11 +4649,11 @@
       "x-powered-by": "Strattic"
     },
     "icon": "strattic-icon.png",
+    "implies": "WordPress",
     "pricing": [
       "recurring",
       "low"
     ],
-    "requires": "WordPress",
     "website": "https://www.strattic.com/"
   },
   "Strikingly": {
@@ -4680,8 +4680,8 @@
     "icon": "Stripe.svg",
     "js": {
       "Stripe.version": "^(.+)$\\;version:\\1",
-      "checkout.enabledpayments.stripe": "^true$",
-      "__NEXT_DATA__.props.pageProps.appSettings.STRIPE_API_PUBLIC_KEY": ""
+      "__NEXT_DATA__.props.pageProps.appSettings.STRIPE_API_PUBLIC_KEY": "",
+      "checkout.enabledpayments.stripe": "^true$"
     },
     "pricing": [
       "payg"
@@ -5148,12 +5148,12 @@
       "swappName": "Wishlist",
       "swymCart.attributes": "\\;confidence:50"
     },
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://swym.it/apps/wishlist/"
   },
   "Sylius": {

@@ -409,13 +409,13 @@
       76
     ],
     "description": "Jivox is a cloud-based, data-driven platform for delivering personalised digital advertising and marketing experiences at scale.",
-    "icon": "Jivox.svg",
     "dom": "link[href*='.jivox.com']",
-    "scriptSrc": "\\.jivox\\.com/",
-    "saas": true,
+    "icon": "Jivox.svg",
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "\\.jivox\\.com/",
     "website": "https://jivox.com"
   },
   "JobAdder": {

@@ -212,14 +212,14 @@
     "description": "LayoutHub is an easy page builder that helps merchants quickly set up an online store with any kind of page type by using our library of pre-designed layouts and blocks.",
     "icon": "LayoutHub.png",
     "implies": "Shopify",
-    "scriptSrc": "app\\.layouthub\\.com/shopify/layouthub\\.js",
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
     "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "app\\.layouthub\\.com/shopify/layouthub\\.js",
     "website": "https://layouthub.com"
   },
   "Lazada": {
@@ -258,8 +258,8 @@
     ],
     "description": "LazySizes unveilhooks plugin extends lazySizes to lazyload scripts/widgets, background images, styles and video/audio elements.",
     "icon": "default.svg",
-    "scriptSrc": "ls.\\unveilhooks(?:\\.min)?\\.js",
     "oss": true,
+    "scriptSrc": "ls.\\unveilhooks(?:\\.min)?\\.js",
     "website": "https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks"
   },
   "Leadinfo": {
@@ -301,10 +301,10 @@
     ],
     "description": "Leaflet is the price testing platform for Shopify.",
     "icon": "Leaflet platform.png",
+    "implies": "Shopify",
     "pricing": [
       "payg"
     ],
-    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "scripts\\.leaflet\\.co/",
     "website": "https://join.leaflet.co"
@@ -1009,11 +1009,11 @@
     ],
     "description": "Livescale is a video platform that enables teams to transform content and ecommerce into a live shopping experience that reaches engages and monetizes audiences with LiveShopping.",
     "icon": "Livescale.png",
+    "implies": "Shopify",
     "pricing": [
       "mid",
       "recurring"
     ],
-    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "\\.livescale\\.tv/",
     "website": "https://www.livescale.tv"
@@ -1047,7 +1047,7 @@
   },
   "Loadify": {
     "cats": [
-      92,    
+      92,
       100
     ],
     "description": "Loadify is a shopify app which helps merchants deploy performance techniques like loading screen, transitions & lazy Load.",
@@ -1055,7 +1055,7 @@
     "implies": "Shopify",
     "scriptSrc": "\\.loadifyapp\\.ninety9\\.dev",
     "website": "https://apps.shopify.com/loadify"
-  },    
+  },
   "LocalFocus": {
     "cats": [
       25
@@ -1364,6 +1364,7 @@
     ],
     "description": "Loox is a reviews app for Shopify that helps you gather reviews and user-generated photos from your customers.",
     "icon": "Loox.svg",
+    "implies": "Shopify",
     "js": {
       "loox_global_hash": ""
     },
@@ -1371,7 +1372,6 @@
       "low",
       "recurring"
     ],
-    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "loox\\.io/widget",
     "website": "https://loox.app"

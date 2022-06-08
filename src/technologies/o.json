@@ -1273,6 +1273,7 @@
     ],
     "description": "OrderLogic app allows you to define minimum and maximum product quantities for all products in your Shopify store.",
     "icon": "OrderLogic app.png",
+    "implies": "Shopify",
     "js": {
       "OrderLogic.ALERTS_KEY": "",
       "OrderLogic.DEFAULT_MONEY_FORMAT": "",
@@ -1282,7 +1283,6 @@
       "low",
       "recurring"
     ],
-    "implies": "Shopify",
     "saas": true,
     "website": "https://apps.shopify.com/orderlogic"
   },

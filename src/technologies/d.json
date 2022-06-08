@@ -476,11 +476,11 @@
     "js": {
       "deliverrScript": ""
     },
-    "scriptSrc": "fast-tags\\.deliverr\\.com",
     "pricing": [
       "payg",
       "recurring"
     ],
+    "scriptSrc": "fast-tags\\.deliverr\\.com",
     "website": "https://deliverr.com"
   },
   "Demandbase": {
@@ -1278,11 +1278,11 @@
     "cats": [
       68
     ],
-    "description": "Droxit is an automated web accessibility solution.",
-    "icon": "Droxit.png",
     "cookies": {
       "droxit_a11y_state": ""
     },
+    "description": "Droxit is an automated web accessibility solution.",
+    "icon": "Droxit.png",
     "scriptSrc": "/droxit-a11y/js/activator\\.js",
     "website": "https://www.droxit.com"
   },
