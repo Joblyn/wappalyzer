@@ -38,6 +38,10 @@
     "headers": {
       "X-Powered-By": "MATORI.NET"
     },
+<<<<<<< HEAD
+=======
+    "icon": "default.svg",
+>>>>>>> 86a915417 (Build v6.10.27)
     "implies": "OpenResty",
     "website": "http://matori.net"
   },

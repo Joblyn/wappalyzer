@@ -700,6 +700,7 @@
     ],
     "website": "https://instapage.com"
   },
+<<<<<<< HEAD
   "Instatus": {
     "cats": [
       13
@@ -715,6 +716,8 @@
     "saas": true,
     "website": "https://instatus.com"
   },
+=======
+>>>>>>> 86a915417 (Build v6.10.27)
   "Integral Ad Science": {
     "cats": [
       36

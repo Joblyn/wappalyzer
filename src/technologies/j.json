@@ -526,6 +526,7 @@
     "scriptSrc": "(?:cdn)?\\.(?:jwwb|jouwweb)\\.nl/",
     "website": "https://www.jouwweb.nl"
   },
+<<<<<<< HEAD
   "JsObservable": {
     "cats": [
       59
@@ -560,6 +561,8 @@
     "scriptSrc": "([\\d\\.]+)?/jsviews(?:\\.min)?\\.js\\;version:\\1",
     "website": "https://www.jsviews.com/#jsviews"
   },
+=======
+>>>>>>> 86a915417 (Build v6.10.27)
   "Judge.me": {
     "cats": [
       90,

@@ -923,6 +923,7 @@
     "scriptSrc": "\\.thehotelsnetwork\\.com/",
     "website": "https://thehotelsnetwork.com"
   },
+<<<<<<< HEAD
   "The SEO Framework": {
     "cats": [
       54,
@@ -940,6 +941,8 @@
     "saas": true,
     "website": "https://theseoframework.com"
   },
+=======
+>>>>>>> 86a915417 (Build v6.10.27)
   "The Theme Foundry Make": {
     "cats": [
       80
