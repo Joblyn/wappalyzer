@@ -389,6 +389,11 @@
     "website": "https://www.zip.co/"
   },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 86a915417 (Build v6.10.27)
   "Zipify OCU": {
     "cats": [
       100
@@ -403,9 +408,13 @@
     "scriptSrc": "/zipify-oneclickupsell-vendor\\.js",
     "website": "https://zipify.com/apps/ocu/"
   },
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> e669d2ea5 (Add Zipify OCU / shopify-apps)
+=======
+>>>>>>> de378fc3d (Build v6.10.27)
+>>>>>>> 86a915417 (Build v6.10.27)
   "Zipify Pages": {
     "cats": [
       100,
@@ -421,7 +430,11 @@
       "low",
       "recurring"
     ],
+<<<<<<< HEAD
     "saas": true,
+=======
+<<<<<<< HEAD
+>>>>>>> 86a915417 (Build v6.10.27)
     "website": "https://zipify.com/apps/pages/"
 =======
   "Zipify OCU": {
@@ -438,6 +451,10 @@
     ],
     "website": "https://zipify.com/apps/ocu/"
 >>>>>>> db11c2aed (Add Zipify OCU / shopify-apps)
+=======
+    "saas": true,
+    "website": "https://zipify.com/apps/pages/"
+>>>>>>> de378fc3d (Build v6.10.27)
   },
   "Zipkin": {
     "cats": [

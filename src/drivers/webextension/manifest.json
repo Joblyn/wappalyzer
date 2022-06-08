@@ -4,7 +4,11 @@
   "author": "Wappalyzer",
   "homepage_url": "https://www.wappalyzer.com/",
   "description": "Identify web technologies",
+<<<<<<< HEAD
   "version": "6.10.36",
+=======
+  "version": "6.10.27",
+>>>>>>> 86a915417 (Build v6.10.27)
   "default_locale": "en",
   "manifest_version": 2,
   "icons": {
