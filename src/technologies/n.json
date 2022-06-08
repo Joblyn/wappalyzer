@@ -891,15 +891,16 @@
   },
   "nopStation": {
     "cats": [
-      19
+      6
     ],
-    "description": "nopStation is a one stop ecommerce solution with custom integrations and custom built plugins based on custom tailored requirements on top of nopCommerce.",
-    "dom": "a[href*='.nop-station.com/']",
+    "description": "One stop e-commerce solution with custom integrations and custom built plugins based on custom tailored requirements on top of NopCommerce",
+    "html": "<a[^>]+nop-station",
     "icon": "nopStation.png",
     "implies": "Microsoft ASP.NET",
-    "requires": [
-      "nopCommerce"
-    ],
+    "meta": {
+      "generator": "^nopStation$"
+    },
+    "oss": true,
     "website": "http://www.nop-station.com"
   },
   "novomind iSHOP": {
