@@ -38,6 +38,7 @@
     "headers": {
       "X-Powered-By": "MATORI.NET"
     },
+    "icon": "default.svg",
     "implies": "OpenResty",
     "website": "http://matori.net"
   },
@@ -369,18 +370,18 @@
       32
     ],
     "description": "MailerLite is an email marketing tool and website builder for businesses of all shapes and sizes.",
-    "icon": "MailerLite.svg",
     "dom": "link[href*='.mailerlite.com']",
+    "icon": "MailerLite.svg",
     "js": {
       "MailerLiteObject": ""
     },
-    "scriptSrc": "\\.mailerlite\\.com/",
-    "saas": true,
     "pricing": [
       "freemium",
       "payg",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "\\.mailerlite\\.com/",
     "website": "https://www.mailerlite.com"
   },
   "MailerLite plugin": {
@@ -869,18 +870,6 @@
     },
     "website": "https://developer.matomo.org/guides/tagmanager/introduction"
   },
-  "MATORI.NET": {
-    "cats": [
-      64
-    ],
-    "description": "MATORI.NET is a fully managed reverse proxy.",
-    "icon": "default.svg",
-    "implies": "OpenResty",
-    "headers": {
-      "X-Powered-By": "MATORI.NET"
-    },
-    "website": "http://matori.net"
-  },
   "Mattermost": {
     "cats": [
       2
@@ -974,11 +963,11 @@
     ],
     "description": "Measured is an analytics platform to measure efficiency of marketing channels.",
     "icon": "Measured.svg",
-    "scriptSrc": "tag\\.measured\\.com",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "tag\\.measured\\.com",
     "website": "https://www.measured.com"
   },
   "Medallia": {

@@ -2850,11 +2850,11 @@
     "js": {
       "cozyEcoAdnsUa": ""
     },
-    "scriptSrc": "cdncozyantitheft\\.addons\\.business/",
-    "saas": true,
     "pricing": [
       "freemium"
     ],
+    "saas": true,
+    "scriptSrc": "cdncozyantitheft\\.addons\\.business/",
     "website": "https://apps.shopify.com/cozy-antitheft-for-images-and-more"
   },
   "CppCMS": {

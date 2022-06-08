@@ -706,13 +706,13 @@
     "js": {
       "emotivePopupInitializing": ""
     },
-    "scriptSrc": "emotivecdn\\.io/",
-    "saas": true,
     "pricing": [
       "mid",
       "recurring",
       "payg"
     ],
+    "saas": true,
+    "scriptSrc": "emotivecdn\\.io/",
     "website": "https://emotive.io"
   },
   "Enable": {
@@ -967,10 +967,10 @@
     "js": {
       "cartroids.appBase": "cartroids\\.eraofecom\\.org"
     },
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://eraofecom.org/collections/tech/products/cartroids"
   },
   "EraofEcom MTL": {
@@ -980,11 +980,11 @@
     "description": "EraofEcom MTL is a Shopify pop up app that enables you to catch your website visitors.",
     "icon": "EraofEcom.png",
     "implies": "Shopify",
-    "scriptSrc": "mtl\\.eraofecom\\.org",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "mtl\\.eraofecom\\.org",
     "website": "https://eraofecom.org/collections/tech/products/milk-the-leads"
   },
   "EraofEcom WinAds": {
@@ -992,17 +992,17 @@
       100
     ],
     "description": "EraofEcom WinAds is an all-in-one Facebook pixel app for Shopify.",
+    "dom": "link[href*='winads.eraofecom.org']",
     "icon": "EraofEcom.png",
     "implies": "Shopify",
-    "dom": "link[href*='winads.eraofecom.org']",
     "js": {
       "win_ads.baseURL": "winads\\.eraofecom\\.org"
     },
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://eraofecom.org/collections/tech/products/win-ads-manager"
   },
   "Erlang": {
@@ -1032,20 +1032,6 @@
     ],
     "saas": true,
     "website": "https://errorception.com"
-  },
-  "eShopCRM": {
-    "cats": [
-      53
-    ],
-    "description": "eShopCRM is an ecommerce CRM for Shopify.",
-    "icon": "eShopCRM.png",
-    "implies": "Shopify",
-    "scriptSrc": "eshopcrm\\.com/",
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "website": "https://eshopcrm.com"
   },
   "Essent SiteBuilder Pro": {
     "cats": [
@@ -1189,8 +1175,8 @@
       "high",
       "recurring"
     ],
-    "scriptSrc": "everflow\\.js",
     "saas": true,
+    "scriptSrc": "everflow\\.js",
     "website": "https://www.everflow.io"
   },
   "Eveve": {

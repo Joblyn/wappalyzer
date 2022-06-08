@@ -287,26 +287,6 @@
     "scriptSrc": "api\\.fastbundle\\.co/",
     "website": "https://fastbundle.co"
   },
-  "Fast Bundle": {
-    "cats": [
-      100
-    ],
-    "description": "Fast Bundle gives you the ability to create product bundle offers with discounts.",
-    "icon": "Fast Bundle.svg",
-    "implies": "Shopify",
-    "js": {
-      "FastBundleConf.cartInfo.app_version": "v([\\d\\.]+)\\;version:\\1",
-      "FastBundleConf.bundleBox": ""
-    },
-    "scriptSrc": "api\\.fastbundle\\.co/",
-    "pricing": [
-      "freemium",
-      "recurring",
-      "low"
-    ],
-    "saas": true,
-    "website": "https://fastbundle.co"
-  },
   "Fast Checkout": {
     "cats": [
       6
@@ -824,23 +804,6 @@
       "jquery\\.flexslider(?:\\.min)?\\.js$"
     ],
     "website": "https://woocommerce.com/flexslider/"
-  },
-  "Flits": {
-    "cats": [
-      100
-    ],
-    "description": "Flits is a customer account pages that get all your shopper data in one place.",
-    "icon": "Flits.png",
-    "implies": "Shopify",
-    "js": {
-      "flitsObjects.accountPage": ""
-    },
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://getflits.com"
   },
   "Flickity": {
     "cats": [
@@ -1597,11 +1560,11 @@
     ],
     "description": "Froala Editor is a WYSIWYG HTML Editor written in Javascript that enables rich text editing capabilities for applications.",
     "dom": {
-      ".froala-box": {
-        "exists": "\\;version:1"
-      },
       ".fr-view, .fr-box, .fr-popup": {
         "exists": "\\;version:2+"
+      },
+      ".froala-box": {
+        "exists": "\\;version:1"
       }
     },
     "icon": "Froala.svg",

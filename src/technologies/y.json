@@ -16,22 +16,6 @@
     "saas": true,
     "website": "https://apps.shopify.com/ymq-options"
   },
-  "YNAP Ecommerce": {
-    "cats": [
-      6
-    ],
-    "description": "YNAP provides a suite of B2B luxury services including online and mobile store development, omnichannel logistics, customer care, digital marketing, data-driven merchandising and global strategy development.",
-    "icon": "YNAP.png",
-    "js": {
-      "yTos": "",
-      "ycookieApiUrl": ""
-    },
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "website": "https://www.ynap.com/pages/about-us/what-we-do/monobrand/"
-  },
   "YUI": {
     "cats": [
       59
@@ -357,23 +341,6 @@
     ],
     "website": "https://www.yiiframework.com"
   },
-  "YMQ Product Options Variant Option": {
-    "cats": [
-      100
-    ],
-    "description": "YMQ Product Options Variant Option help add an unlimited number of product options to your items so you're not restricted by Shopify's limit of 3 options and 100 variants.",
-    "icon": "YMQ Product Options Variant Option.png",
-    "implies": "Shopify",
-    "js": {
-      "ymq_option.v": "\\?v=([\\d\\.]+)\\;version:\\1"
-    },
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://apps.shopify.com/ymq-options"
-  },
   "Yoast Duplicate Post": {
     "cats": [
       87
@@ -401,8 +368,8 @@
       "<!-- This site is optimized with the Yoast (?:WordPress )?SEO plugin v([^\\s]+) -\\;version:\\1",
       "<!-- This site is optimized with the Yoast SEO Premium plugin v(?:[^\\s]+) \\(Yoast SEO v([^\\s]+)\\) -\\;version:\\1"
     ],
-    "implies": "WordPress",
     "icon": "Yoast SEO.png",
+    "implies": "WordPress",
     "oss": true,
     "website": "https://yoast.com/wordpress/plugins/seo/"
   },
@@ -428,7 +395,6 @@
       100
     ],
     "description": "Yoast SEO for Shopify optimizes Shopify shops.",
-    "html": "<!-- This site is optimized with Yoast SEO for Shopify -->",
     "dom": {
       "script#yoast-schema-graph": {
         "attributes": {
@@ -436,12 +402,13 @@
         }
       }
     },
+    "html": "<!-- This site is optimized with Yoast SEO for Shopify -->",
     "icon": "yoast-seo-shopify.png",
+    "implies": "Shopify",
     "pricing": [
       "low",
       "recurring"
     ],
-    "implies": "Shopify",
     "saas": true,
     "website": "https://yoast.com/shopify/apps/yoast-seo/"
   },

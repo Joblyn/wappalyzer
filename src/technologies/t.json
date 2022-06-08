@@ -525,12 +525,12 @@
       36
     ],
     "description": "Tapad is a venture-funded startup company that develops and markets software and services for cross-device advertising and content delivery.",
-    "icon": "Tapad.svg",
     "dom": "link[href*='pixel.tapad.com'], img[src*='pixel.tapad.com']",
-    "saas": true,
+    "icon": "Tapad.svg",
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://www.tapad.com"
   },
   "Tapcart": {
@@ -903,23 +903,6 @@
     "saas": true,
     "scriptSrc": "\\.thehotelsnetwork\\.com/",
     "website": "https://thehotelsnetwork.com"
-  },
-  "The SEO Framework": {
-    "cats": [
-      54,
-      87
-    ],
-    "description": "The SEO Framework is the only WordPress plugin that can intelligently generate critical SEO meta tags by reading your WordPress environment.",
-    "html": "<!--[^>]+The SEO Framework by Sybre Waaijer",
-    "icon": "The SEO Framework.svg",
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring"
-    ],
-    "requires": "WordPress",
-    "saas": true,
-    "website": "https://theseoframework.com"
   },
   "The Theme Foundry Make": {
     "cats": [
@@ -1753,13 +1736,13 @@
       59
     ],
     "description": "Tippy.js is the complete tooltip, popover, dropdown, and menu solution for the web, powered by Popper.",
-    "icon": "Tippy.js.svg",
     "dom": "style[data-tippy-stylesheet]",
+    "icon": "Tippy.js.svg",
     "js": {
       "tippy.defaultProps": ""
     },
-    "scriptSrc": "/tippy\\.js(?:@|/)?([\\d\\.]+)?\\;version:\\1",
     "oss": true,
+    "scriptSrc": "/tippy\\.js(?:@|/)?([\\d\\.]+)?\\;version:\\1",
     "website": "https://atomiks.github.io/tippyjs"
   },
   "Tipsa": {
@@ -1978,10 +1961,10 @@
     "js": {
       "transcend": ""
     },
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "http://www.transcend.io"
   },
   "Transcy": {
