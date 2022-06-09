@@ -2320,6 +2320,23 @@
     },
     "website": "http://www.gocontentbox.org"
   },
+  "Contentsquare": {
+    "cats": [
+      10,
+      74
+    ],
+    "description": "Contentsquare is an enterprise-level UX optimisation platform.",
+    "icon": "Contentsquare.png",
+    "js": {
+      "CS_CONF.trackerDomain": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.contentsquare\\.net/",
+    "website": "https://contentsquare.com"
+  },
   "ContentStudio": {
     "cats": [
       96
@@ -2367,23 +2384,6 @@
     ],
     "saas": true,
     "website": "https://contently.com"
-  },
-  "Contentsquare": {
-    "cats": [
-      10,
-      74
-    ],
-    "description": "Contentsquare is an enterprise-level UX optimisation platform.",
-    "icon": "Contentsquare.svg",
-    "js": {
-      "CS_CONF.trackerDomain": ""
-    },
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "scriptSrc": "\\.contentsquare\\.net/",
-    "website": "https://contentsquare.com"
   },
   "Contentstack": {
     "cats": [
