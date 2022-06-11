@@ -896,7 +896,7 @@ class Site {
                                     placeholder,
                                     className,
                                   })
-                                )
+                                  )
 
                               const btnEls = Array.from(
                                 document.querySelectorAll('button')
