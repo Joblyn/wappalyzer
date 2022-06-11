@@ -21,6 +21,8 @@ const chromiumArgs = [
   '--no-sandbox',
   '--no-zygote',
   '--disable-gpu',
+  '--disable-software-rasterizer',
+  '--disable-features=AudioServiceOutOfProcess',
   '--ignore-certificate-errors',
   '--allow-running-insecure-content',
   '--disable-web-security',
@@ -598,7 +600,7 @@ class Site {
 
     // gets the response from page
     page.on('response', async (response) => {
-      if (this.destroyed || !page || page.__closed || page.isClosed()) {
+      if (this.destroyed || !page || page.isClosed()) {
         return
       }
 
@@ -614,11 +616,7 @@ class Site {
           await this.onDetect(response.url(), analyze({ scripts }))
         }
       } catch (error) {
-        if (error.constructor.name !== 'ProtocolError') {
-          error.message += ` (${url})`
-
-          this.error(error)
-        }
+        this.error(error)
       }
 
       try {
@@ -678,11 +676,7 @@ class Site {
       await page.goto(url.href)
 
       if (page.url() === 'about:blank') {
-        const error = new Error(`The page failed to load (${url})`)
-
-        error.code = 'WAPPALYZER_PAGE_EMPTY'
-
-        throw error
+        throw new Error(`The page failed to load (${url.href})`)
       }
 
       if (!this.options.noScripts) {
@@ -1264,7 +1258,11 @@ class Site {
         ...this.cache[url.href],
       })
 
-      page.__closed = true
+      try {
+        await page.close()
+      } catch (error) {
+        // Continue
+      }
 
       try {
         await page.close()
