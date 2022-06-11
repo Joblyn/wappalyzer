@@ -17,6 +17,8 @@ const chromiumArgs = [
   '--no-sandbox',
   '--no-zygote',
   '--disable-gpu',
+  '--disable-software-rasterizer',
+  '--disable-features=AudioServiceOutOfProcess',
   '--ignore-certificate-errors',
   '--allow-running-insecure-content',
   '--disable-web-security',
@@ -405,7 +407,11 @@ class Site {
 =======
     // login button
     this.buttons = {}
+<<<<<<< HEAD
 >>>>>>> 5ee4d0314 (added coded to check for login or sigin button on a page)
+=======
+    this.destroyed = false
+>>>>>>> 2f30fa4c9 (NPM fixes)
   }
 
   log(message, source = 'driver', type = 'log') {
@@ -597,7 +603,11 @@ class Site {
 
     // gets the response from page
     page.on('response', async (response) => {
+<<<<<<< HEAD
       if (this.destroyed || !page || page.__closed || page.isClosed()) {
+=======
+      if (this.destroyed || !page || page.isClosed()) {
+>>>>>>> 2f30fa4c9 (NPM fixes)
         return
       }
 
@@ -613,6 +623,7 @@ class Site {
           await this.onDetect(response.url(), analyze({ scripts }))
         }
       } catch (error) {
+<<<<<<< HEAD
         if (error.constructor.name !== 'ProtocolError') {
           error.message += ` (${url})`
 
@@ -620,6 +631,11 @@ class Site {
         }
       }
 
+=======
+        this.error(error)
+      }
+
+>>>>>>> 2f30fa4c9 (NPM fixes)
       try {
         if (response.url() === url.href) {
           this.analyzedUrls[url.href] = {
@@ -677,11 +693,15 @@ class Site {
       await page.goto(url.href)
 
       if (page.url() === 'about:blank') {
+<<<<<<< HEAD
         const error = new Error(`The page failed to load (${url})`)
 
         error.code = 'WAPPALYZER_PAGE_EMPTY'
 
         throw error
+=======
+        throw new Error(`The page failed to load (${url.href})`)
+>>>>>>> 2f30fa4c9 (NPM fixes)
       }
 
       if (!this.options.noScripts) {
@@ -1014,7 +1034,15 @@ class Site {
         ...this.cache[url.href],
       })
 
+<<<<<<< HEAD
       page.__closed = true
+=======
+      try {
+        await page.close()
+      } catch (error) {
+        // Continue
+      }
+>>>>>>> 2f30fa4c9 (NPM fixes)
 
       try {
         await page.close()
