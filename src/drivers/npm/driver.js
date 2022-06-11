@@ -16,6 +16,8 @@ const chromiumArgs = [
   '--no-sandbox',
   '--no-zygote',
   '--disable-gpu',
+  '--disable-software-rasterizer',
+  '--disable-features=AudioServiceOutOfProcess',
   '--ignore-certificate-errors',
   '--allow-running-insecure-content',
   '--disable-web-security',
@@ -405,6 +407,7 @@ class Site {
 
     // login button
     this.buttons = {}
+    this.destroyed = false
   }
 
   log(message, source = 'driver', type = 'log') {
@@ -476,6 +479,10 @@ class Site {
 
   // make request to url
   async goto(url) {
+    if (this.destroyed) {
+      return
+    }
+
     // Return when the URL is a duplicate or maxUrls has been reached
     if (this.analyzedUrls[url.href]) {
       return []
@@ -576,6 +583,10 @@ class Site {
 
     // gets the response from page
     page.on('response', async (response) => {
+      if (this.destroyed || !page || page.isClosed()) {
+        return
+      }
+
       try {
         if (
           response.status() < 300 &&
@@ -587,7 +598,11 @@ class Site {
           // analyzes the response
           await this.onDetect(response.url(), analyze({ scripts }))
         }
+      } catch (error) {
+        this.error(error)
+      }
 
+      try {
         if (response.url() === url.href) {
           this.analyzedUrls[url.href] = {
             status: response.status(),
@@ -653,7 +668,7 @@ class Site {
       }
 
       if (page.url() === 'about:blank') {
-        throw new Error('The website failed to load')
+        throw new Error(`The page failed to load (${url.href})`)
       }
 
       if (!this.options.noScripts) {
@@ -984,7 +999,11 @@ class Site {
         ...this.cache[url.href],
       })
 
-      await page.close()
+      try {
+        await page.close()
+      } catch (error) {
+        // Continue
+      }
 
       this.log(`Page closed (${url})`)
 
@@ -995,7 +1014,7 @@ class Site {
 
         this.log(`Page closed (${url})`)
       } catch (error) {
-        this.log(error)
+        // Continue
       }
 
       let hostname = url
@@ -1334,6 +1353,8 @@ class Site {
         }
       })
     )
+
+    this.destroyed = true
 
     this.log('Site closed')
   }
