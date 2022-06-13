@@ -1,4 +1,4 @@
-const os = require('os')
+// const os = require('os')
 const fs = require('fs')
 const dns = require('dns').promises
 const path = require('path')
@@ -20,17 +20,11 @@ const chromiumArgs = [
   '--no-sandbox',
   '--no-zygote',
   '--disable-gpu',
-  '--disable-software-rasterizer',
-  '--disable-features=AudioServiceOutOfProcess',
   '--ignore-certificate-errors',
   '--allow-running-insecure-content',
   '--disable-web-security',
   `--user-data-dir=${CHROMIUM_DATA_DIR || '/tmp/chromium'}`,
 ]
-
-if (os.arch() === 'arm64') {
-  chromiumArgs.push('--single-process')
-}
 
 const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/
 
@@ -436,7 +430,7 @@ class Site {
 
   emit(event, params) {
     if (this.listeners[event]) {
-      return Promise.all(
+      return Promise.allSettled(
         this.listeners[event].map((listener) => listener(params))
       )
     }
@@ -491,7 +485,7 @@ class Site {
       return []
     }
 
-    this.log(`Navigate to ${url}`, 'page')
+    this.log(`Navigate to ${url}`)
 
     this.analyzedUrls[url.href] = {
       status: 0,
@@ -509,7 +503,13 @@ class Site {
 
     try {
       page = await this.browser.newPage()
+
+      if (!page || page.isClosed()) {
+        throw new Error('Page did not open')
+      }
     } catch (error) {
+      error.message += ` (${url})`
+
       this.error(error)
 
       await this.initDriver()
@@ -525,9 +525,15 @@ class Site {
 
     await page.setRequestInterception(true)
 
+    await page.setUserAgent(this.options.userAgent)
+
     page.on('dialog', (dialog) => dialog.dismiss())
 
-    page.on('error', (error) => this.error(error))
+    page.on('error', (error) => {
+      error.message += ` (${url})`
+
+      this.error(error)
+    })
 
     let responseReceived = false
 
@@ -540,6 +546,8 @@ class Site {
           try {
             ;({ hostname } = new URL(request.url()))
           } catch (error) {
+            request.abort('blockedbyclient')
+
             return
           }
 
@@ -580,13 +588,15 @@ class Site {
           request.continue({ headers })
         }
       } catch (error) {
+        error.message += ` (${url})`
+
         this.error(error)
       }
     })
 
     // gets the response from page
     page.on('response', async (response) => {
-      if (this.destroyed || !page || page.isClosed()) {
+      if (this.destroyed || !page || page.__closed || page.isClosed()) {
         return
       }
 
@@ -602,7 +612,11 @@ class Site {
           await this.onDetect(response.url(), analyze({ scripts }))
         }
       } catch (error) {
-        this.error(error)
+        if (error.constructor.name !== 'ProtocolError') {
+          error.message += ` (${url})`
+
+          this.error(error)
+        }
       }
 
       try {
@@ -652,26 +666,21 @@ class Site {
           await this.emit('response', { page, response, headers, certIssuer })
         }
       } catch (error) {
+        error.message += ` (${url})`
+
         this.error(error)
       }
     })
 
-    await page.setUserAgent(this.options.userAgent)
-
     try {
-      try {
-        await this.promiseTimeout(page.goto(url.href))
-      } catch (error) {
-        if (
-          error.constructor.name !== 'TimeoutError' &&
-          error.code !== 'PROMISE_TIMEOUT_ERROR'
-        ) {
-          throw error
-        }
-      }
+      await page.goto(url.href)
 
       if (page.url() === 'about:blank') {
-        throw new Error(`The page failed to load (${url.href})`)
+        const error = new Error(`The page failed to load (${url})`)
+
+        error.code = 'WAPPALYZER_PAGE_EMPTY'
+
+        throw error
       }
 
       if (!this.options.noScripts) {
@@ -692,6 +701,8 @@ class Site {
           {}
         )
       } catch (error) {
+        error.message += ` (${url})`
+
         this.error(error)
       }
 
@@ -1251,16 +1262,20 @@ class Site {
         ...this.cache[url.href],
       })
 
+      page.__closed = true
+
       try {
         await page.close()
+
+        this.log(`Page closed (${url})`)
       } catch (error) {
         // Continue
       }
 
-      this.log(`Page closed (${url})`)
-
       return reducedLinks
     } catch (error) {
+      page.__closed = true
+
       try {
         await page.close()
 
@@ -1277,30 +1292,22 @@ class Site {
         // Continue
       }
 
-      if (
-        error.constructor.name === 'TimeoutError' ||
-        error.code === 'PROMISE_TIMEOUT_ERROR'
-      ) {
-        const newError = new Error(
-          `The website took too long to respond: ${
-            error.message || error
-          } at ${hostname}`
-        )
-
-        newError.code = 'WAPPALYZER_TIMEOUT_ERROR'
-
-        throw newError
-      }
-
       if (error.message.includes('net::ERR_NAME_NOT_RESOLVED')) {
-        const newError = new Error(
-          `Hostname could not be resolved at ${hostname}`
-        )
+        const newError = new Error(`Hostname could not be resolved (${url})`)
 
         newError.code = 'WAPPALYZER_DNS_ERROR'
 
         throw newError
       }
+
+      if (
+        error.constructor.name === 'TimeoutError' ||
+        error.code === 'PROMISE_TIMEOUT_ERROR'
+      ) {
+        error.code = 'WAPPALYZER_TIMEOUT_ERROR'
+      }
+
+      error.message += ` (${url})`
 
       throw error
     }
@@ -1308,13 +1315,13 @@ class Site {
 
   // analyzes the url passed in
   async analyze(url = this.originalUrl, index = 1, depth = 1) {
-    try {
-      if (this.options.recursive) {
-        await sleep(this.options.delay * index)
-      }
+    if (this.options.recursive) {
+      await sleep(this.options.delay * index)
+    }
 
-      await Promise.all([
-        (async () => {
+    await Promise.allSettled([
+      (async () => {
+        try {
           const links = ((await this.goto(url)) || []).filter(
             ({ href }) => !this.analyzedUrls[href]
           )
@@ -1333,23 +1340,25 @@ class Site {
               depth + 1
             )
           }
-        })(),
-        (async () => {
-          if (this.options.probe && !this.probed) {
-            this.probed = true
-
-            await this.probe(url)
+        } catch (error) {
+          this.analyzedUrls[url.href] = {
+            status: this.analyzedUrls[url.href]?.status || 0,
+            error: error.message || error.toString(),
           }
-        })(),
-      ])
-    } catch (error) {
-      this.analyzedUrls[url.href] = {
-        status: this.analyzedUrls[url.href]?.status || 0,
-        error: error.message || error.toString(),
-      }
 
-      this.error(error)
-    }
+          error.message += ` (${url})`
+
+          this.error(error)
+        }
+      })(),
+      (async () => {
+        if (this.options.probe && !this.probed) {
+          this.probed = true
+
+          await this.probe(url)
+        }
+      })(),
+    ])
 
     const patterns = this.options.extended
       ? this.detections.reduce(
@@ -1429,6 +1438,8 @@ class Site {
       return this.promiseTimeout(
         func(hostname).catch((error) => {
           if (error.code !== 'ENODATA') {
+            error.message += ` (${url})`
+
             this.error(error)
           }
 
@@ -1442,7 +1453,7 @@ class Site {
 
     const domain = url.hostname.replace(/^www\./, '')
 
-    await Promise.all([
+    await Promise.allSettled([
       // Static files
       ...Object.keys(files).map(async (file, index) => {
         const path = files[file]
@@ -1452,7 +1463,7 @@ class Site {
 
           const body = await get(new URL(path, url.href), {
             userAgent: this.options.userAgent,
-            timeout: Math.min(this.options.maxWait, 3000),
+            timeout: Math.min(this.options.maxWait, 1000),
           })
 
           this.log(`Probe ok (${path})`)
@@ -1509,7 +1520,7 @@ class Site {
 
     const batched = links.splice(0, this.options.batchSize)
 
-    await Promise.all(
+    await Promise.allSettled(
       batched.map((link, index) => this.analyze(link, index, depth))
     )
 
@@ -1543,7 +1554,7 @@ class Site {
         ),
       ]
 
-      await Promise.all(
+      await Promise.allSettled(
         requires.map(async ({ name, categoryId, technologies }) => {
           const id = categoryId
             ? `category:${categoryId}`
@@ -1596,9 +1607,11 @@ class Site {
   }
 
   async destroy() {
-    await Promise.all(
+    await Promise.allSettled(
       this.pages.map(async (page) => {
         if (page) {
+          page.__closed = true
+
           try {
             await page.close()
           } catch (error) {
