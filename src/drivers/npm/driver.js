@@ -21,8 +21,6 @@ const chromiumArgs = [
   '--no-sandbox',
   '--no-zygote',
   '--disable-gpu',
-  '--disable-software-rasterizer',
-  '--disable-features=AudioServiceOutOfProcess',
   '--ignore-certificate-errors',
   '--allow-running-insecure-content',
   '--disable-web-security',
@@ -600,7 +598,7 @@ class Site {
 
     // gets the response from page
     page.on('response', async (response) => {
-      if (this.destroyed || !page || page.isClosed()) {
+      if (this.destroyed || !page || page.__closed || page.isClosed()) {
         return
       }
 
@@ -616,7 +614,11 @@ class Site {
           await this.onDetect(response.url(), analyze({ scripts }))
         }
       } catch (error) {
-        this.error(error)
+        if (error.constructor.name !== 'ProtocolError') {
+          error.message += ` (${url})`
+
+          this.error(error)
+        }
       }
 
       try {
@@ -676,7 +678,11 @@ class Site {
       await page.goto(url.href)
 
       if (page.url() === 'about:blank') {
-        throw new Error(`The page failed to load (${url.href})`)
+        const error = new Error(`The page failed to load (${url})`)
+
+        error.code = 'WAPPALYZER_PAGE_EMPTY'
+
+        throw error
       }
 
       if (!this.options.noScripts) {
@@ -1258,8 +1264,12 @@ class Site {
         ...this.cache[url.href],
       })
 
+      page.__closed = true
+
       try {
         await page.close()
+
+        this.log(`Page closed (${url})`)
       } catch (error) {
         // Continue
       }
