@@ -17,8 +17,6 @@ const chromiumArgs = [
   '--no-sandbox',
   '--no-zygote',
   '--disable-gpu',
-  '--disable-software-rasterizer',
-  '--disable-features=AudioServiceOutOfProcess',
   '--ignore-certificate-errors',
   '--allow-running-insecure-content',
   '--disable-web-security',
@@ -604,10 +602,14 @@ class Site {
     // gets the response from page
     page.on('response', async (response) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (this.destroyed || !page || page.__closed || page.isClosed()) {
 =======
       if (this.destroyed || !page || page.isClosed()) {
 >>>>>>> 2f30fa4c9 (NPM fixes)
+=======
+      if (this.destroyed || !page || page.__closed || page.isClosed()) {
+>>>>>>> ae8d7f429 (wip)
         return
       }
 
@@ -624,15 +626,21 @@ class Site {
         }
       } catch (error) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ae8d7f429 (wip)
         if (error.constructor.name !== 'ProtocolError') {
           error.message += ` (${url})`
 
           this.error(error)
         }
+<<<<<<< HEAD
       }
 
 =======
         this.error(error)
+=======
+>>>>>>> ae8d7f429 (wip)
       }
 
 >>>>>>> 2f30fa4c9 (NPM fixes)
@@ -694,14 +702,20 @@ class Site {
 
       if (page.url() === 'about:blank') {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ae8d7f429 (wip)
         const error = new Error(`The page failed to load (${url})`)
 
         error.code = 'WAPPALYZER_PAGE_EMPTY'
 
         throw error
+<<<<<<< HEAD
 =======
         throw new Error(`The page failed to load (${url.href})`)
 >>>>>>> 2f30fa4c9 (NPM fixes)
+=======
+>>>>>>> ae8d7f429 (wip)
       }
 
       if (!this.options.noScripts) {
@@ -1035,15 +1049,29 @@ class Site {
       })
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       page.__closed = true
 =======
+=======
+      page.__closed = true
+
+>>>>>>> ae8d7f429 (wip)
       try {
         await page.close()
+
+        this.log(`Page closed (${url})`)
       } catch (error) {
         // Continue
       }
 >>>>>>> 2f30fa4c9 (NPM fixes)
 
+<<<<<<< HEAD
+=======
+      return reducedLinks
+    } catch (error) {
+      page.__closed = true
+
+>>>>>>> ae8d7f429 (wip)
       try {
         await page.close()
 
@@ -1071,6 +1099,18 @@ class Site {
 
         throw newError
       }
+<<<<<<< HEAD
+
+      if (
+        error.constructor.name === 'TimeoutError' ||
+        error.code === 'PROMISE_TIMEOUT_ERROR'
+      ) {
+        error.code = 'WAPPALYZER_TIMEOUT_ERROR'
+      }
+
+      error.message += ` (${url})`
+=======
+>>>>>>> ae8d7f429 (wip)
 
       if (
         error.constructor.name === 'TimeoutError' ||
