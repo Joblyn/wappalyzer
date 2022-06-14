@@ -350,14 +350,14 @@
     ],
     "description": "SabaVision, one of the core products of SabaIdea, is Iran's largest online advertising agency.",
     "icon": "SabaVision.png",
-    "js": {
-      "SabavisionElement": "",
-      "__SABAVISION_GET_ADD_TIMEOUT": "",
-      "sabaVisionWebsiteID": "",
-      "sabaVisionWebsitePage": ""
-    },
     "meta": {
       "sabavision_zone": ""
+    },
+    "js": {
+      "sabaVisionWebsitePage": "",
+      "sabaVisionWebsiteID": "",
+      "SabavisionElement": "",
+      "__SABAVISION_GET_ADD_TIMEOUT": ""
     },
     "website": "https://www.sabavision.com"
   },
