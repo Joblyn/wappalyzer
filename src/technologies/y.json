@@ -213,13 +213,13 @@
     "cats": [
       36
     ],
-    "description": "Yektanet is the biggest and most advanced native advertising network in Iran.",
+    "description": "YEKTANET is the biggest and most advanced native advertising network in Iran.",
     "icon": "Yektanet.png",
-    "js": {
-      "yektanet": ""
-    },
     "meta": {
       "yektanet_session_last_activity": ""
+    },
+    "js": {
+      "yektanet": ""
     },
     "website": "https://www.yektanet.com"
   },
