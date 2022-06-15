@@ -502,15 +502,6 @@
     "scriptSrc": "tag.demandbase.com",
     "website": "https://www.demandbase.com"
   },
-  "Deno": {
-    "cats": [
-      22
-    ],
-    "description": "A modern runtime for JavaScript and TypeScript.",
-    "icon": "deno.svg",
-    "oss": true,
-    "website": "https://deno.land"
-  },
   "Deno Deploy": {
     "cats": [
       62
@@ -519,10 +510,7 @@
     "headers": {
       "server": "^deno/*"
     },
-    "icon": "deno.svg",
-    "implies": [
-      "Deno"
-    ],
+    "icon": "deno.png",
     "pricing": [
       "freemium",
       "low"
