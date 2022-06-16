@@ -622,11 +622,11 @@
       35
     ],
     "description": "Maptalks is a light and plugable JavaScript library for integrated 2D/3D maps.",
-    "dom": "div.maptalks-wrapper",
     "icon": "Maptalks.png",
+    "dom": "div.maptalks-wrapper",
     "js": {
-      "map._eventMap": "",
-      "maptalks.GeoJSON": ""
+      "maptalks.GeoJSON": "",
+      "map._eventMap": ""
     },
     "oss": true,
     "website": "https://maptalks.org"
