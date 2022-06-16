@@ -787,8 +787,8 @@
       27
     ],
     "description": "Sass is an extension of CSS that enables you to use things like variables, nested rules, inline imports and more.",
-    "dom": "link[href*='/index.scss']",
     "icon": "Sass.svg",
+    "dom": "link[href*='/index.scss']",
     "website": "https://sass-lang.com"
   },
   "Satori": {
