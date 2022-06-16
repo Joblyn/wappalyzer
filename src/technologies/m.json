@@ -1418,8 +1418,8 @@
     "description": "The Microsoft Authentication Library for JavaScript enables both client-side and server-side JavaScript applications to authenticate users using Azure AD for work and school accounts (AAD), Microsoft personal accounts (MSA), and social identity providers like Facebook, Google, LinkedIn, Microsoft accounts, etc. through Azure AD B2C service.",
     "icon": "Microsoft.svg",
     "js": {
-      "Msal.Authority": "",
       "msal.authorityInstance": "",
+      "Msal.Authority": "",
       "msalConfig.auth": ""
     },
     "oss": true,
