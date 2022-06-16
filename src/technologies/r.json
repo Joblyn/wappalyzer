@@ -1549,12 +1549,12 @@
     "js": {
       "rive.Rive": ""
     },
+    "saas": true,
     "pricing": [
       "freemium",
       "payg",
       "recurring"
     ],
-    "saas": true,
     "website": "https://rive.app"
   },
   "Roadiz CMS": {
