@@ -1366,11 +1366,11 @@
     ],
     "description": "Droz Bot is a multi-channel, customisable chatbot designed to help brands provide customer service across commonly used social apps.",
     "icon": "Droz.svg",
+    "scriptSrc": "chat-app\\.meudroz\\.com/",
+    "saas": true,
     "pricing": [
       "poa"
     ],
-    "saas": true,
-    "scriptSrc": "chat-app\\.meudroz\\.com/",
     "website": "https://meudroz.com/droz-bot/"
   },
   "Drupal": {
