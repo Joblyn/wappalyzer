@@ -1136,6 +1136,7 @@
       57
     ],
     "description": "Hugo is an open-source static site generator written in Go.",
+    "icon": "Hugo.svg",
     "dom": {
       "a[href*='hugo.']": {
         "attributes": {
@@ -1143,8 +1144,7 @@
         },
         "text": "Hugo\\;confidence:99"
       }
-    },
-    "icon": "Hugo.svg",
+    }, 
     "meta": {
       "generator": "Hugo ([\\d.]+)?\\;version:\\1"
     },
