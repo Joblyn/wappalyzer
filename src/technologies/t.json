@@ -1,70 +1,4 @@
 {
-  "T1 Comercios": {
-    "cats": [
-      19
-    ],
-    "description": "T1 Comercios is an integrator platform with marketplaces(https://www.claroshop.com/,https://www.sears.com.mx/,https://www.sanborns.com.mx/).",
-    "icon": "T1 Comercios.svg",
-    "meta": {
-      "generator": "^T1COMERCIOS$"
-    },
-    "saas": true,
-    "pricing": [
-      "freemium"
-    ],
-    "website": "https://www.t1comercios.com"
-  },
-  "T1 Envios": {
-    "cats": [
-      99
-    ],
-    "description": "T1 Envios is a delivery solution, allows the business to select the best courier to send their packages.",
-    "icon": "T1 Envios.svg",
-    "meta": {
-      "generator": "^T1ENVIOS$"
-    },
-    "saas": true,
-    "pricing": [
-      "payg"
-    ],
-    "website": "https://t1envios.com"
-  },
-  "T1 Paginas": {
-    "cats": [
-      6
-    ],
-    "description": "T1 Paginas is an ecommerce platform.",
-    "icon": "T1 Paginas.svg",
-    "implies": [
-      "AngularJS",
-      "Node.js",
-      "MongoDB"
-    ],
-    "meta": {
-      "generator": "^T1PAGINAS$"
-    },
-    "saas": true,
-    "pricing": [
-      "high",
-      "recurring"
-    ],
-    "website": "https://t1paginas.com"
-  },
-  "T1 Pagos": {
-    "cats": [
-      41
-    ],
-    "description": "T1 Pagos is a payment processing platform.",
-    "icon": "T1 Pagos.svg",
-    "meta": {
-      "generator": "^T1PAGOS$"
-    },
-    "saas": true,
-    "pricing": [
-      "payg"
-    ],
-    "website": "https://www.t1pagos.com"
-  },
   "T-Soft": {
     "cats": [
       6
@@ -779,17 +713,17 @@
       6
     ],
     "description": "Tebex specialises in providing gcommerce solutions for online games.",
+    "icon": "Tebex.svg",
+    "requires": "Cart Functionality",
+    "implies": [
+      "MySQL",
+      "Sass"
+    ],
     "headers": {
       "tb-cache-country": "\\;confidence:33",
       "tb-cache-group": "\\;confidence:34",
       "tb-node": "\\;confidence:33"
     },
-    "icon": "Tebex.svg",
-    "implies": [
-      "MySQL",
-      "Sass"
-    ],
-    "requires": "Cart Functionality",
     "saas": true,
     "website": "https://www.tebex.io"
   },
@@ -1517,7 +1451,7 @@
     ],
     "description": "The SEO Framework is the only WordPress plugin that can intelligently generate critical SEO meta tags by reading your WordPress environment.",
     "icon": "The SEO Framework.svg",
-    "html":"<!--[^>]+The SEO Framework by Sybre Waaijer",
+    "html": "<!--[^>]+The SEO Framework by Sybre Waaijer",
     "requires": "WordPress",
     "saas": true,
     "pricing": [
