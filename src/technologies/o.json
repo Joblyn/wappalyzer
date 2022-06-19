@@ -174,14 +174,15 @@
   },
   "Oct8ne": {
     "cats": [
+      5,
       52
     ],
     "description": "Oct8ne is a visual customer service software.",
     "icon": "Oct8ne.png",
     "js": {
-      "oct8ne.agentsAvailable": "",
       "oct8neApi": "",
-      "oct8neVars.pluginVersion": "([\\d\\.]+)\\;version:\\1"
+      "oct8neVars.pluginVersion": "([\\d\\.]+)\\;version:\\1",
+      "oct8ne.agentsAvailable": ""
     },
     "pricing": [
       "poa"
