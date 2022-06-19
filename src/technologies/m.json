@@ -280,18 +280,6 @@
     ],
     "website": "https://magento.com"
   },
-  "MageWorx Search Autocomplete": {
-    "cats": [
-      29
-    ],
-    "description": "MageWorx Search Autocomplete extension offers an AJAX-based popup window that displays and updates relevant search results while a customer forms his or her query.",
-    "icon": "MageWorx.svg",
-    "requires": "Magento",
-    "dom":"link[href*='MageWorx_SearchSuiteAutocomplete']",
-    "oss": true,
-    "scriptSrc": "MageWorx_SearchSuiteAutocomplete",
-    "website": "https://github.com/mageworx/search-suite-autocomplete"
-  },
   "Magisto": {
     "cats": [
       14
@@ -566,12 +554,12 @@
     ],
     "description": "Mapbox GL JS is a JavaScript library that uses WebGL to render interactive maps from vector tiles and Mapbox styles.",
     "dom": "link[href*='mapbox-gl.css']",
-    "icon": "Mapbox.svg",
+    "icon": "Mapbogljs.svg",
     "js": {
       "mapboxgl.version": "^(.+)$\\;version:\\1\\;confidence:0"
     },
-    "oss": true,
     "scriptSrc": "mapbox-gl\\.js",
+    "oss": true,
     "website": "https://github.com/mapbox/mapbox-gl-js"
   },
   "Mapp": {
@@ -1279,21 +1267,6 @@
       "eomportal-uuid": "[a-f\\d]+"
     },
     "website": "https://www.eidosmedia.com/"
-  },
-  "metisMenu": {
-    "cats": [
-      59
-    ],
-    "description": "metisMenu is a collapsible jQuery menu plugin.",
-    "icon": "default.svg",
-    "implies": "jQuery",
-    "js": {
-      "metisMenu": "",
-      "MetisMenu": ""
-    },
-    "scriptSrc": "(?:/|\\.)metisMenu(?:js)?(?:\\.min)?\\.js(?:\\?([\\d\\.]+))?\\;version:\\1",
-    "oss": true,
-    "website": "https://github.com/onokumus/metismenu"
   },
   "Metomic": {
     "cats": [
@@ -2438,18 +2411,6 @@
     },
     "icon": "mycashflow.png",
     "website": "https://www.mycashflow.fi/"
-  },
-  "Myhkw player": {
-    "cats": [
-      5
-    ],
-    "description": "Myhkw player is a website music player.",
-    "icon": "Myhkw player.png",
-    "js": {
-      "myhkplayerlist": "",
-      "myhk_player_songid": ""
-    },
-    "website": "https://myhkw.cn"
   },
   "MyLiveChat": {
     "cats": [
