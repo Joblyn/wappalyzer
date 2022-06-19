@@ -2714,19 +2714,19 @@
       1
     ],
     "description": "SiteManager is a collaborative no-code/low-code web design platform for agencies and marketing teams.",
-    "dom": "link[href*='.sitemn.gr/']",
     "icon": "SiteManager.svg",
+    "dom": "link[href*='.sitemn.gr/']",
+    "requires": "PHP",
     "js": {
-      "SM_CookiesModal": "\\;confidence:50",
-      "SM_Modal": "\\;confidence:50"
+      "SM_Modal": "\\;confidence:50",
+      "SM_CookiesModal": "\\;confidence:50"
     },
+    "scriptSrc": "s\\d+\\.sitemn\\.gr/",
+    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
-    "requires": "PHP",
-    "saas": true,
-    "scriptSrc": "s\\d+\\.sitemn\\.gr/",
     "website": "https://www.sitemanager.io"
   },
   "SiteMinder": {
