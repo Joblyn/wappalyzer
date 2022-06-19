@@ -1314,21 +1314,6 @@
     "icon": "Dropbox.svg",
     "website": "https://www.dropbox.com"
   },
-  "DropInBlog": {
-    "cats": [
-      11
-    ],
-    "description": "DropInBlog is a remotely hosted, cloud based platform that is designed to embed a blog into your html site.",
-    "icon": "DropInBlog.png",
-    "dom": "link[href*='.dropinblog.com/']",
-    "scriptSrc": "\\.dropinblog\\.com/",
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://dropinblog.com"
-  },
   "Dropzone": {
     "cats": [
       59
@@ -1336,16 +1321,16 @@
     "description": "Dropzone is a JavaScript library that turns any HTML element into a dropzone.",
     "icon": "Dropzone.svg",
     "js": {
-      "Dropzone": "",
-      "Dropzone.version": "([\\d\\.]+)\\;version:\\1"
+      "Dropzone.version": "([\\d\\.]+)\\;version:\\1",
+      "Dropzone": ""
     },
     "oss": true,
+    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
-    "saas": true,
     "website": "https://www.dropzone.dev"
   },
   "Droxit": {
