@@ -4468,20 +4468,6 @@
     "icon": "StackPath.svg",
     "website": "https://www.stackpath.com"
   },
-  "Stackify": {
-    "cats": [
-      13,
-      78
-    ],
-    "description": "Stackify offers the only solution that fully integrates application performance monitoring with errors and logs.",
-    "icon": "Stackify.svg",
-    "pricing": [
-      "payg"
-    ],
-    "saas": true,
-    "scriptSrc": "\\.stackify\\.com/",
-    "website": "https://stackify.com"
-  },
   "Stamped": {
     "cats": [
       90
