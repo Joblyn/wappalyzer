@@ -731,21 +731,30 @@
     "scriptSrc": "connect\\.nosto\\.\\w+/",
     "website": "https://www.nosto.com"
   },
-  "Nosto Visual UGC": {
+  "Notion": {
     "cats": [
-      96
+      51
     ],
+<<<<<<< HEAD
     "description": "Nosto Visual UGC (Earlier known as Stackla) is a cloud-based content marketing platform that helps discover, curate, display and engage with user-generated content across all digital marketing platforms.",
     "icon": "Nosto.svg",
     "js": {
       "Stackla": "",
       "stacklaWidgetJsonp": ""
     },
+=======
+    "description": "The all-in-one workspace — for notes, tasks, wikis, and databases.",
+    "icon": "Notion.svg",
+    "dom": "html[class='notion-html']",
+>>>>>>> dd9234eaa (Add Notion Detection)
     "pricing": [
-      "high",
-      "recurring"
+      "freemium",
+      "recurring",
+      "low",
+      "poa"
     ],
     "saas": true,
+<<<<<<< HEAD
     "scriptSrc": "\\.stackla\\.com/",
     "website": "https://www.nosto.com/products/visual-ugc/"
   },
@@ -763,6 +772,8 @@
       "poa"
     ],
     "saas": true,
+=======
+>>>>>>> dd9234eaa (Add Notion Detection)
     "website": "https://notion.so"
   },
   "Nudgify": {
