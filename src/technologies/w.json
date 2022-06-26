@@ -877,6 +877,7 @@
     },
     "website": "http://worldwide.webtrends.com"
   },
+<<<<<<< HEAD
   "Webzie": {
     "cats": [
       1,
@@ -895,6 +896,8 @@
     "saas": true,
     "website": "https://www.webzie.com/"
   },
+=======
+>>>>>>> ac707252e (Prettify)
   "Weebly": {
     "cats": [
       1

@@ -29,6 +29,7 @@
     ],
     "website": "https://echarts.apache.org/"
   },
+<<<<<<< HEAD
   "Edgio App Platform": {
     "cats": [
       31,
@@ -58,6 +59,8 @@
     "scriptSrc": "/__layer0__/cache-manifest\\.js",
     "website": "https://edg.io"
   },
+=======
+>>>>>>> ac707252e (Prettify)
   "EKM": {
     "cats": [
       6

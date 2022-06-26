@@ -527,6 +527,9 @@
     "website": "https://www.jouwweb.nl"
   },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ac707252e (Prettify)
   "JsObservable": {
     "cats": [
       59
@@ -561,8 +564,11 @@
     "scriptSrc": "([\\d\\.]+)?/jsviews(?:\\.min)?\\.js\\;version:\\1",
     "website": "https://www.jsviews.com/#jsviews"
   },
+<<<<<<< HEAD
 =======
 >>>>>>> 86a915417 (Build v6.10.27)
+=======
+>>>>>>> ac707252e (Prettify)
   "Judge.me": {
     "cats": [
       90,
