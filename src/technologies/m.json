@@ -1632,12 +1632,11 @@
     "cats": [
       22
     ],
+    "icon": "default.svg",
     "headers": {
       "Server": "MiniServ/([\\d\\.]+)\\;version:\\1"
     },
-    "implies": "Webmin",
-    "oss": true,
-    "website": "https://github.com/webmin/webmin/blob/master/miniserv.pl"
+    "oss": true
   },
   "Mint": {
     "cats": [
