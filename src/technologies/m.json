@@ -38,7 +38,6 @@
     "headers": {
       "X-Powered-By": "MATORI.NET"
     },
-    "icon": "default.svg",
     "implies": "OpenResty",
     "website": "http://matori.net"
   },
@@ -1632,7 +1631,6 @@
     "cats": [
       22
     ],
-    "icon": "default.svg",
     "implies": "Webmin",
     "headers": {
       "Server": "MiniServ/([\\d\\.]+)\\;version:\\1"
