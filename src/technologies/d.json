@@ -502,24 +502,13 @@
     "scriptSrc": "tag.demandbase.com",
     "website": "https://www.demandbase.com"
   },
-  "Deno Deploy": {
+  "Deno": {
     "cats": [
-      62
+      22
     ],
-    "description": "Deno Deploy is a distributed system that runs JavaScript, TypeScript, and WebAssembly at the edge, worldwide.",
-    "implies": [
-      "Deno"
-    ],
-    "headers": {
-      "server": "^deno/*"
-    },
-    "icon": "deno.svg",
-    "pricing": [
-      "freemium",
-      "low"
-    ],
-    "saas": true,
-    "website": "https://deno.land/"
+    "description": "A modern runtime for JavaScript and TypeScript.",
+    "icon": "Deno.svg",
+    "website": "https://deno.land"
   },
   "Deta": {
     "cats": [
