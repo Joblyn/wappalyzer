@@ -649,10 +649,14 @@
       "_linkedin_partner_id": "",
       "ORIBI": ""
     },
+<<<<<<< HEAD
     "scriptSrc": [
       "snap\\.licdn\\.com/li\\.lms-analytics/insight\\.min\\.js",
       "cdn\\.oribi\\.io"
     ],
+=======
+    "scriptSrc": "snap\\.licdn\\.com/li\\.lms-analytics/insight\\.min\\.js",
+>>>>>>> ac707252e (Prettify)
     "scripts": "_linkedin_partner_id",
     "website": "https://business.linkedin.com/marketing-solutions/insight-tag"
   },
