@@ -474,28 +474,28 @@
     ],
     "description": "Tallentor is a subscription-based software website analytics, heatmap, channel chat intergration.",
     "icon": "Tallentor.png",
-    "scriptSrc": "tallentor\\.com/js/script_tracker\\.js",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "tallentor\\.com/js/script_tracker\\.js",
     "website": "https://tallentor.com"
   },
   "Tallentor Widget": {
     "cats": [
       52
     ],
-    "description": "Tallentor is a subscription-based software website analytics, heatmap, channel chat intergration.",
-    "icon": "Tallentor.png",
     "cookies": {
       "tallentor_widget": ""
     },
-    "saas": true,
+    "description": "Tallentor is a subscription-based software website analytics, heatmap, channel chat intergration.",
+    "icon": "Tallentor.png",
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://tallentor.com"
   },
   "Tamago": {
@@ -713,17 +713,17 @@
       6
     ],
     "description": "Tebex specialises in providing gcommerce solutions for online games.",
-    "icon": "Tebex.svg",
-    "requires": "Cart Functionality",
-    "implies": [
-      "MySQL",
-      "Sass"
-    ],
     "headers": {
       "tb-cache-country": "\\;confidence:33",
       "tb-cache-group": "\\;confidence:34",
       "tb-node": "\\;confidence:33"
     },
+    "icon": "Tebex.svg",
+    "implies": [
+      "MySQL",
+      "Sass"
+    ],
+    "requires": "Cart Functionality",
     "saas": true,
     "website": "https://www.tebex.io"
   },
@@ -922,6 +922,23 @@
     "saas": true,
     "scriptSrc": "\\.thehotelsnetwork\\.com/",
     "website": "https://thehotelsnetwork.com"
+  },
+  "The SEO Framework": {
+    "cats": [
+      54,
+      87
+    ],
+    "description": "The SEO Framework is the only WordPress plugin that can intelligently generate critical SEO meta tags by reading your WordPress environment.",
+    "html": "<!--[^>]+The SEO Framework by Sybre Waaijer",
+    "icon": "The SEO Framework.svg",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "saas": true,
+    "website": "https://theseoframework.com"
   },
   "The Theme Foundry Make": {
     "cats": [
@@ -1443,23 +1460,6 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/themes/iconic-one(?:-[\\w]+)?/",
     "website": "https://themonic.com/iconic-one"
-  },
-  "The SEO Framework": {
-    "cats": [
-      54,
-      87
-    ],
-    "description": "The SEO Framework is the only WordPress plugin that can intelligently generate critical SEO meta tags by reading your WordPress environment.",
-    "icon": "The SEO Framework.svg",
-    "html": "<!--[^>]+The SEO Framework by Sybre Waaijer",
-    "requires": "WordPress",
-    "saas": true,
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring"
-    ],
-    "website": "https://theseoframework.com"
   },
   "Thesis": {
     "cats": [

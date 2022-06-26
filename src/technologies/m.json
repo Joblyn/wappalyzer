@@ -557,8 +557,8 @@
     "js": {
       "mapboxgl.version": "^(.+)$\\;version:\\1\\;confidence:0"
     },
-    "scriptSrc": "mapbox-gl\\.js",
     "oss": true,
+    "scriptSrc": "mapbox-gl\\.js",
     "website": "https://github.com/mapbox/mapbox-gl-js"
   },
   "Mapp": {
@@ -609,11 +609,11 @@
       35
     ],
     "description": "Maptalks is a light and plugable JavaScript library for integrated 2D/3D maps.",
-    "icon": "Maptalks.png",
     "dom": "div.maptalks-wrapper",
+    "icon": "Maptalks.png",
     "js": {
-      "maptalks.GeoJSON": "",
-      "map._eventMap": ""
+      "map._eventMap": "",
+      "maptalks.GeoJSON": ""
     },
     "oss": true,
     "website": "https://maptalks.org"
@@ -1405,8 +1405,8 @@
     "description": "The Microsoft Authentication Library for JavaScript enables both client-side and server-side JavaScript applications to authenticate users using Azure AD for work and school accounts (AAD), Microsoft personal accounts (MSA), and social identity providers like Facebook, Google, LinkedIn, Microsoft accounts, etc. through Azure AD B2C service.",
     "icon": "Microsoft.svg",
     "js": {
-      "msal.authorityInstance": "",
       "Msal.Authority": "",
+      "msal.authorityInstance": "",
       "msalConfig.auth": ""
     },
     "oss": true,
@@ -1631,10 +1631,10 @@
     "cats": [
       22
     ],
-    "implies": "Webmin",
     "headers": {
       "Server": "MiniServ/([\\d\\.]+)\\;version:\\1"
     },
+    "implies": "Webmin",
     "oss": true,
     "website": "https://github.com/webmin/webmin/blob/master/miniserv.pl"
   },

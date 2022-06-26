@@ -156,18 +156,18 @@
     ],
     "description": "WP Job Openings is a job listing and recruitment plugin for WordPress websites.",
     "icon": "WP Job Openings.svg",
-    "requires": "WordPress",
     "js": {
       "awsmJobs": ""
     },
-    "scriptSrc": "/wp-content/plugins/wp-job-openings/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring",
       "onetime"
     ],
+    "requires": "WordPress",
+    "saas": true,
+    "scriptSrc": "/wp-content/plugins/wp-job-openings/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://wpjobopenings.com"
   },
   "WP Maintenance Mode": {
@@ -698,6 +698,27 @@
     },
     "website": "http://websitex5.com"
   },
+  "WebZi": {
+    "cats": [
+      1,
+      51
+    ],
+    "description": "WebZi is a professional website builder.",
+    "icon": "Webzi.svg",
+    "js": {
+      "WebziCart": "",
+      "WebziValidate": ""
+    },
+    "meta": {
+      "generator": "^Webzi\\.ir\\sWebsite\\sBuilder$"
+    },
+    "pricing": [
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "//webzi\\.ir/",
+    "website": "https://webzi.ir"
+  },
   "Webflow": {
     "cats": [
       51
@@ -855,27 +876,6 @@
       "WebTrends": ""
     },
     "website": "http://worldwide.webtrends.com"
-  },
-  "WebZi": {
-    "cats": [
-      1,
-      51
-    ],
-    "description": "WebZi is a professional website builder.",
-    "icon": "Webzi.svg",
-    "js": {
-      "WebziCart": "",
-      "WebziValidate": ""
-    },
-    "meta": {
-      "generator": "^Webzi\\.ir\\sWebsite\\sBuilder$"
-    },
-    "scriptSrc": "//webzi\\.ir/",
-    "saas": true,
-    "pricing": [
-      "recurring"
-    ],
-    "website": "https://webzi.ir"
   },
   "Weebly": {
     "cats": [

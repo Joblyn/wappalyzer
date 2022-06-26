@@ -2320,23 +2320,6 @@
     },
     "website": "http://www.gocontentbox.org"
   },
-  "Contentsquare": {
-    "cats": [
-      10,
-      74
-    ],
-    "description": "Contentsquare is an enterprise-level UX optimisation platform.",
-    "icon": "Contentsquare.svg",
-    "js": {
-      "CS_CONF.trackerDomain": ""
-    },
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "scriptSrc": "\\.contentsquare\\.net/",
-    "website": "https://contentsquare.com"
-  },
   "ContentStudio": {
     "cats": [
       96
@@ -2384,6 +2367,23 @@
     ],
     "saas": true,
     "website": "https://contently.com"
+  },
+  "Contentsquare": {
+    "cats": [
+      10,
+      74
+    ],
+    "description": "Contentsquare is an enterprise-level UX optimisation platform.",
+    "icon": "Contentsquare.svg",
+    "js": {
+      "CS_CONF.trackerDomain": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.contentsquare\\.net/",
+    "website": "https://contentsquare.com"
   },
   "Contentstack": {
     "cats": [
@@ -2969,10 +2969,8 @@
     "js": {
       "$__CRISP_INCLUDED": "",
       "$crisp": "",
-      "CRISP_WEBSITE_ID": "",
-      "$__CRISP_INCLUDED": ""
+      "CRISP_WEBSITE_ID": ""
     },
-    "scriptSrc": "client\\.crisp\\.chat/",
     "pricing": [
       "freemium",
       "low",
