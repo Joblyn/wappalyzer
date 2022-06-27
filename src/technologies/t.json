@@ -2881,16 +2881,16 @@
     "implies": "Shopify",
     "js": {
       "openTysloForm": "",
+      "tysloEasysellConfig": "",
       "tysloApplyDiscount": "",
-      "tysloConfigVersion": "",
-      "tysloEasysellConfig": ""
+      "tysloConfigVersion": ""
     },
+    "saas": true,
     "pricing": [
       "low",
       "freemium",
       "recurring"
     ],
-    "saas": true,
     "website": "https://tyslo.com"
   },
   "theTradeDesk": {
