@@ -1742,16 +1742,16 @@
       5
     ],
     "description": "Podigee is an independent company for podcast publishers. Podigee offers hosting, distribution, analytics and monetisation of podcasts.",
-    "dom": "iframe[src*='cdn.podigee.com/']",
     "icon": "Podigee.svg",
+    "dom": "iframe[src*='cdn.podigee.com/']",
     "js": {
       "podigeePodcastPlayers": ""
     },
+    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
-    "saas": true,
     "website": "https://www.podigee.com"
   },
   "Podium": {
