@@ -48,9 +48,9 @@
     "description": "Qstomizer app is the app for Shopify and Woocomerce that allows you to add a visual custom product designer to your shop.",
     "icon": "Qstomizer.png",
     "js": {
+      "qstomizer_script": "",
       "jQueryQSMZ": "",
-      "loadScript_qsmz": "",
-      "qstomizer_script": ""
+      "loadScript_qsmz": ""
     },
     "pricing": [
       "recurring",
