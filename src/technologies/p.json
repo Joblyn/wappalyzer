@@ -133,11 +133,11 @@
   },
   "PWA": {
     "cats": [
-      19
+      68
     ],
     "description": "Progressive Web Apps (PWAs) are web apps built and enhanced with modern APIs to deliver enhanced capabilities, reliability, and installability while reaching anyone, anywhere, on any device, all with a single codebase.",
-    "dom": "link[rel='manifest']",
     "icon": "PWA.svg",
+    "dom": "link[rel='manifest']",
     "website": "https://web.dev/progressive-web-apps/"
   },
   "PWA Studio": {
