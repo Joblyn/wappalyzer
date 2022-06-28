@@ -349,11 +349,11 @@
       "Fastly-Debug-Digest": "",
       "Vary": "Fastly-SSL",
       "X-Fastly-Request-ID": "",
-      "server": "Fastly",
-      "x-fastly-origin": "",
       "x-fastly-request-id": "",
+      "x-fastly-origin": "",
       "x-served-by": "^cache-",
-      "x-via-fastly:": ""
+      "x-via-fastly:": "",
+      "server": "Fastly"
     },
     "icon": "Fastly.svg",
     "pricing": [
