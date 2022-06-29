@@ -200,6 +200,8 @@
       "GbSdk.settings.shop": "",
       "gbReferralCodeInput": ""
     },
+    "scriptSrc": "assets\\.gameball\\.co/",
+    "saas": true,
     "pricing": [
       "freemium",
       "low",
@@ -207,8 +209,6 @@
       "payg",
       "poa"
     ],
-    "saas": true,
-    "scriptSrc": "assets\\.gameball\\.co/",
     "website": "https://www.gameball.co"
   },
   "Gatsby": {
