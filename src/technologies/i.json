@@ -99,15 +99,15 @@
     ],
     "description": "IPFS is a peer-to-peer hypermedia protocol that provides a distributed hypermedia web.",
     "headers": {
-      "x-cf-ipfs-cache-status": "",
       "x-ipfs-datasize": "",
       "x-ipfs-gateway-host": "",
       "x-ipfs-lb-pop": "",
       "x-ipfs-path": "",
       "x-ipfs-pop": "",
+      "x-ipfs-roots": "",
       "x-ipfs-root": "",
-      "x-ipfs-root-cid": "",
-      "x-ipfs-roots": ""
+      "x-cf-ipfs-cache-status": "",
+      "x-ipfs-root-cid": ""
     },
     "icon": "IPFS.png",
     "website": "https://ipfs.io/"
