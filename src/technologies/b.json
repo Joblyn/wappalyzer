@@ -1927,25 +1927,20 @@
     "saas": true,
     "website": "https://www.bsale.cl"
   },
-  "BSmart": {
+  "bSecure": {
     "cats": [
-      6
+      41
     ],
-    "description": "BSmart is an ecommerce platform, programmed by Microline.",
-    "icon": "BSmart.png",
-    "cookies": {
-      "bsmartstate": ""
-    },
+    "description": "bSecure is a one-click checkout solution for selling your products all across the globe instantly.",
+    "icon": "bSecure.svg",
     "js": {
-      "BSmartConfirmWindow": "",
-      "bsmartPriceList": "",
-      "bsGetBSmartStock": ""
+      "bsecure_js_object": ""
     },
     "saas": true,
     "pricing": [
-      "poa"
+      "payg"
     ],
-    "website": "https://www.bsmart.co.il"
+    "website": "https://www.bsecure.pk"
   },
   "Bubble": {
     "cats": [
