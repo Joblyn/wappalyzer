@@ -208,19 +208,19 @@
       "X-Powered-By": "WP Rocket(?:/([\\d.]+))?\\;version:\\1",
       "X-Rocket-Nginx-Bypass": ""
     },
-    "html": "<!--[^>]+WP Rocket",
-    "icon": "WP Rocket.png",
     "js": {
       "RocketPreloadLinksConfig": "",
       "rocket_lazy": ""
     },
+    "html": "<!--[^>]+WP Rocket",
+    "icon": "WP Rocket.png",
     "pricing": [
       "low",
       "recurring"
     ],
     "requires": "WordPress",
-    "saas": true,
     "scriptSrc": "/wp-content/plugins/wp-rocket/",
+    "saas": true,
     "website": "http://wp-rocket.me"
   },
   "WP-Optimize": {
