@@ -668,9 +668,9 @@
     "description": "Linx Commerce is an ecommerce platform, which provides seamless and personalised cross-channel solution that enables a true omni-channel shopping experience.",
     "icon": "Linx.png",
     "js": {
+      "linxImpulse.config.integrationFlags.platformProvider": "linxCommerce",
       "EzGaCfg.Config.Store": "",
-      "EzGaCfg.Shopper": "",
-      "linxImpulse.config.integrationFlags.platformProvider": "linxCommerce"
+      "EzGaCfg.Shopper": ""
     },
     "pricing": [
       "poa"
