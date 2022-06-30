@@ -1927,6 +1927,7 @@
     "saas": true,
     "website": "https://www.bsale.cl"
   },
+<<<<<<< HEAD
   "BSmart": {
     "cats": [
       6
@@ -1946,6 +1947,22 @@
       "poa"
     ],
     "website": "https://www.bsmart.co.il"
+=======
+  "bSecure": {
+    "cats": [
+      41
+    ],
+    "description": "bSecure is a one-click checkout solution for selling your products all across the globe instantly.",
+    "icon": "bSecure.svg",
+    "js": {
+      "bsecure_js_object": ""
+    },
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://www.bsecure.pk"
+>>>>>>> 35d41d511 (Add bSecure / payment-processors)
   },
   "Bubble": {
     "cats": [
