@@ -312,7 +312,6 @@
     "scriptSrc": "cdn\\.trytada\\.com/",
     "saas": true,
     "pricing": [
-      "freemium",
       "payg",
       "recurring"
     ],
