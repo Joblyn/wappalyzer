@@ -509,6 +509,7 @@
     ],
     "description": "A modern runtime for JavaScript and TypeScript.",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "icon": "deno.svg",
     "oss": true,
     "website": "https://deno.land"
@@ -541,9 +542,10 @@
 >>>>>>> 4502070c2 (chore: Remove duplicate icon)
     "icon": "Deno.svg",
 =======
+=======
+>>>>>>> 6c5b26aa0 (improve aws waf captcha)
     "icon": "deno.svg",
     "oss": true,
->>>>>>> 41f7a2a31 (chore: Remove duplicate icon)
     "website": "https://deno.land"
 >>>>>>> e86474d43 (add Deno)
   },
