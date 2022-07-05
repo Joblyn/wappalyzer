@@ -140,7 +140,16 @@ const Wappalyzer = {
       .sort((a, b) => (priority(a) > priority(b) ? 1 : -1))
       .map(
         ({
-          technology: { name, slug, categories, icon, website, pricing, cpe },
+          technology: {
+            name,
+            slug,
+            categories,
+            icon,
+            website,
+            pricing,
+            cpe,
+            description,
+          },
           confidence,
           version,
           lastUrl,
@@ -155,6 +164,7 @@ const Wappalyzer = {
           pricing,
           cpe,
           lastUrl,
+          description,
         })
       )
   },
@@ -260,7 +270,7 @@ const Wappalyzer = {
     } while (resolved.length && !done)
   },
 
-  // here ----- 
+  // here -----
   /**
    * Initialize analyzation.
    * @param {*} param0
@@ -288,7 +298,7 @@ const Wappalyzer = {
       headers: mm,
       dns: mm,
     }
-    
+
     // returns the technologies detected
     try {
       const detections = technologies
@@ -345,6 +355,7 @@ const Wappalyzer = {
         website,
         pricing,
         cpe,
+        description,
       } = data[name]
 
       technologies.push({
@@ -396,6 +407,7 @@ const Wappalyzer = {
         website: website || null,
         pricing: pricing || [],
         cpe: cpe || null,
+        description,
       })
 
       return technologies

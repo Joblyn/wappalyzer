@@ -4,10 +4,10 @@ const dns = require('dns').promises
 const path = require('path')
 const http = require('http')
 const https = require('https')
-const puppeteer = require('puppeteer')
-const Wappalyzer = require('./wappalyzer')
 const { title } = require('process')
+const puppeteer = require('puppeteer')
 const { IBM_LZ77 } = require('adm-zip/util/constants')
+const Wappalyzer = require('./wappalyzer')
 
 const { setTechnologies, setCategories, analyze, analyzeManyToMany, resolve } =
   Wappalyzer
@@ -407,7 +407,6 @@ class Site {
 
     // inspects
     this.inspects = {}
-
   }
 
   log(message, source = 'driver', type = 'log') {
@@ -761,7 +760,7 @@ class Site {
                               /((sign|log)(\s{0,}|_)(in|up))|register/gi
 
                             // anchors
-                            let anchors = Array.from(
+                            const anchors = Array.from(
                               document.getElementsByTagName('a')
                             )
                               .map(({ href, title, textContent, alt }) => ({
@@ -771,13 +770,14 @@ class Site {
                                 alt,
                               }))
                               .filter(({ href, title, textContent, alt }) => {
-                                let hrefIncludes =
+                                const hrefIncludes =
                                   href && href.match(signInRegExp)
-                                let titleIncludes =
+                                const titleIncludes =
                                   title && title.match(signInRegExp)
-                                let textIncludes =
+                                const textIncludes =
                                   textContent && textContent.match(signInRegExp)
-                                let altIncludes = alt && alt.match(signInRegExp)
+                                const altIncludes =
+                                  alt && alt.match(signInRegExp)
                                 return (
                                   hrefIncludes ||
                                   titleIncludes ||
@@ -787,7 +787,7 @@ class Site {
                               })
 
                             // check for a button with href attribute or textcontent that contains regex
-                            let buttons = Array.from(
+                            const buttons = Array.from(
                               document.getElementsByTagName('button')
                             )
                               .map(({ href, title, textContent }) => ({
@@ -796,11 +796,11 @@ class Site {
                                 textContent,
                               }))
                               .filter(({ href, title, textContent }) => {
-                                let hrefIncludes =
+                                const hrefIncludes =
                                   href && href.match(signInRegExp)
-                                let titleIncludes =
+                                const titleIncludes =
                                   title && title.match(signInRegExp)
-                                let textIncludes =
+                                const textIncludes =
                                   textContent && textContent.match(signInRegExp)
                                 return (
                                   hrefIncludes || textIncludes || titleIncludes
@@ -808,20 +808,24 @@ class Site {
                               })
 
                             // check for a div with a textcontent that contains regex
-                            let divTexts = Array.from(
+                            const divTexts = Array.from(
                               document.getElementsByTagName('div')
                             )
                               .map(({ textContent }) => ({
                                 textContent,
                               }))
                               .filter(({ textContent }) => {
-                                let textIncludes =
+                                const textIncludes =
                                   textContent && textContent.match(signInRegExp)
                                 return textIncludes
                               })
                               .map(({ innerText }) => ({ innerText }))
 
-                            return { anchors, buttons, divTexts }
+                            return {
+                              anchors,
+                              buttons,
+                              // divTexts
+                            }
                           })
                         ),
                       20000
@@ -853,13 +857,13 @@ class Site {
                               /(email|(^.{0,}@.{0,}\.com))/gi
                             const emailClassRegex =
                               /join|subsci(b|p)(e|tion)|sign(\s{0,1}|_)up|newsletter/gi
-                            const btnTextRegex =
-                              /subscri(b|p)(e|tion)|newsletter/gi
+                            // const btnTextRegex =
+                            //   /subscri(b|p)(e|tion)|newsletter/gi
 
                             const els = []
                             //  input
-                            let inputBtnEls = (() => {
-                              let emailInputEls = Array.from(
+                            const inputBtnEls = (() => {
+                              const emailInputEls = Array.from(
                                 document.querySelectorAll('input[type=email]')
                               )
                                 .filter(
@@ -869,14 +873,14 @@ class Site {
                                     placeholder,
                                     className,
                                   }) => {
-                                    let nameIncludes =
+                                    const nameIncludes =
                                       _name && _name.match(emailInputRegex)
-                                    let idIncludes =
+                                    const idIncludes =
                                       id && id.match(emailInputRegex)
-                                    let placeholderIncludes =
+                                    const placeholderIncludes =
                                       placeholder &&
                                       placeholder.match(emailPlaceholderRegex)
-                                    let classIncludes =
+                                    const classIncludes =
                                       className &&
                                       className
                                         .split(' ')
@@ -896,23 +900,23 @@ class Site {
                                     placeholder,
                                     className,
                                   })
-                                  )
+                                )
 
                               const btnEls = Array.from(
                                 document.querySelectorAll('button')
                               )
                                 .filter(
                                   ({ type, id, className, textContent }) => {
-                                    let typeMatches =
-                                      type && type.match(/submit|button/gi)
-                                    let idIncludes =
+                                    // let typeMatches =
+                                    //   type && type.match(/submit|button/gi)
+                                    const idIncludes =
                                       id && id.match(emailClassRegex)
-                                    let classIncludes =
+                                    const classIncludes =
                                       className &&
                                       className
                                         .split(' ')
                                         .some((c) => c.match(emailClassRegex))
-                                    let textIncludes =
+                                    const textIncludes =
                                       textContent &&
                                       textContent.match(emailClassRegex)
                                     return (
@@ -938,16 +942,16 @@ class Site {
                               )
                                 .filter(
                                   ({ type, id, className, name, value }) => {
-                                    let typeMatches =
+                                    const typeMatches =
                                       type && type.match(/(submit)|(button)/gi)
-                                    let idIncludes =
+                                    const idIncludes =
                                       id && id.match(emailClassRegex)
-                                    let classIncludes =
+                                    const classIncludes =
                                       className &&
                                       className.match(emailClassRegex)
-                                    let nameIncludes =
+                                    const nameIncludes =
                                       name && name.match(emailClassRegex)
-                                    let valueIncludes =
+                                    const valueIncludes =
                                       value && value.match(emailClassRegex)
                                     return (
                                       typeMatches &&
@@ -1012,10 +1016,10 @@ class Site {
                               document.getElementsByTagName('iframe')
                             )
                               .filter(({ id, title, src }) => {
-                                let idIncludes = id && id.match(liveChatRegex)
-                                let titleIncludes =
+                                const idIncludes = id && id.match(liveChatRegex)
+                                const titleIncludes =
                                   title && title.match(liveChatRegex)
-                                let srcIncludes =
+                                const srcIncludes =
                                   src && title.match(liveChatRegex)
                                 return (
                                   idIncludes || titleIncludes || srcIncludes
@@ -1027,7 +1031,7 @@ class Site {
                               document.getElementsByTagName('script')
                             )
                               .filter(({ src }) => {
-                                let srcIncludes =
+                                const srcIncludes =
                                   src && src.match(liveChatRegex)
                                 return srcIncludes
                               })
@@ -1180,8 +1184,8 @@ class Site {
 
       this.inspects = {
         login: logins,
-        subscribe: subscribe,
-        livechats: livechats,
+        subscribe,
+        livechats,
       }
 
       await this.onDetect(
@@ -1367,6 +1371,7 @@ class Site {
           website,
           cpe,
           categories,
+          description,
         }) => ({
           slug,
           name,
@@ -1380,6 +1385,7 @@ class Site {
             slug,
             name,
           })),
+          description: description || '',
         })
       ),
       patterns,
