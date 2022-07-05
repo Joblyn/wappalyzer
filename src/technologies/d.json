@@ -507,7 +507,8 @@
       22
     ],
     "description": "A modern runtime for JavaScript and TypeScript.",
-    "icon": "Deno.svg",
+    "icon": "deno.svg",
+    "oss": true,
     "website": "https://deno.land"
   },
   "Deno Deploy": {
