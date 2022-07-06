@@ -1,7 +1,7 @@
 const http = require('http')
 const path = require('path')
 const express = require('express')
-const Wappalyzer = require('../drivers/npm/cli.js')
+const { fetchUrls } = require('../drivers/npm/server')
 
 const port = 8080
 
@@ -33,7 +33,7 @@ server.get('/lookup', async (req, res) => {
   // eslint-disable-next-line no-console
   console.log(urls)
 
-  const results = await Wappalyzer.fetchUrls(urls)
+  const results = await fetchUrls(urls)
   res.status(200).send(results)
   res.end()
 })
