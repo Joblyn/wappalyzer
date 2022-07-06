@@ -15,9 +15,9 @@ If you don't have time to configure, host, debug and maintain your own infrastru
 
 ## Prerequisites
 
--   [Git](https://git-scm.com)
--   [Node.js](https://nodejs.org) version 14 or higher
--   [Yarn](https://yarnpkg.com)
+- [Git](https://git-scm.com)
+- [Node.js](https://nodejs.org) version 14 or higher
+- [Yarn](https://yarnpkg.com)
 
 ## Quick start
 
@@ -35,19 +35,22 @@ yarn run link
 ```sh
 node src/drivers/npm/cli.js https://example.com
 ```
+#### Start Local http_server
 
+```sh 
+  nodemon src/server/route.js
+```
 ### Chrome extension
-
-* Go to `about:extensions`
-* Enable 'Developer mode'
-* Click 'Load unpacked'
-* Select `src/drivers/webextension`
+- Go to `about:extensions`
+- Enable 'Developer mode'
+- Click 'Load unpacked'
+- Select `src/drivers/webextension`
 
 ### Firefox extension
 
-* Go to `about:debugging#/runtime/this-firefox`
-* Click 'Load Temporary Add-on'
-* Select `src/drivers/webextension/manifest.json`
+- Go to `about:debugging#/runtime/this-firefox`
+- Click 'Load Temporary Add-on'
+- Select `src/drivers/webextension/manifest.json`
 
 ## Specification
 
@@ -210,6 +213,7 @@ Find the JSON schema at [`schema.json`](https://github.com/wappalyzer/wappalyzer
 Cost indicator (based on a typical plan or average monthly price) and available pricing models. For paid products only.
 
 One of:
+
 <ul>
   <li><code>low</code>Less than US $100 / mo</li>
   <li><code>mid</code>Between US $100 - $1,000 / mo</li>
@@ -217,6 +221,7 @@ One of:
 </ul>
 
 Plus any of:
+
 <ul>
   <li><code>freemium</code> Free plan available</li>
   <li><code>onetime</code> One-time payments accepted</li>
@@ -424,11 +429,11 @@ Patterns are essentially JavaScript regular expressions written as strings, but 
 
 ### Quirks and pitfalls
 
--   Because of the string format, the escape character itself must be escaped when using special characters such as the dot (`\\.`). Double quotes must be escaped only once (`\"`). Slashes do not need to be escaped (`/`).
--   Flags are not supported. Regular expressions are treated as case-insensitive.
--   Capture groups (`()`) are used for version detection. In other cases, use non-capturing groups (`(?:)`).
--   Use start and end of string anchors (`^` and `$`) where possible for optimal performance.
--   Short or generic patterns can cause applications to be identified incorrectly. Try to find unique strings to match.
+- Because of the string format, the escape character itself must be escaped when using special characters such as the dot (`\\.`). Double quotes must be escaped only once (`\"`). Slashes do not need to be escaped (`/`).
+- Flags are not supported. Regular expressions are treated as case-insensitive.
+- Capture groups (`()`) are used for version detection. In other cases, use non-capturing groups (`(?:)`).
+- Use start and end of string anchors (`^` and `$`) where possible for optimal performance.
+- Short or generic patterns can cause applications to be identified incorrectly. Try to find unique strings to match.
 
 ### Tags
 
