@@ -51,7 +51,12 @@ server.use((req, res, next) => {
   res.end()
 })
 
-server.listen(port, 'backend.myserver.com', 511, () => {
-  // eslint-disable-next-line no-console
-  console.log(`Server listening on port ${port}`)
-})
+process.env.NODE_ENV === 'development'
+  ? server.listen(port, 'backend.myserver.com', 511, () => {
+      // eslint-disable-next-line no-console
+      console.log(`Server listening on port ${port}`)
+    })
+  : server.listen(process.env.PORT || port, () => {
+      // eslint-disable-next-line no-console
+      console.log('Server is running...')
+    })
