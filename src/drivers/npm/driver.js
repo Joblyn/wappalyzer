@@ -4,8 +4,10 @@ const dns = require('dns').promises
 const path = require('path')
 const http = require('http')
 const https = require('https')
+// eslint-disable-next-line no-unused-vars
 const { title } = require('process')
 const puppeteer = require('puppeteer')
+// eslint-disable-next-line no-unused-vars
 const { IBM_LZ77 } = require('adm-zip/util/constants')
 const Wappalyzer = require('./wappalyzer')
 
@@ -808,18 +810,18 @@ class Site {
                               })
 
                             // check for a div with a textcontent that contains regex
-                            const divTexts = Array.from(
-                              document.getElementsByTagName('div')
-                            )
-                              .map(({ textContent }) => ({
-                                textContent,
-                              }))
-                              .filter(({ textContent }) => {
-                                const textIncludes =
-                                  textContent && textContent.match(signInRegExp)
-                                return textIncludes
-                              })
-                              .map(({ innerText }) => ({ innerText }))
+                            // const divTexts = Array.from(
+                            //   document.getElementsByTagName('div')
+                            // )
+                            //   .map(({ textContent }) => ({
+                            //     textContent,
+                            //   }))
+                            //   .filter(({ textContent }) => {
+                            //     const textIncludes =
+                            //       textContent && textContent.match(signInRegExp)
+                            //     return textIncludes
+                            //   })
+                            //   .map(({ innerText }) => ({ innerText }))
 
                             return {
                               anchors,

@@ -1,4 +1,4 @@
-const http = require('http')
+// const http = require('http')
 const path = require('path')
 const express = require('express')
 const { fetchUrls } = require('../drivers/npm/server')
@@ -7,7 +7,7 @@ const port = 8080
 
 const server = express()
 
-const httpServer = http.createServer(server)
+// const httpServer = http.createServer(server)
 
 // const publicDirectoryPath = path.join(__dirname, '../client/index.html')
 
