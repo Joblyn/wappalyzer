@@ -293,6 +293,23 @@
     "oss": true,
     "website": "https://batflat.org"
   },
+  "Bazaarvoice Curation": {
+    "cats": [
+      96
+    ],
+    "description": "Bazaarvoice Curation is a content curation service Bazaarvoice provides post it's acquisition of Curalate.",
+    "icon": "Bazaarvoice.png",
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": [
+      "edge\\.curalate\\.com",
+      "cdn\\.curalate\\.com"
+    ],
+    "website": "https://www.bazaarvoice.com/products/visual-and-social-content/"
+  },
   "Bazaarvoice Reviews": {
     "cats": [
       90
@@ -311,23 +328,6 @@
       "apps\\.bazaarvoice\\.com"
     ],
     "website": "https://www.bazaarvoice.com/products/ratings-and-reviews/"
-  },
-  "Bazaarvoice Curation": {
-    "cats": [
-      96
-    ],
-    "description": "Bazaarvoice Curation is a content curation service Bazaarvoice provides post it's acquisition of Curalate.",
-    "icon": "Bazaarvoice.png",
-    "pricing": [
-      "high",
-      "recurring"
-    ],
-    "saas": true,
-    "scriptSrc": [
-      "edge\\.curalate\\.com",
-      "cdn\\.curalate\\.com"
-    ],
-    "website": "https://www.bazaarvoice.com/products/visual-and-social-content/"
   },
   "Beans": {
     "cats": [
@@ -963,38 +963,6 @@
     "saas": true,
     "website": "https://www.bokun.io"
   },
-  "Bold Chat": {
-    "cats": [
-      52
-    ],
-    "description": "BoldChat is a live chat platform.",
-    "icon": "BoldChat.png",
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "scriptSrc": "^https?://vmss\\.boldchat\\.com/aid/\\d{18}/bc\\.vms4/vms\\.js",
-    "website": "https://www.boldchat.com/"
-  },
-  "Bold Commerce": {
-    "cats": [
-      76
-    ],
-    "description": "Bold Commerce is a software company that specialises in ecommerce websites and app development.",
-    "icon": "Bold.svg",
-    "pricing": [
-      "recurring",
-      "payg",
-      "low",
-      "poa"
-    ],
-    "saas": true,
-    "scriptSrc": [
-      "\\.boldapps\\.net/",
-      "\\.boldcommerce\\.com"
-    ],
-    "website": "https://boldcommerce.com"
-  },
   "Bold Brain": {
     "cats": [
       100
@@ -1037,6 +1005,38 @@
     "saas": true,
     "scriptSrc": "bundles\\.boldapps\\.net/",
     "website": "https://boldcommerce.com/bundles"
+  },
+  "Bold Chat": {
+    "cats": [
+      52
+    ],
+    "description": "BoldChat is a live chat platform.",
+    "icon": "BoldChat.png",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "^https?://vmss\\.boldchat\\.com/aid/\\d{18}/bc\\.vms4/vms\\.js",
+    "website": "https://www.boldchat.com/"
+  },
+  "Bold Commerce": {
+    "cats": [
+      76
+    ],
+    "description": "Bold Commerce is a software company that specialises in ecommerce websites and app development.",
+    "icon": "Bold.svg",
+    "pricing": [
+      "recurring",
+      "payg",
+      "low",
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": [
+      "\\.boldapps\\.net/",
+      "\\.boldcommerce\\.com"
+    ],
+    "website": "https://boldcommerce.com"
   },
   "Bold Custom Pricing": {
     "cats": [

@@ -731,12 +731,12 @@
     ],
     "description": "PeerBoard is a plug-and-play community solution, which helps groups, clubs, startups, marketplaces and businesses create discussion forums.",
     "icon": "PeerBoard.png",
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
     "scriptSrc": "\\.peerboard\\.com/",
     "website": "https://peerboard.com"
   },
@@ -1352,8 +1352,8 @@
       10
     ],
     "description": "Piwik PRO Core is a free alternative to Google Analytics that is privacy & compliance focused.",
-    "icon": "Piwik PRO Core.svg",
     "excludes": "Matomo Analytics",
+    "icon": "Piwik PRO Core.svg",
     "pricing": [
       "freemium",
       "poa"
@@ -2225,11 +2225,11 @@
       1
     ],
     "description": "ProcessWire is an open source content management system (CMS) and framework (CMF).",
-    "icon": "ProcessWire.svg",
-    "implies": "PHP",
     "headers": {
       "X-Powered-By": "ProcessWire CMS"
     },
+    "icon": "ProcessWire.svg",
+    "implies": "PHP",
     "js": {
       "ProcessWire": ""
     },
@@ -2256,11 +2256,11 @@
     "cats": [
       87
     ],
-    "description": "ProfilePress is a WordPress registration plugin that lets you create login forms, registration forms, user profiles, and more.",
-    "dom": "link[href*='/wp-content/plugins/wp-user-avatar/']",
     "cookies": {
       "ppwp_wp_session": ""
     },
+    "description": "ProfilePress is a WordPress registration plugin that lets you create login forms, registration forms, user profiles, and more.",
+    "dom": "link[href*='/wp-content/plugins/wp-user-avatar/']",
     "icon": "ProfilePress.svg",
     "pricing": [
       "low",

@@ -378,6 +378,23 @@
     "scriptSrc": "/wp-content/plugins/wpcf7-recaptcha/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://wordpress.org/plugins/wpcf7-recaptcha/"
   },
+  "ReConvert": {
+    "cats": [
+      100
+    ],
+    "description": "ReConvert is a post-purchase upsell & thank you page.",
+    "icon": "ReConvert.svg",
+    "implies": "Shopify",
+    "pricing": [
+      "low",
+      "payg",
+      "freemium",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.stilyoapps\\.com/reconvert/assets/js/store_reconvert_node\\.js",
+    "website": "https://www.reconvert.io"
+  },
   "ReDoc": {
     "cats": [
       4
@@ -407,13 +424,13 @@
     },
     "html": "<[^>]+data-react",
     "icon": "React.svg",
-    "meta": {
-      "description": "^Web site created using create-react-app$"
-    },
     "js": {
       "React.version": "^(.+)$\\;version:\\1",
       "ReactOnRails": "",
       "__REACT_ON_RAILS_EVENT_HANDLERS_RAN_ONCE__": ""
+    },
+    "meta": {
+      "description": "^Web site created using create-react-app$"
     },
     "scriptSrc": [
       "react(?:-with-addons)?[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
@@ -613,23 +630,6 @@
     "icon": "Recite Me.png",
     "scriptSrc": "api\\.reciteme\\.com/asset/js",
     "website": "https://reciteme.com/"
-  },
-  "ReConvert": {
-    "cats": [
-      100
-    ],
-    "description": "ReConvert is a post-purchase upsell & thank you page.",
-    "icon": "ReConvert.svg",
-    "implies": "Shopify",
-    "pricing": [
-      "low",
-      "payg",
-      "freemium",
-      "recurring"
-    ],
-    "saas": true,
-    "scriptSrc": "\\.stilyoapps\\.com/reconvert/assets/js/store_reconvert_node\\.js",
-    "website": "https://www.reconvert.io"
   },
   "RecoverMyCart": {
     "cats": [
@@ -931,13 +931,13 @@
     ],
     "description": "Remarkable Commerce is a technology and services company which provides a commerce platform for mid-sized retailers.",
     "icon": "Remarkable.png",
+    "js": {
+      "Remarkable": ""
+    },
     "pricing": [
       "poa"
     ],
     "saas": true,
-    "js": {
-      "Remarkable": ""
-    },
     "website": "https://remarkable.net/"
   },
   "Remix": {

@@ -85,23 +85,6 @@
     "icon": "SDL Tridion.svg",
     "website": "http://www.sdl.com/products/tridion"
   },
-  "Semplice": {
-    "cats": [
-      80,
-      51
-    ],
-    "description": "Semplice is a Wordpress-based website builder made by designers for designers.",
-    "icon": "Semplice.svg",
-    "js": {
-      "semplice.template_dir": ""
-    },
-    "pricing": [
-      "onetime"
-    ],
-    "requires": "WordPress",
-    "scriptSrc": "/wp-content/themes/semplice(?:\\d+)?(?:-child)?(?:-theme)?/",
-    "website": "https://www.semplice.com"
-  },
   "SEMrush": {
     "cats": [
       32
@@ -264,19 +247,6 @@
     "scriptSrc": "embed\\.sendtonews\\.com/",
     "scripts": "embed\\.sendtonews\\.com/",
     "website": "https://www.stnvideo.com"
-  },
-  "Strattic": {
-    "cats": [
-      88
-    ],
-    "description": "Strattic offers static and headless hosting for WordPress sites.",
-    "headers": {
-      "x-powered-by": "Strattic"
-    },
-    "pricing": [ "recurring", "low" ],
-    "requires": "WordPress",
-    "icon": "strattic-icon.png",
-    "website": "https://www.strattic.com/"
   },
   "STUDIO": {
     "cats": [
@@ -1022,6 +992,7 @@
     ],
     "description": "Secomapp is a trusted Shopify Expert providing services through Shopify Apps.",
     "icon": "Secomapp.png",
+    "implies": "Shopify",
     "js": {
       "SECOMAPP": ""
     },
@@ -1030,7 +1001,6 @@
       "low",
       "recurring"
     ],
-    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "cdn\\.secomapp\\.com/",
     "website": "https://www.secomapp.com"
@@ -1044,16 +1014,6 @@
     "icon": "Sectigo.svg",
     "website": "https://sectigo.com/"
   },
-  "Sections.design Shopify App Optimization": {
-    "cats": [
-      92
-    ],
-    "description": "Sections.design Shopify App Optimization is a Shopify section written in liquid for the purpose of improving performance of Shopify stores by optimizing how Shopify app loads.",
-    "dom": "div#shopify-section-app-optimization",
-    "icon": "Sections-Design.png",
-    "implies": "Shopify",
-    "website": "https://github.com/mirceapiturca/Sections/tree/master/App%20Optimization"
-  },
   "Section.io": {
     "cats": [
       31
@@ -1066,6 +1026,16 @@
     },
     "icon": "sectionio.svg",
     "website": "https://www.section.io"
+  },
+  "Sections.design Shopify App Optimization": {
+    "cats": [
+      92
+    ],
+    "description": "Sections.design Shopify App Optimization is a Shopify section written in liquid for the purpose of improving performance of Shopify stores by optimizing how Shopify app loads.",
+    "dom": "div#shopify-section-app-optimization",
+    "icon": "Sections-Design.png",
+    "implies": "Shopify",
+    "website": "https://github.com/mirceapiturca/Sections/tree/master/App%20Optimization"
   },
   "SeedProd Coming Soon": {
     "cats": [
@@ -1318,6 +1288,23 @@
     "saas": true,
     "scriptSrc": "\\.sematext\\.com/experience\\.js",
     "website": "https://sematext.com/experience"
+  },
+  "Semplice": {
+    "cats": [
+      80,
+      51
+    ],
+    "description": "Semplice is a Wordpress-based website builder made by designers for designers.",
+    "icon": "Semplice.svg",
+    "js": {
+      "semplice.template_dir": ""
+    },
+    "pricing": [
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/semplice(?:\\d+)?(?:-child)?(?:-theme)?/",
+    "website": "https://www.semplice.com"
   },
   "Sencha Touch": {
     "cats": [
@@ -1713,12 +1700,12 @@
     "description": "ShipTection is the easiest way to offer shipping protection on your Shopify site.",
     "icon": "ShipTection.png",
     "implies": "Shopify",
-    "scriptSrc": "app\\.shiptection\\.com/",
-    "saas": true,
     "pricing": [
       "mid",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "app\\.shiptection\\.com/",
     "website": "https://wamapps.io/pages/shiptection-protection"
   },
   "Shogun": {
@@ -1789,6 +1776,7 @@
     ],
     "description": "ShopPad Infinite Options allows you to create as many custom option fields for your product pages as you need.",
     "icon": "ShopPad.svg",
+    "implies": "Shopify",
     "js": {
       "Shoppad.apps.infiniteoptions": ""
     },
@@ -1796,7 +1784,6 @@
       "low",
       "recurring"
     ],
-    "implies": "Shopify",
     "website": "https://apps.shopify.com/custom-options"
   },
   "Shopaholic": {
@@ -1822,6 +1809,7 @@
     ],
     "description": "Shopapps is a trusted Shopify Expert providing services through Shopify Apps.",
     "icon": "Shopapps.png",
+    "implies": "Shopify",
     "js": {
       "iStockUrl": "iwish\\.myshopapps\\.com/",
       "iWishUrl": "iwish\\.myshopapps\\.com/"
@@ -1830,7 +1818,6 @@
       "low",
       "recurring"
     ],
-    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "cdn\\.myshopapps\\.com/",
     "website": "http://www.shopapps.in"
@@ -2008,10 +1995,10 @@
     ],
     "description": "Shopify Product reviews allows you to add a customer review feature to your products.",
     "icon": "Shopify.svg",
+    "implies": "Shopify",
     "js": {
       "SPR": ""
     },
-    "implies": "Shopify",
     "scriptSrc": [
       "productreviews\\.shopifycdn\\.com"
     ],
@@ -2334,22 +2321,6 @@
     "saas": true,
     "scriptSrc": "\\.signifyd\\.com",
     "website": "https://www.signifyd.com"
-  },
-  "siimple": {
-    "cats": [
-      66
-    ],
-    "description": "siimple is a minimal CSS toolkit for building flat, clean and responsive web designs.",
-    "icon": "siimple.svg",
-    "dom": {
-      "link[href*='siimple.min.css']": {
-        "attributes": {
-          "href": "/npm/siimple@([\\d\\.]+)/dist/siimple\\.min\\.css\\;version:\\1"
-        }
-      }
-    },
-    "oss": true,
-    "website": "https://siimple.xyz"
   },
   "SilverStripe": {
     "cats": [
@@ -4536,26 +4507,6 @@
     "saas": true,
     "website": "https://www.storehippo.com"
   },
-  "stores.jp": {
-    "cats": [
-      6
-    ],
-    "description": "stores.jp is an ecommerce platform which allows users to create their own ecommerce website.",
-    "icon": "stores.jp.svg",
-    "implies": [
-      "Visa",
-      "Mastercard"
-    ],
-    "js": {
-      "STORES_JP": ""
-    },
-    "pricing": [
-      "freemium",
-      "payg"
-    ],
-    "saas": true,
-    "website": "https://stores.jp/ec/"
-  },
   "Storeden": {
     "cats": [
       6
@@ -4666,6 +4617,22 @@
     ],
     "scriptSrc": "strato-editor\\.com/",
     "website": "https://www.strato.de/homepage-baukasten"
+  },
+  "Strattic": {
+    "cats": [
+      88
+    ],
+    "description": "Strattic offers static and headless hosting for WordPress sites.",
+    "headers": {
+      "x-powered-by": "Strattic"
+    },
+    "icon": "strattic-icon.png",
+    "pricing": [
+      "recurring",
+      "low"
+    ],
+    "requires": "WordPress",
+    "website": "https://www.strattic.com/"
   },
   "Strikingly": {
     "cats": [
@@ -5325,6 +5292,22 @@
     "scriptSrc": "shine(?:\\.min)?\\.js",
     "website": "https://bigspaceship.github.io/shine.js/"
   },
+  "siimple": {
+    "cats": [
+      66
+    ],
+    "description": "siimple is a minimal CSS toolkit for building flat, clean and responsive web designs.",
+    "dom": {
+      "link[href*='siimple.min.css']": {
+        "attributes": {
+          "href": "/npm/siimple@([\\d\\.]+)/dist/siimple\\.min\\.css\\;version:\\1"
+        }
+      }
+    },
+    "icon": "siimple.svg",
+    "oss": true,
+    "website": "https://siimple.xyz"
+  },
   "snigel AdConsent": {
     "cats": [
       67
@@ -5358,6 +5341,26 @@
       "adengine\\.snigelweb\\.com"
     ],
     "website": "https://www.snigel.com/adengine/"
+  },
+  "stores.jp": {
+    "cats": [
+      6
+    ],
+    "description": "stores.jp is an ecommerce platform which allows users to create their own ecommerce website.",
+    "icon": "stores.jp.svg",
+    "implies": [
+      "Visa",
+      "Mastercard"
+    ],
+    "js": {
+      "STORES_JP": ""
+    },
+    "pricing": [
+      "freemium",
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://stores.jp/ec/"
   },
   "styled-components": {
     "cats": [

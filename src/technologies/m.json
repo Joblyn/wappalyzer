@@ -214,10 +214,10 @@
     "meta": {
       "web-author": "^Magazord$"
     },
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://www.magazord.com.br"
   },
   "Magento": {
@@ -1494,17 +1494,17 @@
       32
     ],
     "description": "Mindbox is a marketing automation platform.",
-    "icon":"Mindbox.png",
+    "icon": "Mindbox.png",
     "js": {
-      "mindbox": "",
       "MindboxEndpointSettings": "",
+      "mindbox": "",
       "mindboxBatchedModulesInitialized": ""
     },
-    "saas": true,
     "pricing": [
       "payg",
       "recurring"
     ],
+    "saas": true,
     "website": "https://mindbox.ru"
   },
   "Minero.cc": {
@@ -1923,17 +1923,17 @@
       41
     ],
     "description": "Moneris (formerly Moneris Solutions) is Canada's largest financial technology company that specialises in payment processing.",
-    "icon": "Moneris.svg",
     "headers": {
       "content-security-policy": "\\.moneris\\.com"
     },
+    "icon": "Moneris.svg",
     "js": {
       "initialServerData.monerisConfiguration": ""
     },
-    "saas": true,
     "pricing": [
       "payg"
     ],
+    "saas": true,
     "website": "https://www.moneris.com"
   },
   "Moneris Payment Gateway": {
@@ -1949,8 +1949,8 @@
     "js": {
       "wc_moneris_hosted_tokenization_params": ""
     },
-    "scriptSrc": "/wp-content/plugins/woocommerce-gateway-moneris/",
     "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/woocommerce-gateway-moneris/",
     "website": "https://wordpress.org/plugins/wc-moneris-payment-gateway"
   },
   "MongoDB": {

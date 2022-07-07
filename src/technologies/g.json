@@ -1930,11 +1930,11 @@
       "GumroadOverlay": "",
       "createGumroadOverlay": ""
     },
-    "saas": true,
-    "scriptSrc": "gumroad\\.com/js/gumroad\\.js",
     "pricing": [
       "payg"
     ],
+    "saas": true,
+    "scriptSrc": "gumroad\\.com/js/gumroad\\.js",
     "website": "https://gumroad.com"
   },
   "Gumstack": {
