@@ -1082,7 +1082,10 @@
     "dom": "div#shopify-section-app-optimization",
     "icon": "Sections-Design.png",
     "implies": "Shopify",
+<<<<<<< HEAD
     "oss": true,
+=======
+>>>>>>> 83def8265 (change server log)
     "website": "https://github.com/mirceapiturca/Sections/tree/master/App%20Optimization"
   },
   "SeedProd Coming Soon": {
@@ -4758,11 +4761,18 @@
       "x-powered-by": "Strattic"
     },
     "icon": "strattic-icon.png",
+<<<<<<< HEAD
     "implies": "WordPress",
+=======
+>>>>>>> 83def8265 (change server log)
     "pricing": [
       "recurring",
       "low"
     ],
+<<<<<<< HEAD
+=======
+    "requires": "WordPress",
+>>>>>>> 83def8265 (change server log)
     "website": "https://www.strattic.com/"
   },
   "Strikingly": {

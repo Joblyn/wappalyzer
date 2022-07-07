@@ -349,6 +349,7 @@
     ],
     "website": "https://www.bazaarvoice.com/products/ratings-and-reviews/"
   },
+<<<<<<< HEAD
   "Beam AfterSell": {
     "cats": [
       100
@@ -386,6 +387,8 @@
     "scriptSrc": "//outsellapp\\.com/",
     "website": "https://apps.shopify.com/outsell"
   },
+=======
+>>>>>>> 83def8265 (change server log)
   "Beans": {
     "cats": [
       84

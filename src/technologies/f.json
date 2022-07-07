@@ -267,6 +267,7 @@
     "scriptSrc": "fareharbor\\.com/embeds/api/",
     "website": "https://fareharbor.com"
   },
+<<<<<<< HEAD
   "Fast Bundle": {
     "cats": [
       100
@@ -287,6 +288,8 @@
     "scriptSrc": "api\\.fastbundle\\.co/",
     "website": "https://fastbundle.co"
   },
+=======
+>>>>>>> 83def8265 (change server log)
   "Fast Checkout": {
     "cats": [
       6
