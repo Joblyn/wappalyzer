@@ -1,4 +1,12 @@
 {
+  "name": "wapppalyzer",
+  "description": "wappalyzer",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "18.3.0",
+    "yarn": "1.22.19"
+  },
   "dependencies": {
     "@heroku/buildpack-registry": "^1.0.1",
     "@prantlf/jsonlint": "^10.2.0",
