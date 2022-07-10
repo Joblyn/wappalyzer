@@ -326,7 +326,6 @@ class Driver {
           acceptInsecureCerts: true,
           args: chromiumArgs,
           executablePath: CHROMIUM_BIN,
-          headless: true,
         })
       }
 
