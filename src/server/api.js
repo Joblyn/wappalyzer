@@ -1,5 +1,5 @@
 // const http = require('http')
-const path = require('path')
+// const path = require('path')
 const express = require('express')
 const { fetchUrls } = require('../drivers/npm/server')
 
@@ -38,7 +38,7 @@ server.get('/lookup', async (req, res) => {
   res.end()
 })
 
-server.use(express.static(path.resolve(__dirname, '/src')))
+// server.use(express.static(path.resolve(__dirname, '/src')))
 
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
@@ -53,12 +53,12 @@ server.use((req, res, next) => {
 
 // process.env.NODE_ENV === 'production'
 //   ?
-server.listen(process.env.PORT || port, () => {
-  // eslint-disable-next-line no-console
-  console.log(`Server is running on port ${process.env.PORT || port}`)
-})
-// :
-// server.listen(port, 'backend.myserver.com', 511, () => {
+// server.listen(process.env.PORT || port, () => {
 //   // eslint-disable-next-line no-console
-//   console.log(`Server listening on port ${port}`)
+//   console.log(`Server is running on port ${process.env.PORT || port}`)
 // })
+// :
+server.listen(port, 'backend.myserver.com', 511, () => {
+  // eslint-disable-next-line no-console
+  console.log(`Server listening on port ${port}`)
+})

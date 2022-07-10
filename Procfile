@@ -1,1 +1,1 @@
-web: yarn install && node src/server/route.js
+web: yarn install && node src/server/api.js

@@ -12,7 +12,9 @@
     "@prantlf/jsonlint": "^10.2.0",
     "adm-zip": "^0.4.16",
     "convert-svg-to-png": "^0.5.0",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "netlify-lambda": "^2.0.15",
+    "serverless-http": "^3.0.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",
@@ -34,6 +36,8 @@
     "convert": "node --no-warnings ./bin/convert.js",
     "prettify": "jsonlint -si --trim-trailing-commas --enforce-double-quotes ./src/categories.json ./src/technologies/*.json",
     "build": "yarn run link && yarn run validate && yarn run prettify && yarn run convert && node ./bin/build.js",
-    "build:safari": "xcrun safari-web-extension-converter --swift --project-location build --force src/drivers/webextension"
+    "build:safari": "xcrun safari-web-extension-converter --swift --project-location build --force src/drivers/webextension",
+    "netlify:start": "./node_modules/.bin/netlify-lambda serve src/server",
+    "netlify:build": "./node_modules/.bin/netlify-lambda build src/server"
   }
 }
