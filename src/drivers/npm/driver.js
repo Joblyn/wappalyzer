@@ -16,7 +16,9 @@ const { setTechnologies, setCategories, analyze, analyzeManyToMany, resolve } =
 
 const {
   //  CHROMIUM_BIN,
-    CHROMIUM_DATA_DIR, CHROMIUM_WEBSOCKET } = process.env
+  CHROMIUM_DATA_DIR,
+  CHROMIUM_WEBSOCKET,
+} = process.env
 
 const chromiumArgs = [
   '--no-sandbox',
