@@ -14,7 +14,9 @@ const Wappalyzer = require('./wappalyzer')
 const { setTechnologies, setCategories, analyze, analyzeManyToMany, resolve } =
   Wappalyzer
 
-const { CHROMIUM_BIN, CHROMIUM_DATA_DIR, CHROMIUM_WEBSOCKET } = process.env
+const {
+  //  CHROMIUM_BIN,
+    CHROMIUM_DATA_DIR, CHROMIUM_WEBSOCKET } = process.env
 
 const chromiumArgs = [
   '--no-sandbox',
