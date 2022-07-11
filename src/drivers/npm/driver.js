@@ -325,7 +325,7 @@ class Driver {
           ignoreHTTPSErrors: true,
           acceptInsecureCerts: true,
           args: chromiumArgs,
-          executablePath: CHROMIUM_BIN,
+          // executablePath: CHROMIUM_BIN,
         })
       }
 
