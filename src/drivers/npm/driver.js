@@ -14,7 +14,11 @@ const Wappalyzer = require('./wappalyzer')
 const { setTechnologies, setCategories, analyze, analyzeManyToMany, resolve } =
   Wappalyzer
 
-const { CHROMIUM_BIN, CHROMIUM_DATA_DIR, CHROMIUM_WEBSOCKET } = process.env
+const {
+  // CHROMIUM_BIN,
+  CHROMIUM_DATA_DIR,
+  CHROMIUM_WEBSOCKET,
+} = process.env
 
 const chromiumArgs = [
   '--no-sandbox',
@@ -325,7 +329,7 @@ class Driver {
           ignoreHTTPSErrors: true,
           acceptInsecureCerts: true,
           args: chromiumArgs,
-          executablePath: CHROMIUM_BIN,
+          // executablePath: CHROMIUM_BIN,
         })
       }
 

@@ -3,7 +3,7 @@ FROM node:14-alpine
 MAINTAINER Wappalyzer <hello@wappalyzer.com>
 
 ENV WAPPALYZER_ROOT /opt/wappalyzer
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
+# ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 ENV CHROMIUM_BIN /usr/local/bin/chromium
 
 RUN apk update && apk add -u --no-cache \
