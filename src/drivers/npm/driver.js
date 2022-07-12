@@ -409,7 +409,12 @@ class Site {
 >>>>>>> 5ee4d0314 (added coded to check for login or sigin button on a page)
 =======
     this.destroyed = false
+<<<<<<< HEAD
 >>>>>>> 2f30fa4c9 (NPM fixes)
+=======
+    // login button
+    this.buttons = {}
+>>>>>>> cd5983d08 (update)
   }
 
   log(message, source = 'driver', type = 'log') {
