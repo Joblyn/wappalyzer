@@ -406,6 +406,7 @@ class Site {
 
     // inspects
     this.inspects = {}
+    this.destroyed = false
   }
 
   log(message, source = 'driver', type = 'log') {
