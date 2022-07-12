@@ -391,6 +391,12 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 86a915417 (Build v6.10.27)
+>>>>>>> wappalyzer-master
   "Zipify OCU": {
     "cats": [
       100
@@ -405,7 +411,17 @@
     "scriptSrc": "/zipify-oneclickupsell-vendor\\.js",
     "website": "https://zipify.com/apps/ocu/"
   },
+<<<<<<< HEAD
 >>>>>>> de378fc3d (Build v6.10.27)
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> e669d2ea5 (Add Zipify OCU / shopify-apps)
+=======
+>>>>>>> de378fc3d (Build v6.10.27)
+>>>>>>> 86a915417 (Build v6.10.27)
+>>>>>>> wappalyzer-master
   "Zipify Pages": {
     "cats": [
       100,
@@ -422,6 +438,13 @@
       "recurring"
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    "saas": true,
+=======
+<<<<<<< HEAD
+>>>>>>> 86a915417 (Build v6.10.27)
+>>>>>>> wappalyzer-master
     "website": "https://zipify.com/apps/pages/"
 =======
   "Zipify OCU": {

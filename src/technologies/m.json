@@ -38,6 +38,13 @@
     "headers": {
       "X-Powered-By": "MATORI.NET"
     },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    "icon": "default.svg",
+>>>>>>> 86a915417 (Build v6.10.27)
+>>>>>>> wappalyzer-master
     "implies": "OpenResty",
     "website": "http://matori.net"
   },

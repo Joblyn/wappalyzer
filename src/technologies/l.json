@@ -251,7 +251,15 @@
     "description": "LazySizes unveilhooks plugin extends lazySizes to lazyload scripts/widgets, background images, styles and video/audio elements.",
     "icon": "default.svg",
     "oss": true,
+<<<<<<< HEAD
     "scriptSrc": "ls\\.unveilhooks(?:\\.min)?\\.js",
+=======
+<<<<<<< HEAD
+    "scriptSrc": "ls\\.unveilhooks(?:\\.min)?\\.js",
+=======
+    "scriptSrc": "ls.\\unveilhooks(?:\\.min)?\\.js",
+>>>>>>> 86a915417 (Build v6.10.27)
+>>>>>>> wappalyzer-master
     "website": "https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks"
   },
   "Leadinfo": {
@@ -645,10 +653,20 @@
       "_linkedin_partner_id": "",
       "ORIBI": ""
     },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> wappalyzer-master
     "scriptSrc": [
       "snap\\.licdn\\.com/li\\.lms-analytics/insight\\.min\\.js",
       "cdn\\.oribi\\.io"
     ],
+<<<<<<< HEAD
+=======
+=======
+    "scriptSrc": "snap\\.licdn\\.com/li\\.lms-analytics/insight\\.min\\.js",
+>>>>>>> ac707252e (Prettify)
+>>>>>>> wappalyzer-master
     "scripts": "_linkedin_partner_id",
     "website": "https://business.linkedin.com/marketing-solutions/insight-tag"
   },

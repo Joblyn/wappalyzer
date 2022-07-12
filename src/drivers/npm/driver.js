@@ -400,11 +400,29 @@ class Site {
 
     this.probed = false
 
+<<<<<<< HEAD
     // login button
     this.buttons = {}
     this.destroyed = false
     // login button
     this.buttons = {}
+=======
+<<<<<<< HEAD
+    this.destroyed = false
+=======
+    // login button
+    this.buttons = {}
+<<<<<<< HEAD
+>>>>>>> 5ee4d0314 (added coded to check for login or sigin button on a page)
+=======
+    this.destroyed = false
+<<<<<<< HEAD
+>>>>>>> 2f30fa4c9 (NPM fixes)
+=======
+    // login button
+    this.buttons = {}
+>>>>>>> cd5983d08 (update)
+>>>>>>> wappalyzer-master
   }
 
   log(message, source = 'driver', type = 'log') {
@@ -596,7 +614,19 @@ class Site {
 
     // gets the response from page
     page.on('response', async (response) => {
+<<<<<<< HEAD
       if (this.destroyed || !page || page.__closed || page.isClosed()) {
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+      if (this.destroyed || !page || page.__closed || page.isClosed()) {
+=======
+      if (this.destroyed || !page || page.isClosed()) {
+>>>>>>> 2f30fa4c9 (NPM fixes)
+=======
+      if (this.destroyed || !page || page.__closed || page.isClosed()) {
+>>>>>>> ae8d7f429 (wip)
+>>>>>>> wappalyzer-master
         return
       }
 
@@ -612,13 +642,33 @@ class Site {
           await this.onDetect(response.url(), analyze({ scripts }))
         }
       } catch (error) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ae8d7f429 (wip)
+>>>>>>> wappalyzer-master
         if (error.constructor.name !== 'ProtocolError') {
           error.message += ` (${url})`
 
           this.error(error)
         }
+<<<<<<< HEAD
       }
 
+=======
+<<<<<<< HEAD
+      }
+
+=======
+        this.error(error)
+=======
+>>>>>>> ae8d7f429 (wip)
+      }
+
+>>>>>>> 2f30fa4c9 (NPM fixes)
+>>>>>>> wappalyzer-master
       try {
         if (response.url() === url.href) {
           this.analyzedUrls[url.href] = {
@@ -676,11 +726,27 @@ class Site {
       await page.goto(url.href)
 
       if (page.url() === 'about:blank') {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ae8d7f429 (wip)
+>>>>>>> wappalyzer-master
         const error = new Error(`The page failed to load (${url})`)
 
         error.code = 'WAPPALYZER_PAGE_EMPTY'
 
         throw error
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+        throw new Error(`The page failed to load (${url.href})`)
+>>>>>>> 2f30fa4c9 (NPM fixes)
+=======
+>>>>>>> ae8d7f429 (wip)
+>>>>>>> wappalyzer-master
       }
 
       if (!this.options.noScripts) {
@@ -1013,8 +1079,38 @@ class Site {
         ...this.cache[url.href],
       })
 
+<<<<<<< HEAD
       page.__closed = true
 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+      page.__closed = true
+=======
+=======
+      page.__closed = true
+
+>>>>>>> ae8d7f429 (wip)
+>>>>>>> wappalyzer-master
+      try {
+        await page.close()
+
+        this.log(`Page closed (${url})`)
+      } catch (error) {
+        // Continue
+      }
+>>>>>>> 2f30fa4c9 (NPM fixes)
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> wappalyzer-master
+      return reducedLinks
+    } catch (error) {
+      page.__closed = true
+
+>>>>>>> ae8d7f429 (wip)
       try {
         await page.close()
 
@@ -1023,6 +1119,8 @@ class Site {
         // Continue
       }
 
+<<<<<<< HEAD
+=======
       return reducedLinks
     } catch (error) {
       page.__closed = true
@@ -1035,6 +1133,7 @@ class Site {
         // Continue
       }
 
+>>>>>>> wappalyzer-master
       if (error.message.includes('net::ERR_NAME_NOT_RESOLVED')) {
         const newError = new Error(`Hostname could not be resolved (${url})`)
 
@@ -1042,6 +1141,27 @@ class Site {
 
         throw newError
       }
+<<<<<<< HEAD
+
+      if (
+        error.constructor.name === 'TimeoutError' ||
+        error.code === 'PROMISE_TIMEOUT_ERROR'
+      ) {
+        error.code = 'WAPPALYZER_TIMEOUT_ERROR'
+      }
+
+      error.message += ` (${url})`
+=======
+>>>>>>> ae8d7f429 (wip)
+
+      if (
+        error.constructor.name === 'TimeoutError' ||
+        error.code === 'PROMISE_TIMEOUT_ERROR'
+      ) {
+        error.code = 'WAPPALYZER_TIMEOUT_ERROR'
+      }
+
+      error.message += ` (${url})`
 
       if (
         error.constructor.name === 'TimeoutError' ||

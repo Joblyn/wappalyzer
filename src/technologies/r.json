@@ -977,7 +977,15 @@
     "description": "Remarkable Commerce is a technology and services company which provides a ecommerce platform for mid-sized retailers.",
     "icon": "Remarkable.png",
     "js": {
+<<<<<<< HEAD
       "Remarkable.BasketItems": ""
+=======
+<<<<<<< HEAD
+      "Remarkable.BasketItems": ""
+=======
+      "Remarkable": ""
+>>>>>>> 86a915417 (Build v6.10.27)
+>>>>>>> wappalyzer-master
     },
     "pricing": [
       "poa"

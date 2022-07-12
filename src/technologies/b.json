@@ -1949,6 +1949,13 @@
   },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+=======
+>>>>>>> 93a5c9e94 (Build v6.10.36)
+<<<<<<< HEAD
+>>>>>>> wappalyzer-master
   "BSmart": {
     "cats": [
       6
@@ -1985,8 +1992,17 @@
     "website": "https://www.bsecure.pk"
 >>>>>>> 35d41d511 (Add bSecure / payment-processors)
   },
+<<<<<<< HEAD
 =======
 >>>>>>> 6d06248b3 (Build v6.10.36)
+=======
+<<<<<<< HEAD
+>>>>>>> 69210dc66 (Add bSecure / payment-processors)
+=======
+=======
+>>>>>>> 6d06248b3 (Build v6.10.36)
+>>>>>>> 93a5c9e94 (Build v6.10.36)
+>>>>>>> wappalyzer-master
   "Bubble": {
     "cats": [
       51,
