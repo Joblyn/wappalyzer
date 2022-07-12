@@ -403,6 +403,8 @@ class Site {
     // login button
     this.buttons = {}
     this.destroyed = false
+    // login button
+    this.buttons = {}
   }
 
   log(message, source = 'driver', type = 'log') {
