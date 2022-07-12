@@ -731,8 +731,6 @@
     "scriptSrc": "connect\\.nosto\\.\\w+/",
     "website": "https://www.nosto.com"
   },
-<<<<<<< HEAD
-=======
   "Nosto Visual UGC": {
     "cats": [
       96
@@ -751,7 +749,6 @@
     "scriptSrc": "\\.stackla\\.com/",
     "website": "https://www.nosto.com/products/visual-ugc/"
   },
->>>>>>> c4704aa76 (Prettify)
   "Notion": {
     "cats": [
       51
