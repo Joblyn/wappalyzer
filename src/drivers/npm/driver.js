@@ -588,7 +588,6 @@ class Site {
 
     // gets the response from page
     page.on('response', async (response) => {
-
       if (this.destroyed || !page || page.__closed || page.isClosed()) {
         return
       }
