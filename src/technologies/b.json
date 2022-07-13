@@ -76,26 +76,6 @@
     ],
     "website": "https://www.brt.it"
   },
-  "BSmart": {
-    "cats": [
-      6
-    ],
-    "cookies": {
-      "bsmartstate": ""
-    },
-    "description": "BSmart is an ecommerce platform, programmed by Microline.",
-    "icon": "BSmart.png",
-    "js": {
-      "BSmartConfirmWindow": "",
-      "bsGetBSmartStock": "",
-      "bsmartPriceList": ""
-    },
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "website": "https://www.bsmart.co.il"
-  },
   "Babel": {
     "cats": [
       19
@@ -349,7 +329,6 @@
     ],
     "website": "https://www.bazaarvoice.com/products/ratings-and-reviews/"
   },
-<<<<<<< HEAD
   "Beam AfterSell": {
     "cats": [
       100
@@ -387,8 +366,6 @@
     "scriptSrc": "//outsellapp\\.com/",
     "website": "https://apps.shopify.com/outsell"
   },
-=======
->>>>>>> 83def8265 (change server log)
   "Beans": {
     "cats": [
       84
@@ -1950,12 +1927,6 @@
     "saas": true,
     "website": "https://www.bsale.cl"
   },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 93a5c9e94 (Build v6.10.36)
-<<<<<<< HEAD
   "BSmart": {
     "cats": [
       6
@@ -1975,29 +1946,7 @@
       "poa"
     ],
     "website": "https://www.bsmart.co.il"
-=======
-  "bSecure": {
-    "cats": [
-      41
-    ],
-    "description": "bSecure is a one-click checkout solution for selling your products all across the globe instantly.",
-    "icon": "bSecure.svg",
-    "js": {
-      "bsecure_js_object": ""
-    },
-    "saas": true,
-    "pricing": [
-      "payg"
-    ],
-    "website": "https://www.bsecure.pk"
->>>>>>> 35d41d511 (Add bSecure / payment-processors)
   },
-<<<<<<< HEAD
->>>>>>> 69210dc66 (Add bSecure / payment-processors)
-=======
-=======
->>>>>>> 6d06248b3 (Build v6.10.36)
->>>>>>> 93a5c9e94 (Build v6.10.36)
   "Bubble": {
     "cats": [
       51,

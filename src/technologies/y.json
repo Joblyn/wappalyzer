@@ -16,7 +16,6 @@
     "saas": true,
     "website": "https://apps.shopify.com/ymq-options"
   },
-<<<<<<< HEAD
   "YNAP Ecommerce": {
     "cats": [
       6
@@ -33,8 +32,6 @@
     "saas": true,
     "website": "https://www.ynap.com/pages/about-us/what-we-do/monobrand/"
   },
-=======
->>>>>>> 86a915417 (Build v6.10.27)
   "YUI": {
     "cats": [
       59

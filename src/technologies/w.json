@@ -877,10 +877,6 @@
     },
     "website": "http://worldwide.webtrends.com"
   },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 93a5c9e94 (Build v6.10.36)
   "Webzie": {
     "cats": [
       1,
@@ -899,11 +895,6 @@
     "saas": true,
     "website": "https://www.webzie.com/"
   },
-<<<<<<< HEAD
-=======
->>>>>>> ac707252e (Prettify)
-=======
->>>>>>> 93a5c9e94 (Build v6.10.36)
   "Weebly": {
     "cats": [
       1

@@ -267,29 +267,6 @@
     "scriptSrc": "fareharbor\\.com/embeds/api/",
     "website": "https://fareharbor.com"
   },
-<<<<<<< HEAD
-  "Fast Bundle": {
-    "cats": [
-      100
-    ],
-    "description": "Fast Bundle gives you the ability to create product bundle offers with discounts.",
-    "icon": "Fast Bundle.svg",
-    "implies": "Shopify",
-    "js": {
-      "FastBundleConf.bundleBox": "",
-      "FastBundleConf.cartInfo.app_version": "v([\\d\\.]+)\\;version:\\1"
-    },
-    "pricing": [
-      "freemium",
-      "recurring",
-      "low"
-    ],
-    "saas": true,
-    "scriptSrc": "api\\.fastbundle\\.co/",
-    "website": "https://fastbundle.co"
-  },
-=======
->>>>>>> 83def8265 (change server log)
   "Fast Checkout": {
     "cats": [
       6
