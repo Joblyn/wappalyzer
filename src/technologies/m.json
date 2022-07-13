@@ -37,7 +37,10 @@
     "description": "MATORI.NET is a fully managed reverse proxy.",
     "headers": {
       "X-Powered-By": "MATORI.NET"
-    }
+    },
+    "icon": "default.svg",
+    "implies": "OpenResty",
+    "website": "http://matori.net"
   },
   "MDUI": {
     "cats": [
