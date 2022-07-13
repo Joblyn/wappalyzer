@@ -1,7 +1,7 @@
 {
   "name": "wapppalyzer",
   "description": "wappalyzer",
-  "version": "1.0.0",
+  "version": "6.10.37",
   "private": true,
   "engines": {
     "node": "18.3.0",
