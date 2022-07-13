@@ -747,23 +747,6 @@
     "scriptSrc": "cdn\\.gladly\\.com",
     "website": "https://www.gladly.com"
   },
-  "Glassbox": {
-    "cats": [
-      10
-    ],
-    "description": "Glassbox is an Israeli software company. It sells session-replay analytics software and services.",
-    "icon": "Glassbox.svg",
-    "js": {
-      "sessioncamConfiguration": "",
-      "SessionCamRecorder": ""
-    },
-    "saas": true,
-    "scriptSrc": "cdn\\.glassboxcdn\\.com/",
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://www.glassbox.com"
-  },
   "GlassFish": {
     "cats": [
       22
@@ -775,6 +758,23 @@
     "icon": "GlassFish.png",
     "implies": "Java",
     "website": "http://glassfish.java.net"
+  },
+  "Glassbox": {
+    "cats": [
+      10
+    ],
+    "description": "Glassbox is an Israeli software company. It sells session-replay analytics software and services.",
+    "icon": "Glassbox.svg",
+    "js": {
+      "SessionCamRecorder": "",
+      "sessioncamConfiguration": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "cdn\\.glassboxcdn\\.com/",
+    "website": "https://www.glassbox.com"
   },
   "Glitch": {
     "cats": [
@@ -972,6 +972,26 @@
     "icon": "Go.svg",
     "website": "https://golang.org"
   },
+  "Go Instore": {
+    "cats": [
+      103
+    ],
+    "description": "Go Instore uses high-definition live video to connect online customers with in-store product experts.",
+    "headers": {
+      "content-security-policy": "\\.goinstore\\.com"
+    },
+    "icon": "Go Instore.svg",
+    "js": {
+      "GISAPP.videoJsCtrl": "",
+      "gisAppLib.postRobot": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "//gis\\.goinstore\\.com/",
+    "website": "https://goinstore.com"
+  },
   "GoAffPro": {
     "cats": [
       71
@@ -1159,26 +1179,6 @@
     ],
     "saas": true,
     "website": "https://www.godaddy.com/websites/website-builder"
-  },
-  "Go Instore": {
-    "cats": [
-      103
-    ],
-    "description": "Go Instore uses high-definition live video to connect online customers with in-store product experts.",
-    "icon": "Go Instore.svg",
-    "headers": {
-      "content-security-policy": "\\.goinstore\\.com"
-    },
-    "js": {
-      "GISAPP.videoJsCtrl": "",
-      "gisAppLib.postRobot": ""
-    },
-    "scriptSrc": "//gis\\.goinstore\\.com/",
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://goinstore.com"
   },
   "GoJS": {
     "cats": [

@@ -1018,12 +1018,12 @@
     "description": "WideBundle is a Shopify application that allows a merchant to set up bundles on his store.",
     "icon": "WideBundle.png",
     "implies": "Shopify",
-    "scriptSrc": "//widebundle\\.com/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "//widebundle\\.com/",
     "website": "https://en.widebundle.com"
   },
   "Widen": {

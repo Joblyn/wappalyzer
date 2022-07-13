@@ -449,11 +449,11 @@
       "Python",
       "Django"
     ],
+    "oss": true,
     "scriptSrc": [
       "/mailman\\d+/static/.+\\.js",
       "/static/(?:hyperkitty|django-mailman3)/.+\\.js"
     ],
-    "oss": true,
     "website": "http://list.org"
   },
   "Mailmunch": {

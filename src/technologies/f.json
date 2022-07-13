@@ -267,6 +267,26 @@
     "scriptSrc": "fareharbor\\.com/embeds/api/",
     "website": "https://fareharbor.com"
   },
+  "Fast Bundle": {
+    "cats": [
+      100
+    ],
+    "description": "Fast Bundle gives you the ability to create product bundle offers with discounts.",
+    "icon": "Fast Bundle.svg",
+    "implies": "Shopify",
+    "js": {
+      "FastBundleConf.bundleBox": "",
+      "FastBundleConf.cartInfo.app_version": "v([\\d\\.]+)\\;version:\\1"
+    },
+    "pricing": [
+      "freemium",
+      "recurring",
+      "low"
+    ],
+    "saas": true,
+    "scriptSrc": "api\\.fastbundle\\.co/",
+    "website": "https://fastbundle.co"
+  },
   "Fast Checkout": {
     "cats": [
       6
@@ -908,20 +928,20 @@
     "cats": [
       22
     ],
-    "description": "Fly is a platform for running full stack apps and databases.",
     "cookies": {
       "_fly": ""
     },
+    "description": "Fly is a platform for running full stack apps and databases.",
     "headers": {
       "fly-request-id": "",
       "server": "^Fly/[\\w]+\\s\\(.*\\)$",
       "via": "^.*\\sfly\\.io$"
     },
+    "icon": "Fly.io.png",
     "pricing": [
       "freemium",
       "payg"
     ],
-    "icon": "Fly.io.png",
     "website": "https://fly.io"
   },
   "Flyspray": {

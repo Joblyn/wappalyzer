@@ -977,8 +977,8 @@
     "description": "Remarkable Commerce is a technology and services company which provides a ecommerce platform for mid-sized retailers.",
     "icon": "Remarkable.png",
     "js": {
-      "Remarkable.BasketItems": "",
-      "Remarkable": ""
+      "Remarkable": "",
+      "Remarkable.BasketItems": ""
     },
     "pricing": [
       "poa"
@@ -1413,26 +1413,6 @@
     "saas": true,
     "website": "https://www.rezgo.com"
   },
-  "Richpanel": {
-    "cats": [
-      53
-    ],
-    "description": "Richpanel is a purpose-built CRM and customer support platform for ecommerce and DTC brands.",
-    "icon": "Richpanel.svg",
-    "js": {
-      "Richpanel.PLUGIN_API_URL": "",
-      "richpanel_messenger_url": "",
-      "RichpanelAppProxy": ""
-    },
-    "scriptSrc": "\\.richpanel\\.com/",
-    "saas": true,
-    "pricing": [
-      "freemium",
-      "mid",
-      "recurring"
-    ],
-    "website": "https://www.richpanel.com"
-  },
   "RichRelevance": {
     "cats": [
       76
@@ -1449,6 +1429,26 @@
     "saas": true,
     "scriptSrc": "\\.richrelevance\\.com/",
     "website": "https://richrelevance.com"
+  },
+  "Richpanel": {
+    "cats": [
+      53
+    ],
+    "description": "Richpanel is a purpose-built CRM and customer support platform for ecommerce and DTC brands.",
+    "icon": "Richpanel.svg",
+    "js": {
+      "Richpanel.PLUGIN_API_URL": "",
+      "RichpanelAppProxy": "",
+      "richpanel_messenger_url": ""
+    },
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.richpanel\\.com/",
+    "website": "https://www.richpanel.com"
   },
   "Rickshaw": {
     "cats": [
