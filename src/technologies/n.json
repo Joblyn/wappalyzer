@@ -753,9 +753,9 @@
     "cats": [
       51
     ],
-    "description": "Notion is a collaboration platform with modified Markdown support that integrates kanban boards, tasks, wikis, and database.",
-    "dom": "html.notion-html",
+    "description": "Nosto Visual UGC (Earlier known as Stackla) is a cloud-based content marketing platform that helps discover, curate, display and engage with user-generated content across all digital marketing platforms.",
     "icon": "Notion.svg",
+    "dom": "html[class='notion-html']",
     "pricing": [
       "freemium",
       "recurring",
@@ -763,7 +763,8 @@
       "poa"
     ],
     "saas": true,
-    "website": "https://notion.so"
+    "scriptSrc": "\\.stackla\\.com/",
+    "website": "https://www.nosto.com/products/visual-ugc/"
   },
   "Nudgify": {
     "cats": [
