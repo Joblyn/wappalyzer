@@ -526,13 +526,6 @@
     "scriptSrc": "(?:cdn)?\\.(?:jwwb|jouwweb)\\.nl/",
     "website": "https://www.jouwweb.nl"
   },
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> ac707252e (Prettify)
->>>>>>> wappalyzer-master
   "JsObservable": {
     "cats": [
       59
@@ -567,14 +560,6 @@
     "scriptSrc": "([\\d\\.]+)?/jsviews(?:\\.min)?\\.js\\;version:\\1",
     "website": "https://www.jsviews.com/#jsviews"
   },
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 86a915417 (Build v6.10.27)
-=======
->>>>>>> ac707252e (Prettify)
->>>>>>> wappalyzer-master
   "Judge.me": {
     "cats": [
       90,
@@ -683,11 +668,11 @@
     ],
     "description": "Juo is a centralised experimentation platform for innovative marketing and product teams.",
     "icon": "Juo.svg",
-    "scriptSrc": "cdn\\.juo\\.io/",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "cdn\\.juo\\.io/",
     "website": "https://get.juo.io"
   },
   "Justo": {

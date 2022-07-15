@@ -388,15 +388,6 @@
     ],
     "website": "https://www.zip.co/"
   },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 86a915417 (Build v6.10.27)
->>>>>>> wappalyzer-master
   "Zipify OCU": {
     "cats": [
       100
@@ -411,17 +402,6 @@
     "scriptSrc": "/zipify-oneclickupsell-vendor\\.js",
     "website": "https://zipify.com/apps/ocu/"
   },
-<<<<<<< HEAD
->>>>>>> de378fc3d (Build v6.10.27)
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> e669d2ea5 (Add Zipify OCU / shopify-apps)
-=======
->>>>>>> de378fc3d (Build v6.10.27)
->>>>>>> 86a915417 (Build v6.10.27)
->>>>>>> wappalyzer-master
   "Zipify Pages": {
     "cats": [
       100,
@@ -437,34 +417,8 @@
       "low",
       "recurring"
     ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    "saas": true,
-=======
-<<<<<<< HEAD
->>>>>>> 86a915417 (Build v6.10.27)
->>>>>>> wappalyzer-master
-    "website": "https://zipify.com/apps/pages/"
-=======
-  "Zipify OCU": {
-    "cats": [
-      100
-    ],
-    "description": "Zipify OCU allows you to add upsells and cross-sells to your checkout sequence.",
-    "icon": "Zipify OCU.svg",
-    "scriptSrc": "/zipify-oneclickupsell-vendor\\.js",
-    "saas": true,
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "website": "https://zipify.com/apps/ocu/"
->>>>>>> db11c2aed (Add Zipify OCU / shopify-apps)
-=======
     "saas": true,
     "website": "https://zipify.com/apps/pages/"
->>>>>>> de378fc3d (Build v6.10.27)
   },
   "Zipkin": {
     "cats": [

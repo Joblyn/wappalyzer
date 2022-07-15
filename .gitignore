@@ -3,9 +3,12 @@
 /src/drivers/**/technologies/*
 /src/drivers/**/wappalyzer.js
 /src/drivers/webextension/images/icons/converted/*
+/src/drivers/webextension
 
 node_modules
 package-lock.json
+funtions
+yarn.lock
 
 !.gitkeep
 

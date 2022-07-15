@@ -503,64 +503,17 @@
     "website": "https://www.demandbase.com"
   },
   "Deno": {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> wappalyzer-master
     "cats": [
       22
     ],
     "description": "A modern runtime for JavaScript and TypeScript.",
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> wappalyzer-master
     "icon": "deno.svg",
     "oss": true,
     "website": "https://deno.land"
   },
   "Deno Deploy": {
-<<<<<<< HEAD
-=======
-=======
->>>>>>> e86474d43 (add Deno)
     "cats": [
       22
-    ],
-<<<<<<< HEAD
-    "description": "Deno Deploy is a distributed system that runs JavaScript, TypeScript, and WebAssembly at the edge, worldwide.",
-    "headers": {
-      "server": "^deno/*"
-    },
-    "icon": "deno.svg",
-    "implies": [
-      "Deno"
-    ],
-    "pricing": [
-      "freemium",
-      "low"
-    ],
-    "saas": true,
-    "website": "https://deno.land/"
-=======
-    "description": "A modern runtime for JavaScript and TypeScript.",
-=======
-<<<<<<< HEAD
->>>>>>> 4502070c2 (chore: Remove duplicate icon)
-    "icon": "Deno.svg",
-=======
-=======
->>>>>>> 6c5b26aa0 (improve aws waf captcha)
-    "icon": "deno.svg",
-    "oss": true,
-    "website": "https://deno.land"
->>>>>>> e86474d43 (add Deno)
-  },
-  "Deno Deploy": {
->>>>>>> wappalyzer-master
-    "cats": [
-      62
     ],
     "description": "Deno Deploy is a distributed system that runs JavaScript, TypeScript, and WebAssembly at the edge, worldwide.",
     "headers": {
@@ -575,7 +528,8 @@
       "low"
     ],
     "saas": true,
-    "website": "https://deno.land/"
+    "website": "https://deno.land/",
+    "oss": true
   },
   "Deta": {
     "cats": [
@@ -1351,6 +1305,21 @@
     "saas": true,
     "website": "https://apps.shopify.com/drop-a-hint-v2"
   },
+  "DropInBlog": {
+    "cats": [
+      11
+    ],
+    "description": "DropInBlog is a remotely hosted, cloud based platform that is designed to embed a blog into your html site.",
+    "dom": "link[href*='.dropinblog.com/']",
+    "icon": "DropInBlog.png",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.dropinblog\\.com/",
+    "website": "https://dropinblog.com"
+  },
   "Dropbox": {
     "cats": [
       95
@@ -1360,21 +1329,6 @@
     },
     "icon": "Dropbox.svg",
     "website": "https://www.dropbox.com"
-  },
-  "DropInBlog": {
-    "cats": [
-      11
-    ],
-    "description": "DropInBlog is a remotely hosted, cloud based platform that is designed to embed a blog into your html site.",
-    "icon": "DropInBlog.png",
-    "dom": "link[href*='.dropinblog.com/']",
-    "scriptSrc": "\\.dropinblog\\.com/",
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://dropinblog.com"
   },
   "Dropzone": {
     "cats": [

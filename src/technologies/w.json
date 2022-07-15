@@ -877,13 +877,6 @@
     },
     "website": "http://worldwide.webtrends.com"
   },
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 93a5c9e94 (Build v6.10.36)
->>>>>>> wappalyzer-master
   "Webzie": {
     "cats": [
       1,
@@ -902,11 +895,6 @@
     "saas": true,
     "website": "https://www.webzie.com/"
   },
-<<<<<<< HEAD
-=======
->>>>>>> ac707252e (Prettify)
-=======
->>>>>>> 93a5c9e94 (Build v6.10.36)
   "Weebly": {
     "cats": [
       1
@@ -1030,12 +1018,12 @@
     "description": "WideBundle is a Shopify application that allows a merchant to set up bundles on his store.",
     "icon": "WideBundle.png",
     "implies": "Shopify",
-    "scriptSrc": "//widebundle\\.com/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "//widebundle\\.com/",
     "website": "https://en.widebundle.com"
   },
   "Widen": {

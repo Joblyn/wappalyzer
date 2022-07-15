@@ -38,13 +38,7 @@
     "headers": {
       "X-Powered-By": "MATORI.NET"
     },
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
     "icon": "default.svg",
->>>>>>> 86a915417 (Build v6.10.27)
->>>>>>> wappalyzer-master
     "implies": "OpenResty",
     "website": "http://matori.net"
   },
@@ -455,11 +449,11 @@
       "Python",
       "Django"
     ],
+    "oss": true,
     "scriptSrc": [
       "/mailman\\d+/static/.+\\.js",
       "/static/(?:hyperkitty|django-mailman3)/.+\\.js"
     ],
-    "oss": true,
     "website": "http://list.org"
   },
   "Mailmunch": {

@@ -281,17 +281,17 @@
       16
     ],
     "description": "AWS WAF Captcha helps block unwanted bot traffic by requiring users to successfully complete challenges before their web request are allowed to reach AWS WAF protected resources.",
-    "icon": "aws.svg",
-    "implies": "Amazon Web Services",
     "headers": {
       "x-amzn-waf-action": "^captcha$"
     },
-    "scriptSrc": "captcha\\.awswaf\\.com/",
-    "saas": true,
+    "icon": "aws.svg",
+    "implies": "Amazon Web Services",
     "pricing": [
       "recurring",
       "payg"
     ],
+    "saas": true,
+    "scriptSrc": "captcha\\.awswaf\\.com/",
     "website": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-captcha.html"
   },
   "AWStats": {
@@ -675,23 +675,6 @@
     ],
     "website": "https://www.acquia.com/products/drupal-cloud/site-studio"
   },
-  "Acquire Live Chat": {
-    "cats": [
-      52
-    ],
-    "description": "Acquire is a multi-channel customer support platform designed to provide real-time customer support to customers.",
-    "icon": "Acquire.svg",
-    "js": {
-      "acquire": "",
-      "_acquire_init_config": ""
-    },
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "scriptSrc": "\\.acquire\\.io/(?!cobrowse)",
-    "website": "https://acquire.io"
-  },
   "Acquire Cobrowse": {
     "cats": [
       19,
@@ -700,8 +683,8 @@
     "description": "Acquire Cobrowse is a safe and secure method of interacting with a customer's browser without downloading any additional software.",
     "icon": "Acquire.svg",
     "js": {
-      "acquireCobrowseSettings": "",
       "acquireCobrowseRTC": "",
+      "acquireCobrowseSettings": "",
       "acquireConfigNodeServer": ""
     },
     "pricing": [
@@ -710,6 +693,23 @@
     "saas": true,
     "scriptSrc": "\\.acquire\\.io/cobrowse/",
     "website": "https://acquire.io/co-browsing"
+  },
+  "Acquire Live Chat": {
+    "cats": [
+      52
+    ],
+    "description": "Acquire is a multi-channel customer support platform designed to provide real-time customer support to customers.",
+    "icon": "Acquire.svg",
+    "js": {
+      "_acquire_init_config": "",
+      "acquire": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.acquire\\.io/(?!cobrowse)",
+    "website": "https://acquire.io"
   },
   "Act-On": {
     "cats": [

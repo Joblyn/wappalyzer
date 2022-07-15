@@ -4,13 +4,21 @@ const dns = require('dns').promises
 const path = require('path')
 const http = require('http')
 const https = require('https')
+// eslint-disable-next-line no-unused-vars
+const { title } = require('process')
 const puppeteer = require('puppeteer')
+// eslint-disable-next-line no-unused-vars
+const { IBM_LZ77 } = require('adm-zip/util/constants')
 const Wappalyzer = require('./wappalyzer')
 
 const { setTechnologies, setCategories, analyze, analyzeManyToMany, resolve } =
   Wappalyzer
 
-const { CHROMIUM_BIN, CHROMIUM_DATA_DIR, CHROMIUM_WEBSOCKET } = process.env
+const {
+  // CHROMIUM_BIN,
+  CHROMIUM_DATA_DIR,
+  CHROMIUM_WEBSOCKET,
+} = process.env
 
 const chromiumArgs = [
   '--single-process',
@@ -318,7 +326,7 @@ class Driver {
           ignoreHTTPSErrors: true,
           acceptInsecureCerts: true,
           args: chromiumArgs,
-          executablePath: CHROMIUM_BIN,
+          // executablePath: CHROMIUM_BIN,
         })
       }
 
@@ -399,30 +407,9 @@ class Site {
     this.cache = {}
 
     this.probed = false
-
-<<<<<<< HEAD
-    // login button
-    this.buttons = {}
+    // inspects
+    this.inspects = {}
     this.destroyed = false
-    // login button
-    this.buttons = {}
-=======
-<<<<<<< HEAD
-    this.destroyed = false
-=======
-    // login button
-    this.buttons = {}
-<<<<<<< HEAD
->>>>>>> 5ee4d0314 (added coded to check for login or sigin button on a page)
-=======
-    this.destroyed = false
-<<<<<<< HEAD
->>>>>>> 2f30fa4c9 (NPM fixes)
-=======
-    // login button
-    this.buttons = {}
->>>>>>> cd5983d08 (update)
->>>>>>> wappalyzer-master
   }
 
   log(message, source = 'driver', type = 'log') {
@@ -614,19 +601,7 @@ class Site {
 
     // gets the response from page
     page.on('response', async (response) => {
-<<<<<<< HEAD
       if (this.destroyed || !page || page.__closed || page.isClosed()) {
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-      if (this.destroyed || !page || page.__closed || page.isClosed()) {
-=======
-      if (this.destroyed || !page || page.isClosed()) {
->>>>>>> 2f30fa4c9 (NPM fixes)
-=======
-      if (this.destroyed || !page || page.__closed || page.isClosed()) {
->>>>>>> ae8d7f429 (wip)
->>>>>>> wappalyzer-master
         return
       }
 
@@ -642,33 +617,13 @@ class Site {
           await this.onDetect(response.url(), analyze({ scripts }))
         }
       } catch (error) {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> ae8d7f429 (wip)
->>>>>>> wappalyzer-master
         if (error.constructor.name !== 'ProtocolError') {
           error.message += ` (${url})`
 
           this.error(error)
         }
-<<<<<<< HEAD
       }
 
-=======
-<<<<<<< HEAD
-      }
-
-=======
-        this.error(error)
-=======
->>>>>>> ae8d7f429 (wip)
-      }
-
->>>>>>> 2f30fa4c9 (NPM fixes)
->>>>>>> wappalyzer-master
       try {
         if (response.url() === url.href) {
           this.analyzedUrls[url.href] = {
@@ -726,27 +681,11 @@ class Site {
       await page.goto(url.href)
 
       if (page.url() === 'about:blank') {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> ae8d7f429 (wip)
->>>>>>> wappalyzer-master
-        const error = new Error(`The page failed to load (${url})`)
+        const error = new Error(`The page failed to load (${url.href})`)
 
         error.code = 'WAPPALYZER_PAGE_EMPTY'
 
         throw error
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-        throw new Error(`The page failed to load (${url.href})`)
->>>>>>> 2f30fa4c9 (NPM fixes)
-=======
->>>>>>> ae8d7f429 (wip)
->>>>>>> wappalyzer-master
       }
 
       if (!this.options.noScripts) {
@@ -806,6 +745,9 @@ class Site {
       let dom = []
       // login
       let logins = {}
+      // subscribe
+      let subscribe = {}
+      let livechats = {}
 
       if (html) {
         // Links
@@ -840,54 +782,86 @@ class Site {
           : await this.promiseTimeout(
               (
                 await this.promiseTimeout(
-                  page.evaluateHandle(() => {
-                    const regExp =
-                      /signin|login|sign_in|log_in|sign in|log in/gi
-                    // anchors
-                    let anchors = Array.from(document.getElementsByTagName('a'))
-                      .map(({ href, title, textContent }) => ({
-                        href,
-                        title,
-                        textContent,
-                      }))
-                      .filter(({ href, title, textContent }) => {
-                        let hrefIncludes = href && href.match(regExp)
-                        let titleIncludes = title && title.match(regExp)
-                        let textIncludes =
-                          textContent && textContent.match(regExp)
-                        return hrefIncludes || titleIncludes || textIncludes
-                      })
-                      
-                    // buttons
-                    let buttons = Array.from(
-                      document.getElementsByTagName('button')
-                    )
-                      .map(({ href, textContent }) => ({
-                        href,
-                        textContent,
-                      }))
-                      .filter(({ href, textContent }) => {
-                        let hrefIncludes = href && href.match(regExp)
-                        let textIncludes =
-                          textContent && textContent.match(regExp)
-                        return hrefIncludes || textIncludes
-                      })
+                  // delay page inspection by 20s
+                  new Promise((resolve) => {
+                    setTimeout(
+                      () =>
+                        resolve(
+                          page.evaluateHandle(() => {
+                            const signInRegExp =
+                              /((sign|log)(\s{0,}|_)(in|up))|register/gi
 
-                    // divs
-                    let divTexts = Array.from(
-                      document.getElementsByTagName('div')
-                    )
-                      .map(({ textContent }) => ({
-                        textContent,
-                      }))
-                      .filter(({ textContent }) => {
-                        let textIncludes =
-                          textContent && textContent.match(regExp)
-                        return textIncludes
-                      })
-                      .map(({ innerText }) => ({ innerText }))
+                            // anchors
+                            const anchors = Array.from(
+                              document.getElementsByTagName('a')
+                            )
+                              .map(({ href, title, textContent, alt }) => ({
+                                href,
+                                title,
+                                textContent,
+                                alt,
+                              }))
+                              .filter(({ href, title, textContent, alt }) => {
+                                const hrefIncludes =
+                                  href && href.match(signInRegExp)
+                                const titleIncludes =
+                                  title && title.match(signInRegExp)
+                                const textIncludes =
+                                  textContent && textContent.match(signInRegExp)
+                                const altIncludes =
+                                  alt && alt.match(signInRegExp)
+                                return (
+                                  hrefIncludes ||
+                                  titleIncludes ||
+                                  textIncludes ||
+                                  altIncludes
+                                )
+                              })
 
-                    return { anchors, buttons, divTexts }
+                            // check for a button with href attribute or textcontent that contains regex
+                            const buttons = Array.from(
+                              document.getElementsByTagName('button')
+                            )
+                              .map(({ href, title, textContent }) => ({
+                                href,
+                                title,
+                                textContent,
+                              }))
+                              .filter(({ href, title, textContent }) => {
+                                const hrefIncludes =
+                                  href && href.match(signInRegExp)
+                                const titleIncludes =
+                                  title && title.match(signInRegExp)
+                                const textIncludes =
+                                  textContent && textContent.match(signInRegExp)
+                                return (
+                                  hrefIncludes || textIncludes || titleIncludes
+                                )
+                              })
+
+                            // check for a div with a textcontent that contains regex
+                            // const divTexts = Array.from(
+                            //   document.getElementsByTagName('div')
+                            // )
+                            //   .map(({ textContent }) => ({
+                            //     textContent,
+                            //   }))
+                            //   .filter(({ textContent }) => {
+                            //     const textIncludes =
+                            //       textContent && textContent.match(signInRegExp)
+                            //     return textIncludes
+                            //   })
+                            //   .map(({ innerText }) => ({ innerText }))
+
+                            return {
+                              anchors,
+                              buttons,
+                              // divTexts
+                            }
+                          })
+                        ),
+                      20000
+                    )
                   }),
                   { jsonValue: () => ({}) },
                   'Timeout (login)'
@@ -895,6 +869,218 @@ class Site {
               ).jsonValue(),
               {},
               'Timeout (login)'
+            )
+
+        // subscribe dialog
+        subscribe = this.options.recursive
+          ? {}
+          : await this.promiseTimeout(
+              (
+                await this.promiseTimeout(
+                  // delay page inspection by 20s
+                  new Promise((resolve) => {
+                    setTimeout(
+                      () =>
+                        resolve(
+                          page.evaluateHandle(() => {
+                            const emailInputRegex =
+                              /(join|subscri(b|p)(e|tion)|sign(\s{0,}|_)up|newsletter|email)/gi
+                            const emailPlaceholderRegex =
+                              /(email|(^.{0,}@.{0,}\.com))/gi
+                            const emailClassRegex =
+                              /join|subsci(b|p)(e|tion)|sign(\s{0,1}|_)up|newsletter/gi
+                            // const btnTextRegex =
+                            //   /subscri(b|p)(e|tion)|newsletter/gi
+
+                            const els = []
+                            //  input
+                            const inputBtnEls = (() => {
+                              const emailInputEls = Array.from(
+                                document.querySelectorAll('input[type=email]')
+                              )
+                                .filter(
+                                  ({
+                                    name: _name,
+                                    id,
+                                    placeholder,
+                                    className,
+                                  }) => {
+                                    const nameIncludes =
+                                      _name && _name.match(emailInputRegex)
+                                    const idIncludes =
+                                      id && id.match(emailInputRegex)
+                                    const placeholderIncludes =
+                                      placeholder &&
+                                      placeholder.match(emailPlaceholderRegex)
+                                    const classIncludes =
+                                      className &&
+                                      className
+                                        .split(' ')
+                                        .some((c) => c.match(emailClassRegex))
+                                    return (
+                                      nameIncludes ||
+                                      idIncludes ||
+                                      placeholderIncludes ||
+                                      classIncludes
+                                    )
+                                  }
+                                )
+                                .map(
+                                  ({ name, id, placeholder, className }) => ({
+                                    name,
+                                    id,
+                                    placeholder,
+                                    className,
+                                  })
+                                )
+
+                              const btnEls = Array.from(
+                                document.querySelectorAll('button')
+                              )
+                                .filter(
+                                  ({ type, id, className, textContent }) => {
+                                    // let typeMatches =
+                                    //   type && type.match(/submit|button/gi)
+                                    const idIncludes =
+                                      id && id.match(emailClassRegex)
+                                    const classIncludes =
+                                      className &&
+                                      className
+                                        .split(' ')
+                                        .some((c) => c.match(emailClassRegex))
+                                    const textIncludes =
+                                      textContent &&
+                                      textContent.match(emailClassRegex)
+                                    return (
+                                      idIncludes ||
+                                      classIncludes ||
+                                      textIncludes
+                                    )
+                                  }
+                                )
+                                .map(
+                                  ({ type, id, className, textContent }) => ({
+                                    type,
+                                    id,
+                                    className,
+                                    textContent,
+                                  })
+                                )
+
+                              const submitInputEls = Array.from(
+                                document.querySelectorAll(
+                                  'input[type = submit]'
+                                )
+                              )
+                                .filter(
+                                  ({ type, id, className, name, value }) => {
+                                    const typeMatches =
+                                      type && type.match(/(submit)|(button)/gi)
+                                    const idIncludes =
+                                      id && id.match(emailClassRegex)
+                                    const classIncludes =
+                                      className &&
+                                      className.match(emailClassRegex)
+                                    const nameIncludes =
+                                      name && name.match(emailClassRegex)
+                                    const valueIncludes =
+                                      value && value.match(emailClassRegex)
+                                    return (
+                                      typeMatches &&
+                                      (idIncludes ||
+                                        classIncludes ||
+                                        nameIncludes ||
+                                        valueIncludes)
+                                    )
+                                  }
+                                )
+                                .map(
+                                  ({ type, id, className, name, value }) => ({
+                                    type,
+                                    id,
+                                    className,
+                                    name,
+                                    value,
+                                  })
+                                )
+
+                              els.push({
+                                subscribe: {
+                                  emailInputs: emailInputEls,
+                                  btns: btnEls,
+                                  submitInputs: submitInputEls,
+                                },
+                              })
+
+                              return els
+                            })()
+
+                            return { inputBtnEls }
+                          })
+                        ),
+                      20000
+                    )
+                  }),
+                  { jsonValue: () => ({}) },
+                  'Timeout (subscribe)'
+                )
+              ).jsonValue(),
+              {},
+              'Timeout (subscribe)'
+            )
+
+        // livechats
+        livechats = this.options.recursive
+          ? {}
+          : await this.promiseTimeout(
+              (
+                await this.promiseTimeout(
+                  // delay page inspection by 20s
+                  new Promise((resolve) => {
+                    setTimeout(
+                      () =>
+                        resolve(
+                          page.evaluateHandle(() => {
+                            const liveChatRegex =
+                              /chat|widget|messag(e|ing)|twiliio|tawk|zapier|live(-|_|\s{0,})chat|mobile(-|_|\s{0,})monkey|go(-|_|\s{0,})bot|purechat|bold(-|_|\s{0,})360|wp(-|_|\s{0,})chat|tidio|smarts(-|_|\s{0,})upp|chatty(-|_|\s{0,})people|user(-|_|\s{0,})like|chatra|chaport|snapengage|acquire|kayako|fresh(-|_|\s{0,})chat|drift|help(-|_|\s{0,})crunch|zendesk(-|_|\s{0,})chat|click(-|_|\s{0,})desk|inter(-|_|\s{0,})com|olark|g2|fresh(-|_|\s{0,})desk|crisp|live(-|_|\s{0,})zilla|jivo(-|_|\s{0,})chat|qualaroo|hotjar|flash(-|_|\s{0,})talking/gi
+                            // iframes
+                            const iframes = Array.from(
+                              document.getElementsByTagName('iframe')
+                            )
+                              .filter(({ id, title, src }) => {
+                                const idIncludes = id && id.match(liveChatRegex)
+                                const titleIncludes =
+                                  title && title.match(liveChatRegex)
+                                const srcIncludes =
+                                  src && title.match(liveChatRegex)
+                                return (
+                                  idIncludes || titleIncludes || srcIncludes
+                                )
+                              })
+                              .map(({ id, title, src }) => ({ id, title, src }))
+
+                            const scripts = Array.from(
+                              document.getElementsByTagName('script')
+                            )
+                              .filter(({ src }) => {
+                                const srcIncludes =
+                                  src && src.match(liveChatRegex)
+                                return srcIncludes
+                              })
+                              .map(({ src }) => ({ src }))
+
+                            return { iframes, scripts }
+                          })
+                        ),
+                      20000
+                    )
+                  }),
+                  { jsonValue: () => ({}) },
+                  'Timeout (livechats)'
+                )
+              ).jsonValue(),
+              {},
+              'Timeout (livechats)'
             )
 
         // Text
@@ -1028,8 +1214,10 @@ class Site {
         meta,
       }
 
-      this.buttons = {
-        logins,
+      this.inspects = {
+        login: logins,
+        subscribe,
+        livechats,
       }
 
       await this.onDetect(
@@ -1078,20 +1266,8 @@ class Site {
         links: reducedLinks,
         ...this.cache[url.href],
       })
-
-<<<<<<< HEAD
       page.__closed = true
 
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-      page.__closed = true
-=======
-=======
-      page.__closed = true
-
->>>>>>> ae8d7f429 (wip)
->>>>>>> wappalyzer-master
       try {
         await page.close()
 
@@ -1099,18 +1275,12 @@ class Site {
       } catch (error) {
         // Continue
       }
->>>>>>> 2f30fa4c9 (NPM fixes)
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> wappalyzer-master
+      this.log(`Page closed (${url})`)
+
       return reducedLinks
     } catch (error) {
       page.__closed = true
-
->>>>>>> ae8d7f429 (wip)
       try {
         await page.close()
 
@@ -1118,22 +1288,6 @@ class Site {
       } catch (error) {
         // Continue
       }
-
-<<<<<<< HEAD
-=======
-      return reducedLinks
-    } catch (error) {
-      page.__closed = true
-
-      try {
-        await page.close()
-
-        this.log(`Page closed (${url})`)
-      } catch (error) {
-        // Continue
-      }
-
->>>>>>> wappalyzer-master
       if (error.message.includes('net::ERR_NAME_NOT_RESOLVED')) {
         const newError = new Error(`Hostname could not be resolved (${url})`)
 
@@ -1141,27 +1295,6 @@ class Site {
 
         throw newError
       }
-<<<<<<< HEAD
-
-      if (
-        error.constructor.name === 'TimeoutError' ||
-        error.code === 'PROMISE_TIMEOUT_ERROR'
-      ) {
-        error.code = 'WAPPALYZER_TIMEOUT_ERROR'
-      }
-
-      error.message += ` (${url})`
-=======
->>>>>>> ae8d7f429 (wip)
-
-      if (
-        error.constructor.name === 'TimeoutError' ||
-        error.code === 'PROMISE_TIMEOUT_ERROR'
-      ) {
-        error.code = 'WAPPALYZER_TIMEOUT_ERROR'
-      }
-
-      error.message += ` (${url})`
 
       if (
         error.constructor.name === 'TimeoutError' ||
@@ -1263,6 +1396,7 @@ class Site {
           website,
           cpe,
           categories,
+          description,
         }) => ({
           slug,
           name,
@@ -1276,10 +1410,11 @@ class Site {
             slug,
             name,
           })),
+          description: description || '',
         })
       ),
       patterns,
-      buttons: this.buttons,
+      inspects: this.inspects,
     }
 
     await this.emit('analyze', results)

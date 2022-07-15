@@ -4,23 +4,7 @@
   "author": "Wappalyzer",
   "homepage_url": "https://www.wappalyzer.com/",
   "description": "Identify web technologies",
-<<<<<<< HEAD
-  "version": "6.10.36",
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "version": "6.10.36",
-=======
-  "version": "6.10.27",
->>>>>>> 86a915417 (Build v6.10.27)
-=======
-  "version": "6.10.35",
->>>>>>> ae8d7f429 (wip)
-=======
-  "version": "6.10.36",
->>>>>>> 93a5c9e94 (Build v6.10.36)
->>>>>>> wappalyzer-master
+  "version": "6.10.37",
   "default_locale": "en",
   "manifest_version": 2,
   "icons": {

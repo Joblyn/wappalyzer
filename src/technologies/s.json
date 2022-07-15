@@ -3719,16 +3719,16 @@
       102
     ],
     "description": "Sorted is a global SaaS company that provides data-driven software for checkouts, warehouses, and shipping.",
-    "icon": "Sorted.svg",
     "dom": "a[href*='return.clicksit.com/shop/']",
+    "icon": "Sorted.svg",
     "js": {
       "clicksit_window_on_load": ""
     },
-    "scriptSrc": "return\\.clicksit\\.com/",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "return\\.clicksit\\.com/",
     "website": "https://sorted.com/give-your-customers-a-5-returns-experience/"
   },
   "SoteShop": {
