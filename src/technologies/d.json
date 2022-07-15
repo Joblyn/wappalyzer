@@ -521,13 +521,13 @@
     "implies": [
       "Deno"
     ],
+    "oss": true,
     "pricing": [
       "freemium",
       "low"
     ],
     "saas": true,
-    "website": "https://deno.land/",
-    "oss": true
+    "website": "https://deno.land/"
   },
   "Deta": {
     "cats": [
