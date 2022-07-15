@@ -128,9 +128,6 @@ function dateDiff(file) {
                   outputFilePath,
                 })
                 .catch((error) => {
-                  // eslint-disable-next-line no-console
-                  console.log('error', error)
-                  console.log('fileName', fileName)
                   throw new Error(`${error} (${fileName})`)
                 })
 
