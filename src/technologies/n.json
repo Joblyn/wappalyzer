@@ -754,8 +754,8 @@
       51
     ],
     "description": "Nosto Visual UGC (Earlier known as Stackla) is a cloud-based content marketing platform that helps discover, curate, display and engage with user-generated content across all digital marketing platforms.",
-    "icon": "Notion.svg",
     "dom": "html[class='notion-html']",
+    "icon": "Notion.svg",
     "pricing": [
       "freemium",
       "recurring",

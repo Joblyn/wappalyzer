@@ -281,7 +281,7 @@ class Driver {
       htmlMaxRows: 3000,
       maxDepth: 3,
       maxUrls: 10,
-      maxWait: 30000,
+      maxWait: 50000,
       recursive: false,
       probe: false,
       proxy: false,
@@ -407,9 +407,12 @@ class Site {
     this.cache = {}
 
     this.probed = false
-    // inspects
+
     this.inspects = {}
+
     this.destroyed = false
+
+    this.totalSize = 0
   }
 
   log(message, source = 'driver', type = 'log') {
@@ -666,6 +669,22 @@ class Site {
             ? response.securityDetails().issuer()
             : ''
 
+          // eslint-disable-next-line no-console
+          console.log('page', page.response())
+          // eslint-disable-next-line no-console
+          console.log(
+            'responseHeader',
+            response.getResponseHeader('Content-Length')
+          )
+          // eslint-disable-next-line no-console
+          console.log('header', headers)
+          // eslint-disable-next-line no-console
+          console.log('status', response.status())
+          // eslint-disable-next-line no-console
+          console.log('text', response.text())
+          // eslint-disable-next-line no-console
+          console.log('body', JSON.stringify(response.body()))
+
           await this.onDetect(url, analyze({ headers, certIssuer }))
 
           await this.emit('response', { page, response, headers, certIssuer })
@@ -674,6 +693,27 @@ class Site {
         error.message += ` (${url})`
 
         this.error(error)
+      }
+    })
+
+    // page content size
+    await page.on('response', (response) => {
+      const url = response.url()
+      if (!url.startsWith('data:') && response.ok) {
+        response.buffer().then(
+          (b) => {
+            const size = Number(b.length) / (1024 * 1024)
+            this.totalSize += size
+            // eslint-disable-next-line no-console
+            console.log(`${response.status()} ${url} ${b.length} bytes`)
+          },
+          (e) => {
+            // eslint-disable-next-line no-console
+            console.error(`${response.status()} ${url} failed: ${e}`)
+          }
+        )
+        // eslint-disable-next-line no-console
+        console.log('totalSize:', this.totalSize)
       }
     })
 
@@ -853,6 +893,8 @@ class Site {
                             //   })
                             //   .map(({ innerText }) => ({ innerText }))
 
+                            // eslint-disable-next-line no-console
+                            console.log(JSON.stringify(anchors))
                             return {
                               anchors,
                               buttons,
@@ -1311,6 +1353,9 @@ class Site {
 
   // analyzes the url passed in
   async analyze(url = this.originalUrl, index = 1, depth = 1) {
+    // eslint-disable-next-line no-console
+    console.log('url', url)
+
     if (this.options.recursive) {
       await sleep(this.options.delay * index)
     }
@@ -1386,6 +1431,7 @@ class Site {
 
     const results = {
       urls: this.analyzedUrls,
+      size: `${this.totalSize} MB`,
       technologies: resolve(this.detections).map(
         ({
           slug,

@@ -507,7 +507,6 @@
       22
     ],
     "description": "A modern runtime for JavaScript and TypeScript.",
-    "icon": "deno.svg",
     "oss": true,
     "website": "https://deno.land"
   },
@@ -519,17 +518,16 @@
     "headers": {
       "server": "^deno/*"
     },
-    "icon": "deno.svg",
     "implies": [
       "Deno"
     ],
+    "oss": true,
     "pricing": [
       "freemium",
       "low"
     ],
     "saas": true,
-    "website": "https://deno.land/",
-    "oss": true
+    "website": "https://deno.land/"
   },
   "Deta": {
     "cats": [
