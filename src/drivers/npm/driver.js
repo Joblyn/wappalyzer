@@ -9,6 +9,7 @@ const { title } = require('process')
 const puppeteer = require('puppeteer')
 // eslint-disable-next-line no-unused-vars
 const { IBM_LZ77 } = require('adm-zip/util/constants')
+const fetch = require('node-fetch')
 const Wappalyzer = require('./wappalyzer')
 
 const { setTechnologies, setCategories, analyze, analyzeManyToMany, resolve } =
@@ -281,7 +282,7 @@ class Driver {
       htmlMaxRows: 3000,
       maxDepth: 3,
       maxUrls: 10,
-      maxWait: 50000,
+      maxWait: 100000,
       recursive: false,
       probe: false,
       proxy: false,
@@ -412,7 +413,9 @@ class Site {
 
     this.destroyed = false
 
-    this.totalSize = 0
+    this.totalSize = {
+      js: 0,
+    }
   }
 
   log(message, source = 'driver', type = 'log') {
@@ -545,7 +548,7 @@ class Site {
 
     let responseReceived = false
 
-    // on xhr call the url
+    // page request
     page.on('request', async (request) => {
       try {
         if (request.resourceType() === 'xhr') {
@@ -582,9 +585,35 @@ class Site {
           request.frame() !== page.mainFrame() ||
           !['document', ...(this.options.noScripts ? [] : ['script'])].includes(
             request.resourceType()
+          ) ||
+          ['stylesheet', 'image', 'media', 'font'].includes(
+            request.resourceType()
           )
         ) {
-          request.abort('blockedbyclient')
+          await request.abort('blockedbyclient')
+          const response = await fetch(request.url(), {
+            method: 'HEAD',
+          })
+          if (response.ok) {
+            const size =
+              Number(response.headers.get('content-length')) / (1024 * 1024)
+            this.totalSize[request.resourceType()] = this.totalSize[
+              request.resourceType()
+            ]
+              ? this.totalSize[request.resourceType()] + size
+              : size
+            // eslint-disable-next-line no-console
+            console.log(request.resourceType(), size)
+            // eslint-disable-next-line no-console
+            console.log('totalSize', this.totalSize)
+          } else {
+            // eslint-disable-next-line no-console
+            console.log(
+              `something wrong with ${request.resourceType()}; ${request.url()}`
+            )
+          }
+          // eslint-disable-next-line no-console
+          console.log('here')
         } else {
           const headers = {
             ...request.headers(),
@@ -669,22 +698,6 @@ class Site {
             ? response.securityDetails().issuer()
             : ''
 
-          // eslint-disable-next-line no-console
-          console.log('page', page.response())
-          // eslint-disable-next-line no-console
-          console.log(
-            'responseHeader',
-            response.getResponseHeader('Content-Length')
-          )
-          // eslint-disable-next-line no-console
-          console.log('header', headers)
-          // eslint-disable-next-line no-console
-          console.log('status', response.status())
-          // eslint-disable-next-line no-console
-          console.log('text', response.text())
-          // eslint-disable-next-line no-console
-          console.log('body', JSON.stringify(response.body()))
-
           await this.onDetect(url, analyze({ headers, certIssuer }))
 
           await this.emit('response', { page, response, headers, certIssuer })
@@ -694,26 +707,30 @@ class Site {
 
         this.error(error)
       }
-    })
 
-    // page content size
-    await page.on('response', (response) => {
-      const url = response.url()
-      if (!url.startsWith('data:') && response.ok) {
-        response.buffer().then(
-          (b) => {
-            const size = Number(b.length) / (1024 * 1024)
-            this.totalSize += size
-            // eslint-disable-next-line no-console
-            console.log(`${response.status()} ${url} ${b.length} bytes`)
-          },
-          (e) => {
-            // eslint-disable-next-line no-console
-            console.error(`${response.status()} ${url} failed: ${e}`)
-          }
-        )
-        // eslint-disable-next-line no-console
-        console.log('totalSize:', this.totalSize)
+      // page content size
+      try {
+        const url = response.url()
+        if (!url.startsWith('data:') && response.ok) {
+          response.buffer().then(
+            (b) => {
+              const size = Number(b.length) / (1024 * 1024)
+              this.totalSize.js += size
+              // eslint-disable-next-line no-console
+              console.log(`${response.status()} ${url} ${b.length} bytes`)
+            },
+            (e) => {
+              // eslint-disable-next-line no-console
+              console.error(`${response.status()} ${url} failed: ${e}`)
+            }
+          )
+          // eslint-disable-next-line no-console
+          console.log('js:', this.totalSize)
+        }
+      } catch (error) {
+        error.message += ` (${url})`
+
+        this.error(error)
       }
     })
 
@@ -783,9 +800,7 @@ class Site {
       let meta = []
       let js = []
       let dom = []
-      // login
       let logins = {}
-      // subscribe
       let subscribe = {}
       let livechats = {}
 
@@ -1262,6 +1277,12 @@ class Site {
         livechats,
       }
 
+      // this.totalSize = {
+      //   js: this.totalSize.js + ' MB',
+      //   images: images + ' MB',
+      //   videos: videos + ' MB',
+      // }
+
       await this.onDetect(
         url,
         [
@@ -1431,7 +1452,7 @@ class Site {
 
     const results = {
       urls: this.analyzedUrls,
-      size: `${this.totalSize} MB`,
+      size: this.totalSize,
       technologies: resolve(this.detections).map(
         ({
           slug,
