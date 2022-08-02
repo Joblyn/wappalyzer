@@ -7,10 +7,6 @@ const port = 8080
 
 const server = express()
 
-// const httpServer = http.createServer(server)
-
-// const publicDirectoryPath = path.join(__dirname, '../client/index.html')
-
 // on the request to root (localhost:8080/)
 server.get('/', function (req, res) {
   res
@@ -34,6 +30,9 @@ server.get('/lookup', async (req, res) => {
   console.log(urls)
 
   const results = await fetchUrls(urls)
+  // eslint-disable-next-line no-console
+  console.log(results)
+
   res.status(200).send(results)
   res.end()
 })
