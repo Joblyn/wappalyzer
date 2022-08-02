@@ -40,6 +40,16 @@ node src/drivers/npm/cli.js https://example.com
 ```sh 
   nodemon src/server/route.js
 ```
+
+#### Build project
+```sh
+  yarn run build
+```
+
+#### Build project safari
+```sh
+  yarn run build:safari
+```
 ### Chrome extension
 - Go to `about:extensions`
 - Enable 'Developer mode'

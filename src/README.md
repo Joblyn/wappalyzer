@@ -48,7 +48,7 @@ Wappalyzer.analyze({
   cookies: { awselb: [''] },
   html: '<div ng-app="">'
 }).then((detections) => {
-  const results = Wappalyzer.resolve(detections)
+  const results = Wappalyzer.resolve(detections)****
 
   console.log(results)
 })
